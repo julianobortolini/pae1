@@ -1,0 +1,39 @@
+---
+title: "Planejamento e Análise de Experimentos I"
+author:
+  - name: Prof. Dr. Juliano Bortolini
+    email: profjulianobortolini@gmail.com
+    url: http://www.julianobortolini.com.br
+    affiliations:
+      - name: Universidade Federal de Mato Grosso
+format:
+  html:
+    embed-resources: true
+engine: knitr
+---
+
+*Bacharelado em Estatística - UFMT*
+
+*Período letivo: 2024/2*
+
+### Avisos:
+
+-  Última atualização do site às **`r format(Sys.time(), "%H:%M", tz='America/Cuiaba')`** do dia **`r format(Sys.time(), "%d/%m/%Y")`**.
+-  Substituindo a profa. da disciplina.
+
+
+### Notas de aula:
+
+-   Aula 1: definição de estudos observacionais e experimentais e diferenças entre eles, exemplo de estudo observacional, exemplos de experimentos, definição de parcela e unidade experimental, exemplos de unidades experimentais, definição de tratamento, exemplos de tratamentos, apresentação de modelo matemático para um experimento (dic), pressupostos do modelo (normalidade, independência, homocedasticidade e efeitos aditivos), princípios da experimentação (repetição, aleatorização e controle local), exemplo de comparação de produção de duas variedades de trigo em cinco repetições, impacto dos princípios da experimentação no desenvolvimento do experimento (estimação e validação do erro experimental), exemplo de controle local: manchas de fertilidade no solo, declíve de solo, luminosidade (no campo e casa de vegetação), teste de hipóteses para o delineamneto inteiramente casualizado, análise de variância, definição de fonte de variação, graus de liberdade, soma de quadrados, quadrados médios e F calculado, exemplo de desenvolvimento da análise de variância, expressões das somas de quadrados (total, entre tratamentos e dentro de tratamentos/resíduo), fórmulas práticas para o cálculo de SQ.
+
+-   [Lista 1](): em breve.
+
+-   Aula 2: em breve.
+
+
+
+------------------------------------------------------------------------
+
+::: {style="text-align: center;"}
+[\@profjulianobortolini](https://instagram.com/profjulianobortolini)      [www.julianobortolini.com.br](http://www.julianobortolini.com.br)      [linkedin](https://linkedin.com/in/julianobortolini)      [github](https://github.com/julianobortolini)       [lattes](http://lattes.cnpq.br/6210909768845403)
+:::
