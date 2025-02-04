@@ -26,7 +26,7 @@ engine: knitr
 
 -   Aula 1: definição de estudos observacionais e experimentais e diferenças entre eles, exemplo de estudo observacional, exemplos de experimentos, definição de parcela e unidade experimental, exemplos de unidades experimentais, definição de tratamento, exemplos de tratamentos, apresentação de modelo matemático para um experimento (dic), pressupostos do modelo (normalidade, independência, homocedasticidade e efeitos aditivos), princípios da experimentação (repetição, aleatorização e controle local), exemplo de comparação de produção de duas variedades de trigo em cinco repetições, impacto dos princípios da experimentação no desenvolvimento do experimento (estimação e validação do erro experimental), exemplo de controle local: manchas de fertilidade no solo, declíve de solo, luminosidade (no campo e casa de vegetação), teste de hipóteses para o delineamneto inteiramente casualizado, análise de variância, definição de fonte de variação, graus de liberdade, soma de quadrados, quadrados médios e F calculado, exemplo de desenvolvimento da análise de variância, expressões das somas de quadrados (total, entre tratamentos e dentro de tratamentos/resíduo), fórmulas práticas para o cálculo de SQ.
 
--   [Lista 1](): em breve.
+-   [Lista 1](lista1.html).
 
 -   Aula 2: em breve.
 
