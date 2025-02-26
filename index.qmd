@@ -38,6 +38,8 @@ engine: knitr
 
 -   Aula 4: continuação dos métodos de comparações múltiplas. Tabelas: [t-Student](tab_t.pdf), [Tukey (5%)](tab_q_tukey.pdf), [F (5%)](tab_F_5.pdf), [F (1%)](tab_F_1.pdf), [Duncan (5 e 1%)](tab_duncan.pdf) e [Dunnett (5 e 1%)](tab_dunnett.pdf).
 
+-   [Lista 3](lista3.html): testes de comparações múltiplas e contrastes.
+
 
 ------------------------------------------------------------------------
 
