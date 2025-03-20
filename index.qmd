@@ -26,7 +26,9 @@ engine: knitr
 
 -   Aula 1: definição de estudos observacionais e experimentais e diferenças entre eles, exemplo de estudo observacional, exemplos de experimentos, definição de parcela e unidade experimental, exemplos de unidades experimentais, definição de tratamento, exemplos de tratamentos, apresentação de modelo matemático para um experimento (dic), pressupostos do modelo (normalidade, independência, homocedasticidade e efeitos aditivos), princípios da experimentação (repetição, aleatorização e controle local), exemplo de comparação de produção de duas variedades de trigo em cinco repetições, impacto dos princípios da experimentação no desenvolvimento do experimento (estimação e validação do erro experimental), exemplo de controle local: manchas de fertilidade no solo, declíve de solo, luminosidade (no campo e casa de vegetação), teste de hipóteses para o delineamneto inteiramente casualizado, análise de variância, definição de fonte de variação, graus de liberdade, soma de quadrados, quadrados médios e F calculado, exemplo de desenvolvimento da análise de variância, expressões das somas de quadrados (total, entre tratamentos e dentro de tratamentos/resíduo), fórmulas práticas para o cálculo de SQ.
 
+
 -   [Lista 1](lista1.html): delineamento inteiramente casualizado e anova.
+
 
 -   Aula 2: análise de variância, comparações multiplas, teste Tukey para comparação múltipla e exemplos. [Tabela q (Tukey)](tab_q_tukey.pdf). [Tabela F (5%)](tab_F_5.pdf). Exemplo de cálculo do q (Tukey) no R, para um experimento com 3 tratamentos e grau de liberdade igual a 12 para o resíduo: `qtukey(p = 0.05, nmeans = 3, df = 12, lower.tail = FALSE)`. Exemplo do cálculo do quantil da distribuição F no R: `qf(p = 0.05, df1 = 2, df2 = 12, lower.tail = FALSE)`. Cálculo de somas de quadrados na [Casio fx-82MS](casio_fx82ms.html).
 
@@ -39,6 +41,13 @@ engine: knitr
 -   Aula 4: continuação dos métodos de comparações múltiplas. Tabelas: [t-Student](tab_t.pdf), [Tukey (5%)](tab_q_tukey.pdf), [F (5%)](tab_F_5.pdf), [F (1%)](tab_F_1.pdf), [Duncan (5 e 1%)](tab_duncan.pdf) e [Dunnett (5 e 1%)](tab_dunnett.pdf).
 
 -   [Lista 3](lista3.html): testes de comparações múltiplas e contrastes.
+
+
+-   Aula 5: prova 1.
+
+
+-   Aula 6: delineamentos experimentais: inteiramente casualizado, em blocos casualizados e quadrado latino. Modelos, hipóteses, testes estatísticos, aleatorização dos tratamentos às unidades experimentais e exemplo.
+
 
 
 ------------------------------------------------------------------------

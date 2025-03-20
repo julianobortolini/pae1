@@ -1,0 +1,79 @@
+---
+title: "Planejamento e Análise de Experimentos I"
+author:
+  - name: Prof. Dr. Juliano Bortolini
+    email: profjulianobortolini@gmail.com
+    url: http://www.julianobortolini.com.br
+    affiliations:
+      - name: Universidade Federal de Mato Grosso
+format:
+  pdf:
+    embed-resources: true
+engine: knitr
+---
+
+*Bacharelado em Estatística - UFMT*
+
+*Período letivo: 2024/2*
+
+
+### Prova 1 - 10-3-25
+
+
+
+1. Um experimento foi conduzido no **delineamento inteiramente casualizado (DIC)**, com **três repetições**, para avaliar a altura de plantas da espécie florestal **acácia** (*Acacia holocericea*) submetidas a diferentes substratos para formação de mudas. Os tratamentos e os valores de altura de planta (em cm) foram registrados na seguinte tabela (**dados fictícios**):
+
+
+    | Substratos  | Rep. 1 | Rep. 2 | Rep. 3 |
+    |------------|--------|--------|--------|
+    | CaC+EB     | 18   | 16   | 20   |
+    | CaC+EA     | 12   | 13   | 11   |
+    | HM         | 20   | 19   | 24   |
+    | CaP+EB     | 13   | 12   | 14   |
+    | CaP+EA     | 14   | 14   | 11   |
+    | Plantmax   | 15   | 16   | 17   |
+
+a) (**0,125**) Quais são as fontes de variações nesse experimento?
+b) (**0,125**) Quais são os graus de liberdade para cada fonte de variação?
+c) (**1,00**) Calcule as somas de quadrados total, tratamento e erro (ou resíduo).
+d) (**0,50**) Calcule o quadrado médio para tratamento e erro (ou resíduo).
+e) (**0,25**) Quais são as hipóteses nula e alternativa para o teste F?
+f) (**0,25**) Escreva a tabela da análise de variância (teste F) e calcule o valor da estatística do teste F e interprete o resultado.
+g) (**0,25**) Calcule as médias dos tratamentos.
+h) (**1,00**) Realize o teste de Tukey, ao nível de $5\%$ de significância, para verificar quais efeitos dos tratamentos diferem entre si e interprete os resultados.
+i) (**0,25**) Qual contraste pode ser definido para comparar os efeitos de Cac e CaP? Realize o teste t para esse contraste. Utilize o valor do quantil superior da distribuição t igual a $1,96$ (aproximação pela normal).
+j) (**0,25**) Qual contraste pode ser definido para comparar os efeitos de EB e EA? Esse contraste é ortogonal ao anterior?
+
+
+2. Um experimento foi realizado para verificar o efeito de antiparasitários no peso dos animais.
+
+    Tabela. Peso dos animais por tratamento e repetição (**dados fictícios**).
+    
+    | Tratamento  | 1   | 2   |
+    |------------|----|----|
+    | Controle   | 279 | 240 |
+    | Neguvon    | 330 | 314 |
+    | Methiridim | 315 | 304 |
+    | TH         | 298 | 289 |
+    | Haloxon    | 286 | 273 |
+
+
+a) (**2,00**) Aplique o **teste F** e interprete os resultados.
+b) (**1,00**)  Realize o teste Dunnett, ao nível de $5\%$ de significância, para verificar quais efeitos dos tratamentos diferem com o controle.
+
+
+3. (**1,50**) Explique o que é variação total, entre os tratamentos e dentro dos tratamentos.
+
+4. (**1,50**) Preencha as lacunas:
+
+    O delineamento \_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_  é indicado para experimentos em que as unidades experimentais são \_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_ . Em um experimento balanceado, o número de \_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_  deve ser igual entre os tratamentos, o que aumenta a precisão dos resultados. A hipótese nula do teste F para efeitos de tratamentos é que todos os efeitos são \_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_ . Para que a análise de variância seja válida, os resíduos devem apresentar distribuição \_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_ , e os erros devem ser \_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_ , com variância \_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_ . Caso seja rejeitado o teste F da análise de variância para efeitos de tratamentos, é necessário realizar os testes \_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_ .
+
+
+    <!-- **Sugestões de palavras:** tratamentos, diferentes, blocos casualizados, normal, próximos, constante, comparações múltiplas, inteiramente casualizado, repetições, equilibrada, iguais, linear, não-paramétricos, homogêneas, balanceado, dependentes, quadrado latino, heterogêneas, assintóticos, nula, grau de liberdade, independentes, *entre outras*. -->
+
+
+<!-- ------------------------------------------------------------------------ -->
+
+<!-- ::: {style="text-align: center;"} -->
+<!-- [\@profjulianobortolini](https://instagram.com/profjulianobortolini)      [www.julianobortolini.com.br](http://www.julianobortolini.com.br)      [linkedin](https://linkedin.com/in/julianobortolini)      [github](https://github.com/julianobortolini)       [lattes](http://lattes.cnpq.br/6210909768845403) -->
+<!-- ::: -->
