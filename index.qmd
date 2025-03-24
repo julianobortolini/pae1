@@ -49,6 +49,13 @@ engine: knitr
 -   Aula 6: delineamentos experimentais: inteiramente casualizado, em blocos casualizados e quadrado latino. Modelos, hipóteses, testes estatísticos, aleatorização dos tratamentos às unidades experimentais e exemplo.
 
 
+-   [Lista 4](lista4.html): delineamento em blocos casualizados e em quadrado latino.
+
+
+-   Aula 7: aula de exercícios. Resolver a lista 4 usando calculadora.
+
+
+
 
 ------------------------------------------------------------------------
 
