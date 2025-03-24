@@ -63,11 +63,11 @@ Para análise estatística, foi considerada a diferença entre a altura média o
 
 3. No trabalho "Estudos dos efeitos do Promalin sobre frutos de macieiras ($Malus$ spp) cultivares Brasil e Rainha", Mestriner (1980) utilizou 4 repetições dos seguintes tratamentos:
 
-1. $12,5\;ppm$ de Promalin em plena floração.
-2. $25,0\;ppm$ de Promalin em plena floração.
-3. $50,0\;ppm$ de Promalin em plena floração.
-4. $12,5\;ppm$ de Promalin em plena floração + $12,5\;ppm$ de Promalin no início da frutificação.
-5. Testemunha.
+    1. $12,5\;ppm$ de Promalin em plena floração.
+    2. $25,0\;ppm$ de Promalin em plena floração.
+    3. $50,0\;ppm$ de Promalin em plena floração.
+    4. $12,5\;ppm$ de Promalin em plena floração + $12,5\;ppm$ de Promalin no início da frutificação.
+    5. Testemunha.
 
 O experimento foi instalado na Fazenda Chapadão, no município de Angatuba-SP. O delineamento experimental foi o de blocos casualizados, sendo as parcelas constituídas por 4 plantas espaçadas de $6 \times 7$ metros, com 12 anos de idade na época de instalação do experimento.
 
