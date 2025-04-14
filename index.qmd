@@ -55,6 +55,9 @@ engine: knitr
 -   Aula 7: aula de exercícios. Resolver a lista 4 usando calculadora.
 
 
+-   Aula 8:
+
+-   [Aula 9](pae1_comp.html): análise de experimentos no R e pressupostos. 
 
 
 ------------------------------------------------------------------------

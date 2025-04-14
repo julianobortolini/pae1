@@ -1,0 +1,635 @@
+---
+title: "Planejamento e Análise de Experimentos I"
+subtitle: "Computacional"
+author:
+  - name: Prof. Dr. Juliano Bortolini
+    email: profjulianobortolini@gmail.com
+    url: http://www.julianobortolini.com.br
+    affiliations:
+      - name: Universidade Federal de Mato Grosso
+format:
+  html:
+    embed-resources: true
+engine: knitr
+---
+
+*Bacharelado em Estatística - UFMT*
+
+*Período letivo: 2024/2*
+
+
+# Análise de experimentos no R
+
+```{r, message = FALSE, warning = FALSE}
+# Instalar pacotes, se não estiver instalado:
+# install.packages("ExpDes")
+# install.packages("lmtest")
+# install.packages("MASS")
+
+# Carregar os pacotes:
+library(ExpDes)
+library(lmtest)
+library(MASS)
+
+```
+
+
+## Delineamento inteiramente casualizado
+
+Modelo estatístico:
+
+$$
+Y_{ij} = \mu + \tau_i + \epsilon_{ij},
+$$
+em que $Y_{ij}$ é a observação referente ao tratamento $i$ e repetição $j$, $i = 1, \cdots, I$, $j = 1, \cdots, J$, $\mu$ é uma constante comum a todas as observações, $\tau_i$ é o efeito do tratamento $i$ e $\epsilon_{ij}$ é o erro experimental, que se supõe que seja independente e identicamente distribuído (normal) com média zero e variância $\sigma^2$.
+
+### Experimento
+
+1. Um experimento foi conduzido no **delineamento inteiramente casualizado (DIC)**, com **quatro repetições**, para avaliar a altura de plantas da espécie florestal **acácia** (*Acacia holocericea*) submetidas a diferentes substratos para formação de mudas. Os tratamentos e os valores de altura de planta (em cm) foram registrados na seguinte tabela:
+
+| Substratos  | Rep. 1 | Rep. 2 | Rep. 3 | Rep. 4 |
+|------------|--------|--------|--------|--------|
+| CaC+EB     | 18,2   | 16,4   | 20,5   | 19,4   |
+| CaC+EA     | 12,8   | 14,5   | 10,3   | 11,5   |
+| HM         | 21,8   | 19,3   | 24,5   | 22,6   |
+| Cap+EA     | 14,8   | 16,4   | 12,3   | 13,7   |
+| Cap+EB     | 13,0   | 11,2   | 15,4   | 12,6   |
+| Plantmax   | 16,0   | 14,2   | 18,1   | 16,4   |
+
+Realize a análise de variância com comparações múltiplas de Tukey, considerando um nível de significância de $5\%$.
+
+```{r}
+# Criar os dados
+repeticao <- c(1,2,3,4,
+               1,2,3,4,
+               1,2,3,4,
+               1,2,3,4,
+               1,2,3,4,
+               1,2,3,4)
+
+substratos <- rep(c("CaC+EB", "CaC+EA", "HM", "Cap+EA", "Cap+EB", "Plantmax"), each = 4)
+
+altura <- c(18.2, 16.4, 20.5, 19.4,
+            12.8, 14.5, 10.3, 11.5,
+            21.8, 19.3, 24.5, 22.6,
+            14.8, 16.4, 12.3, 13.7,
+            13.0, 11.2, 15.4, 12.6,
+            16.0, 14.2, 18.1, 16.4)
+
+dados_1 <- data.frame(repeticao, substratos, altura)
+dados_1
+```
+
+```{r}
+# Anova usando a função lm do pacote stats
+# A função lm é a função padrão para ajuste de modelos lineares no R
+
+# A variável com os tratamentos precisa ser fator
+dados_1$substratos <- as.factor(dados_1$substratos)
+
+# definindo o modelo linear
+lm_dic <- lm(altura ~ substratos, data = dados_1)
+
+# estimativas dos parâmetros do modelo linear
+summary(lm_dic) 
+
+# Análise de variância
+anova(lm_dic)
+```
+
+
+
+```{r}
+# ANOVA usando ExpDes
+# teste Tukey é o padrão para comparações múltiplas
+crd(treat = dados_1$substratos,
+    resp = dados_1$altura)
+```
+
+Note que há ambiguidade no teste de comparações múltipla usando o teste de Tukey. Uma outra opção para as comparações múltiplas é usar o teste Scott-Knott.
+
+
+```{r}
+# teste Scott-knott:
+crd(treat = dados_1$substratos,
+    resp = dados_1$altura,
+    mcomp = "sk")
+```
+
+
+Outras opções de teste de comparações múltiplas:
+
+```{r}
+# ?crd
+# mcomp
+# Allows choosing the multiple comparison test; the default is the test of Tukey, however, the options are: the LSD test ('lsd'), the LSD test with Bonferroni protection ('lsdb'), the test of Duncan ('duncan'), the test of Student-Newman-Keuls ('snk'), the test of Scott-Knot ('sk'), the Calinski and Corsten test ('ccF') and bootstrap multiple comparison's test ('ccboot').
+```
+
+
+## Delineamento em blocos casualizados
+
+Modelo estatístico:
+
+$$
+Y_{ij} = \mu + \tau_i + \beta_j + \epsilon_{ij},
+$$
+em que $Y_{ij}$ é a observação referente ao tratamento $i$ e bloco $j$, $i = 1, \cdots, I$, $j = 1, \cdots, J$, $\mu$ é uma constante comum a todas as observações, $\tau_i$ é o efeito do tratamento $i$, $\beta_j$ é o efeito do bloco $j$ e $\epsilon_{ij}$ é o erro experimental, que se supõe que seja independente e identicamente distribuído (normal) com média zero e variância $\sigma^2$.
+
+### Experimento
+
+2. Os dados da Tabela 1 referem-se a um ensaio sobre a influência de quatro épocas de corte na produtividade de matéria verde de uma variedade de alfafa. As épocas estudadas foram $A$, $B$, $C$ e $D$, sendo $A$ a mais precoce e $D$ a mais tardia. Foi utilizado o delineamento em Blocos Casualizados para controlar um possível gradiente de fertilidade do solo, já que a área experimental apresentava uma declividade de $12\%$.
+
+**Tabela 1**: Produções em $\text{Kg/parcela}$ de matéria verde de alfafa.
+
+| Blocos | $A$  | $B$  | $C$  | $D$  |
+|--------|------|------|------|------|
+| $I$    | 2,89 | 1,58 | 2,29 | 2,56 |
+| $II$   | 2,88 | 1,28 | 2,98 | 2,00 |
+| $III$  | 1,88 | 1,22 | 1,55 | 1,82 |
+| $IV$   | 2,90 | 1,21 | 1,95 | 2,20 |
+| $V$    | 2,20 | 1,30 | 1,15 | 1,33 |
+| $VI$   | 2,65 | 1,66 | 1,12 | 1,00 |
+
+
+Realize a análise de variância com teste Tukey para comparações múltiplas, ao nível de $5\%$ de probabilidade.
+
+```{r}
+# Criar os dados
+
+bloco <- c(1, 1, 1, 1,
+           2, 2, 2, 2,
+           3, 3, 3, 3,
+           4, 4, 4, 4,
+           5, 5, 5, 5,
+           6, 6, 6, 6)
+epoca <- rep(c("A", "B", "C", "D"), times = 6)
+
+produtividade <- c(2.89, 1.58, 2.29, 2.56,
+                   2.88, 1.28, 2.98, 2.00,
+                   1.88, 1.22, 1.55, 1.82,
+                   2.90, 1.21, 1.95, 2.20,
+                   2.20, 1.30, 1.15, 1.33,
+                   2.65, 1.66, 1.12, 1.00)
+
+dados_2 <- data.frame(bloco, epoca, produtividade)
+
+dados_2
+```
+
+```{r}
+# Anova usando a função lm do pacote stats
+
+# As variáveis com os blocos e tratamentos precisam ser fator
+dados_2$bloco <- as.factor(dados_2$bloco)
+dados_2$epoca <- as.factor(dados_2$epoca)
+
+# definindo o modelo linear
+lm_dbc <- lm(produtividade ~ bloco + epoca, data = dados_2)
+
+# estimativas dos parâmetros do modelo linear
+summary(lm_dbc) 
+
+# Análise de variância
+anova(lm_dbc)
+```
+
+
+
+```{r}
+# ANOVA usando ExpDes
+# teste Tukey é o padrão para comparações múltiplas
+rbd(treat = dados_2$epoca,
+    block = dados_2$bloco,
+    resp = dados_2$produtividade)
+
+```
+
+
+
+```{r}
+# Anova com o teste Duncan para comparações múltiplas
+rbd(treat = dados_2$epoca,
+    block = dados_2$bloco,
+    resp = dados_2$produtividade,
+    mcomp = "duncan")
+```
+
+
+## Delineamento em quadrado latino
+
+Modelo estatístico:
+
+$$
+Y_{ijk} = \mu + \tau_i + L_j + C_k + \epsilon_{ijk},
+$$
+em que $Y_{ijk}$ é a observação referente ao tratamento $i$ na linha $j$ e coluna $k$, $i = 1, \cdots, p$, $j = 1, \cdots, p$, $k = 1, \cdots, p$, $\mu$ é uma constante comum a todas as observações, $\tau_i$ é o efeito do tratamento $i$, $L_j$ é o efeito da linha $j$, $C_k$ é o efeito da coluna $k$ e $\epsilon_{ijk}$ é o erro experimental, que se supõe que seja independente e identicamente distribuído (normal) com média zero e variância $\sigma^2$.
+
+
+### Experimento
+
+3. Um engenheiro aeroespacial está estudando os efeitos de cinco formulações diferentes de um propulsor de foguete usado em sistemas de evacuação da tripulação.
+
+- Variável observada: velocidade de queima das formulações.
+- Cada formulação é misturada a partir de um lote de matéria-prima suficiente para cinco formulações.
+- As formulações são preparadas por diversos operadores.
+- Duas fontes de perturbação: lotes e operadores.
+- Delineamento apropriado: testar cada formulação apenas uma vez em cada lote de matéria-prima e cada operador preparar uma vez cada formulação.
+
+**Tabela 2**: Velocidade de queima de diferentes formulações (A, B, C, D, E) para diferentes lotes de matéria-prima e operadores.
+
+| Lote/Operador | 1  | 2  | 3  | 4  | 5  |
+|---------------|----|----|----|----|----|
+| 1             | A=24 | B=20 | C=19 | D=24 | E=24 |
+| 2             | B=17 | C=24 | D=30 | E=27 | A=36 |
+| 3             | C=18 | D=38 | E=26 | A=27 | B=21 |
+| 4             | D=26 | E=31 | A=26 | B=23 | C=22 |
+| 5             | E=22 | A=30 | B=20 | C=29 | D=31 |
+
+
+```{r}
+# Criar os dados
+
+# linhas == lote
+lote <- rep(c(1,2,3,4,5), times = 5)
+
+# colunas == operador
+operador <- rep(c(1,2,3,4,5), each = 5)
+
+# tratamento == formulacoes
+formulacoes <- c("A", "B", "C", "D", "E",
+                 "B", "C", "D", "E", "A",
+                 "C", "D", "E", "A", "B",
+                 "D", "E", "A", "B", "C",
+                 "E", "A", "B", "C", "D")
+
+velocidade <- c(24, 17, 18, 26, 22,
+                20, 24, 38, 31, 30,
+                19, 30, 26, 26, 20,
+                24, 27, 27, 23, 29,
+                24, 36, 21, 22, 31)
+
+dados_3 <- data.frame(lote, operador, formulacoes, velocidade)
+dados_3
+```
+
+```{r}
+# Anova usando a função lm do pacote stats
+
+# As variáveis com as linhas, colunas e tratamentos precisam ser fator
+dados_3$lote <- as.factor(dados_3$lote)
+dados_3$operador <- as.factor(dados_3$operador)
+dados_3$formulacoes <- as.factor(dados_3$formulacoes)
+
+# definindo o modelo linear
+lm_dql <- lm(velocidade ~ lote + operador + formulacoes, data = dados_3)
+
+# estimativas dos parâmetros do modelo linear
+summary(lm_dql) 
+
+# Análise de variância
+anova(lm_dql)
+```
+
+
+```{r}
+# ANOVA usando ExpDes
+# teste Tukey é o padrão para comparações múltiplas
+latsd(treat = dados_3$formulacoes,
+    row = dados_3$lote,
+    column = dados_3$operador,
+    resp = dados_3$velocidade)
+```
+
+
+## Análise de resíduos
+
+Os pressupostos a serem verificados em uma análise de experimentos (anova) são: resíduos normais, independentes e de variância constante (homocedasticidade). Também é desejável verificar se há pontos discrepantes e a linearidade da variável resposta.
+
+
+O **resíduo bruto**, ou simplesmente resíduo, é definido por:
+
+$$
+\hat{\epsilon}_{ij} = Y_{ij} - \hat{Y}_{ij},
+$$
+
+em que $Y_{ij}$ é o valor observado e $\hat{Y}_{ij}$ é o valor estimado pelo modelo.
+
+```{r}
+# Resíduo bruto
+res_1 <- residuals(lm_dic)
+res_1
+dados_1$altura - fitted(lm_dic)
+```
+
+
+O **resíduo padronizado** é usado para facilitar a comparação entre diferentes observações:
+
+$$
+d_{ij} = \frac{\hat{\epsilon}_{ij}}{\sqrt{\hat{\sigma}^2}},
+$$
+em que $\hat{\sigma}^2 = QM_{Erro}$ é o quadrado médio do erro da análise de variância.
+
+
+```{r}
+# Resíduo padronizado
+res_2 <- rstandard(lm_dic)
+res_2
+```
+
+
+O **resíduo Studentizado** é uma versão do resíduo padronizado que leva em conta a variabilidade dos resíduos (individuais). Ele é calculado como:
+
+$$
+r_{ij} = \frac{\hat{\epsilon}_{ij}}{\sqrt{\hat{\sigma}^2(1 - h_{ii})}},
+$$
+em que $h_{ii}$ é o $i$-ésimo elemento da diagonal da matriz hat $H$
+
+Esse resíduo possibilita uma identificação mais precisa de pontos influentes e discrepantes.
+
+```{r}
+# Resíduo studentizado
+res_3 <- rstudent(lm_dic)
+res_3
+```
+
+
+```{r}
+# comparação entre os três tipos de resíduos para LM
+data.frame(res_1, res_2, res_3)
+```
+
+
+### Normalidade dos resíduos
+
+- **Histograma dos resíduos padronizados ($d_{ij}$)**: Deve apresentar uma forma semelhante à curva normal padrão.
+
+```{r}
+# histograma dos resíduos
+hist(res_2)
+```
+
+
+- **Gráfico dos valores estimados versus resíduos padronizados**: Deve apresentar pontos dispostos de forma aleatória, geralmente concentrados no intervalo $(-2, 2)$.
+
+```{r}
+# Gráfico dos valores estimados versus resíduos padronizados
+y_est <- fitted(lm_dic)
+plot(y_est, res_2) # os pontos estão entre (-2, 2)?
+```
+
+
+- **Comparação de frequências**: Consiste em comparar a frequência relativa dos resíduos padronizados nos intervalos $(-1, 1)$, $(-1,64, 1,64)$ e $(-1,96, 1,96)$ com as probabilidades teóricas de 68%, 90% e 95%, respectivamente, da distribuição normal padrão.
+
+- **Gráfico quantil-quantil (Q-Q plot)**: Com os resíduos ordenados versus os quantis da distribuição normal padronizada, o gráfico deve aproximar-se da reta bissetriz, demonstrando a aderência à normalidade.
+
+```{r}
+# qq-plot
+qqnorm(res_2)
+qqline(res_2)
+```
+
+
+Além dessas abordagens visuais, a aplicação de testes de aderência (não-paramétricos) também pode ser realizada. Dentre esses, os mais conhecidos incluem:  
+Qui-quadrado, **Kolmogorov-Smirnov**, Jarque-Bera, **Shapiro-Wilk**, Anderson-Darling, Cramér-von Mises, D'Agostino-Pearson, Lilliefors, e Shapiro-Francia.
+
+```{r}
+# Teste de Shapiro-Wilk
+shapiro.test(res_2)
+
+# Teste de Kolmogorov-Smirnov
+ks.test(res_2, "pnorm", mean = 0, sd = 1)
+```
+
+
+### Independência dos Resíduos
+
+Sem a informação sobre a ordem de execução dos experimentos, não é possível aplicar testes estatísticos para a independência que dependem de uma sequência temporal ou da coleta dos dados. Nesse caso, a inferência sobre a independência dos resíduos deve basear-se na robustez do desenho experimental - que, se bem realizado com aleatorização, repetição e controle local, sugere naturalmente a independência dos resíduos.
+
+
+Alguns métodos para avaliar a independência incluem:
+
+- **Gráfico dos valores estimados versus resíduos padronizados**: Os pontos devem estar distribuídos aleatoriamente, sem a formação de padrões específicos.
+
+```{r}
+# Gráfico dos valores estimados versus resíduos padronizados
+plot(y_est, res_2)
+```
+
+
+
+- **Gráfico da ordem de coleta dos dados versus resíduos padronizados**: Quando a ordem de coleta é conhecida, a ausência de padrões neste gráfico indica independência.
+
+
+- **Função de autocorrelação**: Permite avaliar a correlação entre os resíduos em diferentes defasagens.
+
+
+- **Testes estatísticos**: Entre os testes de independência, destaca-se o teste **Durbin-Watson**, além do teste de Breusch-Godfrey e Ljung-Box.
+
+
+
+### Homocedasticidade dos Resíduos
+
+A homocedasticidade refere-se à igualdade das variâncias dos resíduos para todos os tratamentos. Essa verificação pode ser feita por:
+
+- **Gráfico dos valores estimados versus resíduos padronizados**: A ausência de padrão ou "funil" indica homogeneidade das variâncias.
+
+```{r}
+# Gráfico dos valores estimados versus resíduos padronizados
+plot(y_est, res_2)
+```
+
+- **Boxplot ou gráfico de dispersão dos valores observados $(Y_{ij}$ versus tratamentos**: Visualmente, as dispersões entre os diferentes tratamentos devem ser semelhantes.
+
+
+```{r}
+# Boxplot dos valores observados em função dos tratamentos
+boxplot(dados_1$altura ~ dados_1$substratos)
+```
+
+
+- **Testes de homogeneidade de variâncias**: Alguns testes utilizados incluem Bartlett, **Breusch-Pagan**, Levene, Samiuddin, O'Neill e Mathews, Layard, Park, White, Cochran, Hartley e Goldfeld-Quandt.
+
+
+```{r}
+# Teste de Bartlett
+bartlett.test(res_2 ~ dados_1$substratos)
+```
+
+
+```{r}
+# Teste de Breusch-Pagan
+# library(lmtest)
+bptest(lm_dic)
+```
+
+
+### Pontos discrepantes (outliers)
+
+Embora não seja um pressuposto obrigatório, a detecção de outliers é fundamental para identificar erros de coleta ou registros anômalos. Métodos simples para essa verificação são:
+
+- **Boxplot dos resíduos padronizados para cada tratamento**: Facilita a visualização de observações fora do padrão.
+
+
+```{r}
+# Boxplot dos resíduos padronizados
+boxplot(res_2 ~ dados_1$substratos)
+```
+
+
+- **Gráfico dos valores estimados versus resíduos padronizados**: Observações que se afastam do intervalo $(-2, 2)$ devem ser analisadas como possíveis outliers.
+
+
+
+### Linearidade da Variável Resposta
+
+A linearidade entre a variável resposta e os tratamentos é um pressuposto básico para muitos modelos estatísticos. Uma verificação simples pode ser realizada através de:
+
+- **Gráfico de dispersão (ou boxplot) dos valores observados em função dos tratamentos**: Se a variabilidade não for comum a todos os tratamentos, pode ser necessário transformar os dados para um melhor ajuste do modelo.
+
+
+```{r}
+# Boxplot dos valores observados em função dos tratamentos
+boxplot(dados_1$altura ~ dados_1$substratos)
+```
+
+
+### Transformação de Variáveis
+
+Quando os pressupostos do modelo não são atendidos, transformar os dados pode ajudar a melhorar a análise dos resíduos. A seguir, são apresentadas algumas transformações comuns:
+
+## Transformações Específicas
+
+- **Dados de contagem (distribuição de Poisson)**:  
+  $y = \sqrt{x}$ ou $y = \sqrt{x} + 0,5$
+
+- **Dados com distribuição assimétrica (log-normal)**:  
+  $y = \log(x)$ ou $y = \log(x + c)$, onde $0 < c \leq 1$ (comumente $c = 1$ ou $1/2$.
+
+- **Dados de proporção (binomial)**:  
+  $y = \arcsin(\sqrt{x})$, também conhecido como transformação arco-seno.
+
+### Transformações por Potência
+
+Uma forma geral de transformação é a potência, definida como $y = x^p$:
+
+- Quando $p = 0$, utilizamos a transformação logarítmica: $y = \log(x)$.
+- Quando $p = 2$, obtemos: $y = x^2$.
+- Quando $p = \frac{1}{2}$, temos: $y = \sqrt{x}$.
+- Quando $p = -1$, a transformação é: $y = \frac{1}{x}$.
+- Quando $p = -\frac{1}{2}$, resulta em: $y = \frac{1}{\sqrt{x}}$.
+
+## Transformação de Box-Cox
+
+A transformação de Box-Cox é uma técnica poderosa para estabilizar a variância e aproximar a normalidade dos resíduos. Ela é definida por:
+
+$$
+y = \frac{x^p - 1}{p}, \quad \text{para } p \neq 0,
+$$
+
+$$
+y = \log(x), \quad \text{para } p = 0.
+$$
+
+O parâmetro $p$ pode ser estimado através da maximização da função:
+
+$$
+L(p) = -\frac{1}{2}\log\left[ QMErro(p) \right],
+$$
+
+em que $QMErro(p)$ representa o quadrado médio do erro obtido na análise de variância após a transformação de Box-Cox.
+
+
+```{r}
+# transformação boxcox
+# library(MASS)
+boxcox(lm_dic, lambda = seq(-2, 2, 0.1))
+```
+
+
+### Experimento 
+
+```{r}
+# dados simulados
+
+repeticao <- c(1,2,3,4,
+               1,2,3,4,
+               1,2,3,4,
+               1,2,3,4,
+               1,2,3,4,
+               1,2,3,4)
+
+substratos <- rep(c("CaC+EB", "CaC+EA", "HM", "Cap+EA", "Cap+EB", "Plantmax"), each = 4)
+
+altura <- c(18.2, 16.4, 20.5, 19.4,
+            12.8, 14.5, 10.3, 11.5,
+            11.8, 19.3, 24.5, 32.6,
+            14.8, 16.4, 12.3, 13.7,
+            13.0, 11.2, 15.4, 12.6,
+            12.0, 14.2, 18.1, 19.4)
+
+
+dados_4 <- data.frame(repeticao, substratos, altura)
+dados_4
+
+# Análise gráfica da variável resposta por tratamento
+boxplot(dados_4$altura ~ dados_4$substratos)
+
+# Ajuste do modelo
+lm_dic2 <- lm(altura ~ substratos, data = dados_4)
+anova(lm_dic2)
+
+# Resíduo padronizado
+res_4 <- rstandard(lm_dic2)
+
+# histograma dos resíduos
+hist(res_4)
+
+# Gráfico dos valores estimados versus resíduos padronizados
+y_est <- fitted(lm_dic2)
+plot(y_est, res_4) # os pontos estão entre (-2, 2)?
+
+# qq-plot
+qqnorm(res_4)
+qqline(res_4)
+
+# box plot dos resíduos por tratamento
+boxplot(res_4 ~ dados_4$substratos)
+
+# Teste de Shapiro-Wilk
+shapiro.test(res_4)
+
+# Teste de Kolmogorov-Smirnov
+ks.test(res_4, "pnorm", mean = 0, sd = 1)
+
+# teste de homogeneidade de variâncias
+bartlett.test(res_4 ~ dados_4$substratos)
+
+# transformação boxcox
+boxcox(lm_dic2, lambda = seq(-3, 3, 0.1))
+
+dados_4$altura_2 <- log(dados_4$altura)
+boxplot(dados_4$altura_2 ~ dados_4$substratos)
+lm_dic3 <- lm(altura_2 ~ substratos, data = dados_4)
+anova(lm_dic3)
+res_5 <- rstandard(lm_dic3)
+bartlett.test(res_5 ~ dados_4$substratos)
+shapiro.test(res_5)
+
+# Anova e Tukey
+crd(treat = dados_4$substratos,
+    resp = dados_4$altura_2,
+    mcomp = "tukey")
+
+# Scott-Knott
+crd(treat = dados_4$substratos,
+    resp = dados_4$altura_2,
+    mcomp = "sk")
+```
+
+
+
+------------------------------------------------------------------------
+
+::: {style="text-align: center;"}
+[\@profjulianobortolini](https://instagram.com/profjulianobortolini)      [www.julianobortolini.com.br](http://www.julianobortolini.com.br)      [linkedin](https://linkedin.com/in/julianobortolini)      [github](https://github.com/julianobortolini)       [lattes](http://lattes.cnpq.br/6210909768845403)
+:::
