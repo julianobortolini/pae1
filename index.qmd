@@ -24,6 +24,7 @@ engine: knitr
 
 ### Notas de aula:
 
+
 -   Aula 1: definição de estudos observacionais e experimentais e diferenças entre eles, exemplo de estudo observacional, exemplos de experimentos, definição de parcela e unidade experimental, exemplos de unidades experimentais, definição de tratamento, exemplos de tratamentos, apresentação de modelo matemático para um experimento (dic), pressupostos do modelo (normalidade, independência, homocedasticidade e efeitos aditivos), princípios da experimentação (repetição, aleatorização e controle local), exemplo de comparação de produção de duas variedades de trigo em cinco repetições, impacto dos princípios da experimentação no desenvolvimento do experimento (estimação e validação do erro experimental), exemplo de controle local: manchas de fertilidade no solo, declíve de solo, luminosidade (no campo e casa de vegetação), teste de hipóteses para o delineamneto inteiramente casualizado, análise de variância, definição de fonte de variação, graus de liberdade, soma de quadrados, quadrados médios e F calculado, exemplo de desenvolvimento da análise de variância, expressões das somas de quadrados (total, entre tratamentos e dentro de tratamentos/resíduo), fórmulas práticas para o cálculo de SQ.
 
 
@@ -55,9 +56,19 @@ engine: knitr
 -   Aula 7: aula de exercícios. Resolver a lista 4 usando calculadora.
 
 
--   Aula 8:
+-   Aula 8: recesso acadêmico - *Portaria normativa PROGEP/UFMT N. 001, de 04 de abril de 2025.*
 
--   [Aula 9](pae1_comp.html): análise de experimentos no R e pressupostos. 
+
+-   [Aula 9](pae1_comp.html): análise de experimentos no R, pressupostos, transformações de variáveis e comentários sobre testes não-paramétricos e modelos lineares generalizados. 
+
+
+-   Aula 10: feriado 21 de abril, *Dia de Tiradentes*.
+
+
+-   Aula 11: aula de exercícios, [lista 5]() (em breve).
+
+
+-   Aula 12: prova 2.
 
 
 ------------------------------------------------------------------------
