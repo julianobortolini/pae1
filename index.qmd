@@ -21,6 +21,7 @@ engine: knitr
 -   Última atualização do site às **`r format(Sys.time(), "%H:%M", tz='America/Cuiaba')`** do dia **`r format(Sys.time(), "%d/%m/%Y")`**.
 -   Substituindo a profa. da disciplina.
 -   **Prova 1 da disciplina será realizada no dia 10/3/2025.**
+-   **Prova 2 da disciplina será realizada no dia 5/5/2025.**
 
 ### Notas de aula:
 
@@ -64,8 +65,9 @@ engine: knitr
 
 -   Aula 10: feriado 21 de abril, *Dia de Tiradentes*.
 
+-   [Lista 5](lista5.html): análise de experimentos no R (todo o conteúdo da disciplina).
 
--   Aula 11: aula de exercícios, [lista 5]() (em breve).
+-   Aula 11: aula de exercícios.
 
 
 -   Aula 12: prova 2.
