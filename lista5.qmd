@@ -337,6 +337,178 @@ knitr::kable(dados, align = "c")
 
 
 
+11. Um experimento avaliou o efeito do uso da adubação (0: nível baixo ou 1: nível alto) e da aplicação de calcário (0: nível baixo ou 1: nível alto) na cultura de milho. O experimento foi instalado utilizando um delineamento em blocos casualizados com três repetições. As produções obtidas, em $kg/parcela$ foram as seguintes:
+
+
+```{r}
+# Vetores
+adubacao <- rep(c(0, 0, 1, 1), each = 3)
+calcario <- rep(c(0, 1, 0, 1), each = 3)
+bloco <- rep(1:3, times = 4)
+producao <- c(
+  4, 3, 8,    # Adubação 0, Calcário 0
+  6, 8, 10,   # Adubação 0, Calcário 1
+  8, 10, 12,  # Adubação 1, Calcário 0
+  18, 17, 16  # Adubação 1, Calcário 1
+)
+
+# Definição dos tratamentos combinados
+tratamento <- paste0("A", adubacao, "_C", calcario)
+
+# Data Frame
+dados <- data.frame(
+  tratamento,
+  bloco,
+  producao
+)
+
+# Visualização
+knitr::kable(dados, align = "c")
+```
+
+
+
+12. Num experimento com suínos foram comparadas quatro rações ($A$, $B$, $C$, $D$) e duas doses de vitaminas ($2$ e $4 mg$) com três repetições. Foi utilizado um delineamento em blocos casualizados para controlar o peso inicial dos animais. A parcela constituiu-se de um animal e o ganho de peso, em $kg$, dos animais no período experimental foi o seguinte:
+
+```{r}
+# Vetores
+bloco <- rep(1:3, each = 8)
+racao <- rep(c("A", "B", "C", "D", "A", "B", "C", "D"), times = 3)
+dose <- rep(c(2, 2, 2, 2, 4, 4, 4, 4), times = 3)
+ganho_peso <- c(
+  65, 56, 56, 56, 62, 58, 55, 60,   # Bloco 1
+  63, 58, 54, 56, 64, 62, 56, 56,   # Bloco 2
+  64, 57, 54, 60, 66, 59, 62, 68    # Bloco 3
+)
+
+# Definição dos tratamentos combinados
+tratamento <- paste0(racao, dose)
+
+# Data Frame
+dados <- data.frame(
+  tratamento,
+  bloco,
+  ganho_peso
+)
+
+
+# Visualização
+knitr::kable(dados, align = "c")
+
+```
+
+
+13. Os resultados seguintes foram obtidos de um experimento em que foram avaliados três tipos de vinho ($A$, $B$, $C$) servidos em duas condições de temperatura ($1: gelado$, $2: ambiente$). Foram utilizados quatro provadores que atribuíram as seguintes notas numa escala de $1$ a $10$ (média de três determinações):
+
+
+```{r}
+# Vetores
+provador <- rep(1:4, each = 6)
+vinho <- rep(c("A", "A", "B", "B", "C", "C"), times = 4)
+temperatura <- rep(c(1, 2, 1, 2, 1, 2), times = 4)
+nota <- c(
+  8.2, 4.5, 4.2, 5.6, 9.3, 9.6,  # Provador 1
+  7.8, 3.5, 4.4, 4.9, 8.7, 8.9,  # Provador 2
+  6.0, 3.8, 5.3, 5.4, 6.5, 7.3,  # Provador 3
+  8.0, 4.7, 6.8, 6.8, 7.9, 9.3   # Provador 4
+)
+
+# Definição dos tratamentos combinados
+tratamento <- paste0(vinho, temperatura)
+
+# Data Frame
+dados <- data.frame(
+  tratamento,
+  provador,
+  nota
+)
+
+# Visualização
+knitr::kable(dados, align = "c")
+```
+
+
+14. Em um experimento foram avaliados os teores de frutose ($\%$) dos frutos de três cultivares de pêssego ($A$, $B$, $C$) em cinco tempos de armazenamento ($7dias$,  $14dias$, $21dias$, $28dias$ e $35dias$). O experimento foi conduzido em laboratório e o delineamento foi inteiramente ao acaso.
+
+
+```{r}
+# Vetores
+cultivar <- rep(c("A", "A", "A", "A", "A", 
+                  "B", "B", "B", "B", "B", 
+                  "C", "C", "C", "C", "C"), each = 2)
+
+tempo <- rep(rep(c(7, 14, 21, 28, 35), each = 2), times = 3)
+
+repeticao <- rep(1:2, times = 15)
+
+tratamento <- paste0(cultivar, tempo)
+
+teor_frutose <- c(
+  # Cultivar A
+  1.29, 1.36,
+  1.42, 1.46,
+  1.41, 1.43,
+  1.44, 1.42,
+  1.60, 1.80,
+  # Cultivar B
+  1.26, 1.30,
+  1.41, 1.41,
+  1.45, 1.49,
+  1.60, 1.68,
+  1.61, 1.64,
+  # Cultivar C
+  1.30, 1.34,
+  1.38, 1.43,
+  1.22, 1.64,
+  1.65, 1.66,
+  1.65, 1.67
+)
+
+# Data Frame
+dados <- data.frame(
+  tratamento,
+  repeticao,
+  teor_frutose
+)
+
+# Visualização
+knitr::kable(dados, align = "c")
+```
+
+
+
+15. Um experimento foi realizado com o objetivo de avaliar o tempo de cozimento, em minutos, de seis tratamentos constituídos pelas combinações dos fatores: cultivar (Carioca, Jalo e Esal5) e embalagens de polietileno (espessuras de $30\mu$ e $40\mu$). Os feijões foram colhidos e armazenados nas embalagens por um período de seis meses, após o qual foi feito as avaliações. Os resultados do tempo de cozimento obtidos foram:
+
+```{r}
+# Vetores
+cultivar <- rep(c("Carioca", "Carioca", "Esal5", "Esal5", "Jalo", "Jalo"), each = 4)
+embalagem <- rep(c(30, 40, 30, 40, 30, 40), each = 4)
+repeticao <- rep(1:4, times = 6)
+
+tratamento <- paste0(cultivar, embalagem)
+
+tempo_cozimento <- c(
+  57, 53, 47, 55,   # Carioca 30μ
+  52, 50, 41, 45,   # Carioca 40μ
+  66, 61, 63, 66,   # Esal5 30μ
+  70, 68, 58, 68,   # Esal5 40μ
+  57, 61, 55, 59,   # Jalo 30μ
+  50, 50, 45, 47    # Jalo 40μ
+)
+
+
+# Data Frame
+dados <- data.frame(
+  tratamento,
+  repeticao,
+  tempo_cozimento
+  )
+
+# Visualização
+knitr::kable(dados, align = "c")
+```
+
+
 
 ------------------------------------------------------------------------
 
