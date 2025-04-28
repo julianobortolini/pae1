@@ -5522,6 +5522,1344 @@ window.Quarto = {
 </table>
 </div>
 </div>
+<ol start="16" type="1">
+<li>Um estudo foi realizado para investigar o rendimento de um processo químico. As duas variáveis mais importantes no processo analisado são a pressão e a temperatura. Três níveis de cada fator foram selecionados e um experimento fatorial no delineamento inteiramente casualizado (DIC) com duas repetições foi conduzido. Os dados de rendimento obtidos foram:</li>
+</ol>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb16"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb16-1"><a href="#cb16-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Vetores</span></span>
+<span id="cb16-2"><a href="#cb16-2" aria-hidden="true" tabindex="-1"></a>temperatura <span class="ot">&lt;-</span> <span class="fu">rep</span>(<span class="fu">c</span>(<span class="dv">150</span>, <span class="dv">160</span>, <span class="dv">170</span>), <span class="at">each =</span> <span class="dv">6</span>)</span>
+<span id="cb16-3"><a href="#cb16-3" aria-hidden="true" tabindex="-1"></a>pressao <span class="ot">&lt;-</span> <span class="fu">rep</span>(<span class="fu">c</span>(<span class="dv">200</span>, <span class="dv">200</span>, <span class="dv">215</span>, <span class="dv">215</span>, <span class="dv">230</span>, <span class="dv">230</span>), <span class="at">times =</span> <span class="dv">3</span>)</span>
+<span id="cb16-4"><a href="#cb16-4" aria-hidden="true" tabindex="-1"></a>repeticao <span class="ot">&lt;-</span> <span class="fu">rep</span>(<span class="dv">1</span><span class="sc">:</span><span class="dv">2</span>, <span class="at">times =</span> <span class="dv">9</span>)</span>
+<span id="cb16-5"><a href="#cb16-5" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb16-6"><a href="#cb16-6" aria-hidden="true" tabindex="-1"></a>tratamento <span class="ot">&lt;-</span> <span class="fu">paste0</span>(<span class="st">&quot;T&quot;</span>, temperatura, <span class="st">&quot;P&quot;</span>, pressao)</span>
+<span id="cb16-7"><a href="#cb16-7" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb16-8"><a href="#cb16-8" aria-hidden="true" tabindex="-1"></a>rendimento <span class="ot">&lt;-</span> <span class="fu">c</span>(</span>
+<span id="cb16-9"><a href="#cb16-9" aria-hidden="true" tabindex="-1"></a>  <span class="fl">90.4</span>, <span class="fl">90.2</span>, <span class="fl">90.7</span>, <span class="fl">90.6</span>, <span class="fl">90.2</span>, <span class="fl">90.4</span>,    <span class="co"># Temperatura 150°C</span></span>
+<span id="cb16-10"><a href="#cb16-10" aria-hidden="true" tabindex="-1"></a>  <span class="fl">90.1</span>, <span class="fl">90.3</span>, <span class="fl">90.5</span>, <span class="fl">90.6</span>, <span class="fl">89.9</span>, <span class="fl">90.1</span>,    <span class="co"># Temperatura 160°C</span></span>
+<span id="cb16-11"><a href="#cb16-11" aria-hidden="true" tabindex="-1"></a>  <span class="fl">90.5</span>, <span class="fl">90.7</span>, <span class="fl">90.8</span>, <span class="fl">90.9</span>, <span class="fl">90.1</span>, <span class="fl">90.4</span>     <span class="co"># Temperatura 170°C</span></span>
+<span id="cb16-12"><a href="#cb16-12" aria-hidden="true" tabindex="-1"></a>)</span>
+<span id="cb16-13"><a href="#cb16-13" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb16-14"><a href="#cb16-14" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb16-15"><a href="#cb16-15" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb16-16"><a href="#cb16-16" aria-hidden="true" tabindex="-1"></a><span class="co"># Data Frame</span></span>
+<span id="cb16-17"><a href="#cb16-17" aria-hidden="true" tabindex="-1"></a>dados <span class="ot">&lt;-</span> <span class="fu">data.frame</span>(</span>
+<span id="cb16-18"><a href="#cb16-18" aria-hidden="true" tabindex="-1"></a>  tratamento,</span>
+<span id="cb16-19"><a href="#cb16-19" aria-hidden="true" tabindex="-1"></a>  repeticao,</span>
+<span id="cb16-20"><a href="#cb16-20" aria-hidden="true" tabindex="-1"></a>  rendimento</span>
+<span id="cb16-21"><a href="#cb16-21" aria-hidden="true" tabindex="-1"></a>)</span>
+<span id="cb16-22"><a href="#cb16-22" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb16-23"><a href="#cb16-23" aria-hidden="true" tabindex="-1"></a><span class="co"># Visualização</span></span>
+<span id="cb16-24"><a href="#cb16-24" aria-hidden="true" tabindex="-1"></a>knitr<span class="sc">::</span><span class="fu">kable</span>(dados, <span class="at">align =</span> <span class="st">&quot;c&quot;</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output-display">
+<table class="caption-top table table-sm table-striped small">
+<thead>
+<tr class="header">
+<th style="text-align: center;">tratamento</th>
+<th style="text-align: center;">repeticao</th>
+<th style="text-align: center;">rendimento</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: center;">T150P200</td>
+<td style="text-align: center;">1</td>
+<td style="text-align: center;">90.4</td>
+</tr>
+<tr class="even">
+<td style="text-align: center;">T150P200</td>
+<td style="text-align: center;">2</td>
+<td style="text-align: center;">90.2</td>
+</tr>
+<tr class="odd">
+<td style="text-align: center;">T150P215</td>
+<td style="text-align: center;">1</td>
+<td style="text-align: center;">90.7</td>
+</tr>
+<tr class="even">
+<td style="text-align: center;">T150P215</td>
+<td style="text-align: center;">2</td>
+<td style="text-align: center;">90.6</td>
+</tr>
+<tr class="odd">
+<td style="text-align: center;">T150P230</td>
+<td style="text-align: center;">1</td>
+<td style="text-align: center;">90.2</td>
+</tr>
+<tr class="even">
+<td style="text-align: center;">T150P230</td>
+<td style="text-align: center;">2</td>
+<td style="text-align: center;">90.4</td>
+</tr>
+<tr class="odd">
+<td style="text-align: center;">T160P200</td>
+<td style="text-align: center;">1</td>
+<td style="text-align: center;">90.1</td>
+</tr>
+<tr class="even">
+<td style="text-align: center;">T160P200</td>
+<td style="text-align: center;">2</td>
+<td style="text-align: center;">90.3</td>
+</tr>
+<tr class="odd">
+<td style="text-align: center;">T160P215</td>
+<td style="text-align: center;">1</td>
+<td style="text-align: center;">90.5</td>
+</tr>
+<tr class="even">
+<td style="text-align: center;">T160P215</td>
+<td style="text-align: center;">2</td>
+<td style="text-align: center;">90.6</td>
+</tr>
+<tr class="odd">
+<td style="text-align: center;">T160P230</td>
+<td style="text-align: center;">1</td>
+<td style="text-align: center;">89.9</td>
+</tr>
+<tr class="even">
+<td style="text-align: center;">T160P230</td>
+<td style="text-align: center;">2</td>
+<td style="text-align: center;">90.1</td>
+</tr>
+<tr class="odd">
+<td style="text-align: center;">T170P200</td>
+<td style="text-align: center;">1</td>
+<td style="text-align: center;">90.5</td>
+</tr>
+<tr class="even">
+<td style="text-align: center;">T170P200</td>
+<td style="text-align: center;">2</td>
+<td style="text-align: center;">90.7</td>
+</tr>
+<tr class="odd">
+<td style="text-align: center;">T170P215</td>
+<td style="text-align: center;">1</td>
+<td style="text-align: center;">90.8</td>
+</tr>
+<tr class="even">
+<td style="text-align: center;">T170P215</td>
+<td style="text-align: center;">2</td>
+<td style="text-align: center;">90.9</td>
+</tr>
+<tr class="odd">
+<td style="text-align: center;">T170P230</td>
+<td style="text-align: center;">1</td>
+<td style="text-align: center;">90.1</td>
+</tr>
+<tr class="even">
+<td style="text-align: center;">T170P230</td>
+<td style="text-align: center;">2</td>
+<td style="text-align: center;">90.4</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+<ol start="17" type="1">
+<li>Um estudo foi realizado para investigar os fatores que influenciam a resistência à ruptura de uma fibra sintética. Foram escolhidas quatro máquinas de produção e três operadores, sendo conduzido um experimento fatorial <span class="math inline">\(4 \times 3\)</span> utilizando as fibras do mesmo lote de produção. Os resultados obtidos foram:</li>
+</ol>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb17"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb17-1"><a href="#cb17-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Vetores</span></span>
+<span id="cb17-2"><a href="#cb17-2" aria-hidden="true" tabindex="-1"></a>maquina <span class="ot">&lt;-</span> <span class="fu">rep</span>(<span class="fu">c</span>(<span class="dv">1</span>, <span class="dv">2</span>, <span class="dv">3</span>, <span class="dv">4</span>), <span class="at">each =</span> <span class="dv">6</span>)</span>
+<span id="cb17-3"><a href="#cb17-3" aria-hidden="true" tabindex="-1"></a>operador <span class="ot">&lt;-</span> <span class="fu">rep</span>(<span class="fu">c</span>(<span class="dv">1</span>, <span class="dv">1</span>, <span class="dv">2</span>, <span class="dv">2</span>, <span class="dv">3</span>, <span class="dv">3</span>), <span class="at">times =</span> <span class="dv">4</span>)</span>
+<span id="cb17-4"><a href="#cb17-4" aria-hidden="true" tabindex="-1"></a>repeticao <span class="ot">&lt;-</span> <span class="fu">rep</span>(<span class="dv">1</span><span class="sc">:</span><span class="dv">2</span>, <span class="at">times =</span> <span class="dv">12</span>)</span>
+<span id="cb17-5"><a href="#cb17-5" aria-hidden="true" tabindex="-1"></a>forca_ruptura <span class="ot">&lt;-</span> <span class="fu">c</span>(</span>
+<span id="cb17-6"><a href="#cb17-6" aria-hidden="true" tabindex="-1"></a>  <span class="dv">109</span>, <span class="dv">110</span>, <span class="dv">110</span>, <span class="dv">112</span>, <span class="dv">116</span>, <span class="dv">114</span>,   <span class="co"># Máquina 1</span></span>
+<span id="cb17-7"><a href="#cb17-7" aria-hidden="true" tabindex="-1"></a>  <span class="dv">110</span>, <span class="dv">115</span>, <span class="dv">110</span>, <span class="dv">111</span>, <span class="dv">112</span>, <span class="dv">115</span>,   <span class="co"># Máquina 2</span></span>
+<span id="cb17-8"><a href="#cb17-8" aria-hidden="true" tabindex="-1"></a>  <span class="dv">108</span>, <span class="dv">109</span>, <span class="dv">111</span>, <span class="dv">109</span>, <span class="dv">114</span>, <span class="dv">119</span>,   <span class="co"># Máquina 3</span></span>
+<span id="cb17-9"><a href="#cb17-9" aria-hidden="true" tabindex="-1"></a>  <span class="dv">110</span>, <span class="dv">108</span>, <span class="dv">114</span>, <span class="dv">112</span>, <span class="dv">120</span>, <span class="dv">117</span>    <span class="co"># Máquina 4</span></span>
+<span id="cb17-10"><a href="#cb17-10" aria-hidden="true" tabindex="-1"></a>)</span>
+<span id="cb17-11"><a href="#cb17-11" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb17-12"><a href="#cb17-12" aria-hidden="true" tabindex="-1"></a><span class="co"># Definição do tratamento combinado</span></span>
+<span id="cb17-13"><a href="#cb17-13" aria-hidden="true" tabindex="-1"></a>tratamento <span class="ot">&lt;-</span> <span class="fu">paste0</span>(<span class="st">&quot;M&quot;</span>, maquina, <span class="st">&quot;_O&quot;</span>, operador)</span>
+<span id="cb17-14"><a href="#cb17-14" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb17-15"><a href="#cb17-15" aria-hidden="true" tabindex="-1"></a><span class="co"># Data Frame</span></span>
+<span id="cb17-16"><a href="#cb17-16" aria-hidden="true" tabindex="-1"></a>dados <span class="ot">&lt;-</span> <span class="fu">data.frame</span>(</span>
+<span id="cb17-17"><a href="#cb17-17" aria-hidden="true" tabindex="-1"></a>  tratamento,</span>
+<span id="cb17-18"><a href="#cb17-18" aria-hidden="true" tabindex="-1"></a>  repeticao,</span>
+<span id="cb17-19"><a href="#cb17-19" aria-hidden="true" tabindex="-1"></a>  forca_ruptura</span>
+<span id="cb17-20"><a href="#cb17-20" aria-hidden="true" tabindex="-1"></a>)</span>
+<span id="cb17-21"><a href="#cb17-21" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb17-22"><a href="#cb17-22" aria-hidden="true" tabindex="-1"></a><span class="co"># Visualização</span></span>
+<span id="cb17-23"><a href="#cb17-23" aria-hidden="true" tabindex="-1"></a>knitr<span class="sc">::</span><span class="fu">kable</span>(dados, <span class="at">align =</span> <span class="st">&quot;c&quot;</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output-display">
+<table class="caption-top table table-sm table-striped small">
+<thead>
+<tr class="header">
+<th style="text-align: center;">tratamento</th>
+<th style="text-align: center;">repeticao</th>
+<th style="text-align: center;">forca_ruptura</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: center;">M1_O1</td>
+<td style="text-align: center;">1</td>
+<td style="text-align: center;">109</td>
+</tr>
+<tr class="even">
+<td style="text-align: center;">M1_O1</td>
+<td style="text-align: center;">2</td>
+<td style="text-align: center;">110</td>
+</tr>
+<tr class="odd">
+<td style="text-align: center;">M1_O2</td>
+<td style="text-align: center;">1</td>
+<td style="text-align: center;">110</td>
+</tr>
+<tr class="even">
+<td style="text-align: center;">M1_O2</td>
+<td style="text-align: center;">2</td>
+<td style="text-align: center;">112</td>
+</tr>
+<tr class="odd">
+<td style="text-align: center;">M1_O3</td>
+<td style="text-align: center;">1</td>
+<td style="text-align: center;">116</td>
+</tr>
+<tr class="even">
+<td style="text-align: center;">M1_O3</td>
+<td style="text-align: center;">2</td>
+<td style="text-align: center;">114</td>
+</tr>
+<tr class="odd">
+<td style="text-align: center;">M2_O1</td>
+<td style="text-align: center;">1</td>
+<td style="text-align: center;">110</td>
+</tr>
+<tr class="even">
+<td style="text-align: center;">M2_O1</td>
+<td style="text-align: center;">2</td>
+<td style="text-align: center;">115</td>
+</tr>
+<tr class="odd">
+<td style="text-align: center;">M2_O2</td>
+<td style="text-align: center;">1</td>
+<td style="text-align: center;">110</td>
+</tr>
+<tr class="even">
+<td style="text-align: center;">M2_O2</td>
+<td style="text-align: center;">2</td>
+<td style="text-align: center;">111</td>
+</tr>
+<tr class="odd">
+<td style="text-align: center;">M2_O3</td>
+<td style="text-align: center;">1</td>
+<td style="text-align: center;">112</td>
+</tr>
+<tr class="even">
+<td style="text-align: center;">M2_O3</td>
+<td style="text-align: center;">2</td>
+<td style="text-align: center;">115</td>
+</tr>
+<tr class="odd">
+<td style="text-align: center;">M3_O1</td>
+<td style="text-align: center;">1</td>
+<td style="text-align: center;">108</td>
+</tr>
+<tr class="even">
+<td style="text-align: center;">M3_O1</td>
+<td style="text-align: center;">2</td>
+<td style="text-align: center;">109</td>
+</tr>
+<tr class="odd">
+<td style="text-align: center;">M3_O2</td>
+<td style="text-align: center;">1</td>
+<td style="text-align: center;">111</td>
+</tr>
+<tr class="even">
+<td style="text-align: center;">M3_O2</td>
+<td style="text-align: center;">2</td>
+<td style="text-align: center;">109</td>
+</tr>
+<tr class="odd">
+<td style="text-align: center;">M3_O3</td>
+<td style="text-align: center;">1</td>
+<td style="text-align: center;">114</td>
+</tr>
+<tr class="even">
+<td style="text-align: center;">M3_O3</td>
+<td style="text-align: center;">2</td>
+<td style="text-align: center;">119</td>
+</tr>
+<tr class="odd">
+<td style="text-align: center;">M4_O1</td>
+<td style="text-align: center;">1</td>
+<td style="text-align: center;">110</td>
+</tr>
+<tr class="even">
+<td style="text-align: center;">M4_O1</td>
+<td style="text-align: center;">2</td>
+<td style="text-align: center;">108</td>
+</tr>
+<tr class="odd">
+<td style="text-align: center;">M4_O2</td>
+<td style="text-align: center;">1</td>
+<td style="text-align: center;">114</td>
+</tr>
+<tr class="even">
+<td style="text-align: center;">M4_O2</td>
+<td style="text-align: center;">2</td>
+<td style="text-align: center;">112</td>
+</tr>
+<tr class="odd">
+<td style="text-align: center;">M4_O3</td>
+<td style="text-align: center;">1</td>
+<td style="text-align: center;">120</td>
+</tr>
+<tr class="even">
+<td style="text-align: center;">M4_O3</td>
+<td style="text-align: center;">2</td>
+<td style="text-align: center;">117</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+<ol start="18" type="1">
+<li>Um experimento foi conduzido para avaliar os teores de açúcares (<span class="math inline">\(%\)</span>) em frutos de duas cultivares de ameixa (<span class="math inline">\(A\)</span>, <span class="math inline">\(B\)</span>), utilizando embalagens (0: sem embalagem, 1: com embalagem) em cinco tempos de armazenamento (dias: <span class="math inline">\(7\)</span>, <span class="math inline">\(14\)</span>, <span class="math inline">\(21\)</span>, <span class="math inline">\(28\)</span>, <span class="math inline">\(35\)</span>). Os frutos foram colhidos em pomares de três produtores (blocos) (<span class="math inline">\(1\)</span>, <span class="math inline">\(2\)</span>, <span class="math inline">\(3\)</span>), no delineamento em blocos casualizados. Os dados obtidos foram:</li>
+</ol>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb18"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb18-1"><a href="#cb18-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Vetores</span></span>
+<span id="cb18-2"><a href="#cb18-2" aria-hidden="true" tabindex="-1"></a>cultivar <span class="ot">&lt;-</span> <span class="fu">rep</span>(<span class="fu">c</span>(<span class="st">&quot;A&quot;</span>, <span class="st">&quot;A&quot;</span>, <span class="st">&quot;B&quot;</span>, <span class="st">&quot;B&quot;</span>), <span class="at">each =</span> <span class="dv">30</span>)</span>
+<span id="cb18-3"><a href="#cb18-3" aria-hidden="true" tabindex="-1"></a>embalagem <span class="ot">&lt;-</span> <span class="fu">rep</span>(<span class="fu">rep</span>(<span class="fu">c</span>(<span class="dv">0</span>, <span class="dv">1</span>), <span class="at">each =</span> <span class="dv">15</span>), <span class="dv">2</span>)</span>
+<span id="cb18-4"><a href="#cb18-4" aria-hidden="true" tabindex="-1"></a>tempo <span class="ot">&lt;-</span> <span class="fu">rep</span>(<span class="fu">rep</span>(<span class="fu">c</span>(<span class="dv">7</span>, <span class="dv">14</span>, <span class="dv">21</span>, <span class="dv">28</span>, <span class="dv">35</span>), <span class="at">each =</span> <span class="dv">3</span>), <span class="dv">4</span>)</span>
+<span id="cb18-5"><a href="#cb18-5" aria-hidden="true" tabindex="-1"></a>produtor <span class="ot">&lt;-</span> <span class="fu">rep</span>(<span class="dv">1</span><span class="sc">:</span><span class="dv">3</span>, <span class="at">times =</span> <span class="dv">20</span>)</span>
+<span id="cb18-6"><a href="#cb18-6" aria-hidden="true" tabindex="-1"></a>teor_acucar <span class="ot">&lt;-</span> <span class="fu">c</span>(</span>
+<span id="cb18-7"><a href="#cb18-7" aria-hidden="true" tabindex="-1"></a>  <span class="fl">1.29</span>, <span class="fl">1.36</span>, <span class="fl">1.29</span>, <span class="fl">1.43</span>, <span class="fl">1.45</span>, </span>
+<span id="cb18-8"><a href="#cb18-8" aria-hidden="true" tabindex="-1"></a>  <span class="fl">1.46</span>, <span class="fl">1.40</span>, <span class="fl">1.44</span>, <span class="fl">1.44</span>, <span class="fl">1.34</span>, </span>
+<span id="cb18-9"><a href="#cb18-9" aria-hidden="true" tabindex="-1"></a>  <span class="fl">1.36</span>, <span class="fl">1.40</span>, <span class="fl">1.35</span>, <span class="fl">1.14</span>, <span class="fl">1.24</span>,</span>
+<span id="cb18-10"><a href="#cb18-10" aria-hidden="true" tabindex="-1"></a>  <span class="fl">1.29</span>, <span class="fl">1.36</span>, <span class="fl">1.36</span>, <span class="fl">1.21</span>, <span class="fl">1.38</span>, </span>
+<span id="cb18-11"><a href="#cb18-11" aria-hidden="true" tabindex="-1"></a>  <span class="fl">1.41</span>, <span class="fl">1.40</span>, <span class="fl">1.40</span>, <span class="fl">1.40</span>, <span class="fl">1.32</span>, </span>
+<span id="cb18-12"><a href="#cb18-12" aria-hidden="true" tabindex="-1"></a>  <span class="fl">1.32</span>, <span class="fl">1.40</span>, <span class="fl">1.29</span>, <span class="fl">1.29</span>, <span class="fl">1.25</span>,</span>
+<span id="cb18-13"><a href="#cb18-13" aria-hidden="true" tabindex="-1"></a>  <span class="fl">1.36</span>, <span class="fl">1.44</span>, <span class="fl">1.44</span>, <span class="fl">1.46</span>, <span class="fl">1.44</span>, </span>
+<span id="cb18-14"><a href="#cb18-14" aria-hidden="true" tabindex="-1"></a>  <span class="fl">1.47</span>, <span class="fl">1.47</span>, <span class="fl">1.53</span>, <span class="fl">1.50</span>, <span class="fl">1.54</span>, </span>
+<span id="cb18-15"><a href="#cb18-15" aria-hidden="true" tabindex="-1"></a>  <span class="fl">1.55</span>, <span class="fl">1.52</span>, <span class="fl">1.56</span>, <span class="fl">1.44</span>, <span class="fl">1.46</span>,</span>
+<span id="cb18-16"><a href="#cb18-16" aria-hidden="true" tabindex="-1"></a>  <span class="fl">1.48</span>, <span class="fl">1.44</span>, <span class="fl">1.44</span>, <span class="fl">1.44</span>, <span class="fl">1.48</span>, </span>
+<span id="cb18-17"><a href="#cb18-17" aria-hidden="true" tabindex="-1"></a>  <span class="fl">1.44</span>, <span class="fl">1.47</span>, <span class="fl">1.52</span>, <span class="fl">1.44</span>, <span class="fl">1.66</span>, </span>
+<span id="cb18-18"><a href="#cb18-18" aria-hidden="true" tabindex="-1"></a>  <span class="fl">1.55</span>, <span class="fl">1.55</span>, <span class="fl">1.74</span>, <span class="fl">1.78</span>, <span class="fl">1.47</span></span>
+<span id="cb18-19"><a href="#cb18-19" aria-hidden="true" tabindex="-1"></a>)</span>
+<span id="cb18-20"><a href="#cb18-20" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb18-21"><a href="#cb18-21" aria-hidden="true" tabindex="-1"></a><span class="co"># Definição do tratamento combinado</span></span>
+<span id="cb18-22"><a href="#cb18-22" aria-hidden="true" tabindex="-1"></a>tratamento <span class="ot">&lt;-</span> <span class="fu">paste0</span>(cultivar, <span class="st">&quot;_E&quot;</span>, embalagem, <span class="st">&quot;_T&quot;</span>, tempo)</span>
+<span id="cb18-23"><a href="#cb18-23" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb18-24"><a href="#cb18-24" aria-hidden="true" tabindex="-1"></a><span class="co"># Data Frame</span></span>
+<span id="cb18-25"><a href="#cb18-25" aria-hidden="true" tabindex="-1"></a>dados <span class="ot">&lt;-</span> <span class="fu">data.frame</span>(</span>
+<span id="cb18-26"><a href="#cb18-26" aria-hidden="true" tabindex="-1"></a>  tratamento,</span>
+<span id="cb18-27"><a href="#cb18-27" aria-hidden="true" tabindex="-1"></a>  produtor,</span>
+<span id="cb18-28"><a href="#cb18-28" aria-hidden="true" tabindex="-1"></a>  teor_acucar</span>
+<span id="cb18-29"><a href="#cb18-29" aria-hidden="true" tabindex="-1"></a>)</span>
+<span id="cb18-30"><a href="#cb18-30" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb18-31"><a href="#cb18-31" aria-hidden="true" tabindex="-1"></a><span class="co"># Visualização</span></span>
+<span id="cb18-32"><a href="#cb18-32" aria-hidden="true" tabindex="-1"></a>knitr<span class="sc">::</span><span class="fu">kable</span>(dados, <span class="at">align =</span> <span class="st">&quot;c&quot;</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output-display">
+<table class="caption-top table table-sm table-striped small">
+<thead>
+<tr class="header">
+<th style="text-align: center;">tratamento</th>
+<th style="text-align: center;">produtor</th>
+<th style="text-align: center;">teor_acucar</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: center;">A_E0_T7</td>
+<td style="text-align: center;">1</td>
+<td style="text-align: center;">1.29</td>
+</tr>
+<tr class="even">
+<td style="text-align: center;">A_E0_T7</td>
+<td style="text-align: center;">2</td>
+<td style="text-align: center;">1.36</td>
+</tr>
+<tr class="odd">
+<td style="text-align: center;">A_E0_T7</td>
+<td style="text-align: center;">3</td>
+<td style="text-align: center;">1.29</td>
+</tr>
+<tr class="even">
+<td style="text-align: center;">A_E0_T14</td>
+<td style="text-align: center;">1</td>
+<td style="text-align: center;">1.43</td>
+</tr>
+<tr class="odd">
+<td style="text-align: center;">A_E0_T14</td>
+<td style="text-align: center;">2</td>
+<td style="text-align: center;">1.45</td>
+</tr>
+<tr class="even">
+<td style="text-align: center;">A_E0_T14</td>
+<td style="text-align: center;">3</td>
+<td style="text-align: center;">1.46</td>
+</tr>
+<tr class="odd">
+<td style="text-align: center;">A_E0_T21</td>
+<td style="text-align: center;">1</td>
+<td style="text-align: center;">1.40</td>
+</tr>
+<tr class="even">
+<td style="text-align: center;">A_E0_T21</td>
+<td style="text-align: center;">2</td>
+<td style="text-align: center;">1.44</td>
+</tr>
+<tr class="odd">
+<td style="text-align: center;">A_E0_T21</td>
+<td style="text-align: center;">3</td>
+<td style="text-align: center;">1.44</td>
+</tr>
+<tr class="even">
+<td style="text-align: center;">A_E0_T28</td>
+<td style="text-align: center;">1</td>
+<td style="text-align: center;">1.34</td>
+</tr>
+<tr class="odd">
+<td style="text-align: center;">A_E0_T28</td>
+<td style="text-align: center;">2</td>
+<td style="text-align: center;">1.36</td>
+</tr>
+<tr class="even">
+<td style="text-align: center;">A_E0_T28</td>
+<td style="text-align: center;">3</td>
+<td style="text-align: center;">1.40</td>
+</tr>
+<tr class="odd">
+<td style="text-align: center;">A_E0_T35</td>
+<td style="text-align: center;">1</td>
+<td style="text-align: center;">1.35</td>
+</tr>
+<tr class="even">
+<td style="text-align: center;">A_E0_T35</td>
+<td style="text-align: center;">2</td>
+<td style="text-align: center;">1.14</td>
+</tr>
+<tr class="odd">
+<td style="text-align: center;">A_E0_T35</td>
+<td style="text-align: center;">3</td>
+<td style="text-align: center;">1.24</td>
+</tr>
+<tr class="even">
+<td style="text-align: center;">A_E1_T7</td>
+<td style="text-align: center;">1</td>
+<td style="text-align: center;">1.29</td>
+</tr>
+<tr class="odd">
+<td style="text-align: center;">A_E1_T7</td>
+<td style="text-align: center;">2</td>
+<td style="text-align: center;">1.36</td>
+</tr>
+<tr class="even">
+<td style="text-align: center;">A_E1_T7</td>
+<td style="text-align: center;">3</td>
+<td style="text-align: center;">1.36</td>
+</tr>
+<tr class="odd">
+<td style="text-align: center;">A_E1_T14</td>
+<td style="text-align: center;">1</td>
+<td style="text-align: center;">1.21</td>
+</tr>
+<tr class="even">
+<td style="text-align: center;">A_E1_T14</td>
+<td style="text-align: center;">2</td>
+<td style="text-align: center;">1.38</td>
+</tr>
+<tr class="odd">
+<td style="text-align: center;">A_E1_T14</td>
+<td style="text-align: center;">3</td>
+<td style="text-align: center;">1.41</td>
+</tr>
+<tr class="even">
+<td style="text-align: center;">A_E1_T21</td>
+<td style="text-align: center;">1</td>
+<td style="text-align: center;">1.40</td>
+</tr>
+<tr class="odd">
+<td style="text-align: center;">A_E1_T21</td>
+<td style="text-align: center;">2</td>
+<td style="text-align: center;">1.40</td>
+</tr>
+<tr class="even">
+<td style="text-align: center;">A_E1_T21</td>
+<td style="text-align: center;">3</td>
+<td style="text-align: center;">1.40</td>
+</tr>
+<tr class="odd">
+<td style="text-align: center;">A_E1_T28</td>
+<td style="text-align: center;">1</td>
+<td style="text-align: center;">1.32</td>
+</tr>
+<tr class="even">
+<td style="text-align: center;">A_E1_T28</td>
+<td style="text-align: center;">2</td>
+<td style="text-align: center;">1.32</td>
+</tr>
+<tr class="odd">
+<td style="text-align: center;">A_E1_T28</td>
+<td style="text-align: center;">3</td>
+<td style="text-align: center;">1.40</td>
+</tr>
+<tr class="even">
+<td style="text-align: center;">A_E1_T35</td>
+<td style="text-align: center;">1</td>
+<td style="text-align: center;">1.29</td>
+</tr>
+<tr class="odd">
+<td style="text-align: center;">A_E1_T35</td>
+<td style="text-align: center;">2</td>
+<td style="text-align: center;">1.29</td>
+</tr>
+<tr class="even">
+<td style="text-align: center;">A_E1_T35</td>
+<td style="text-align: center;">3</td>
+<td style="text-align: center;">1.25</td>
+</tr>
+<tr class="odd">
+<td style="text-align: center;">A_E0_T7</td>
+<td style="text-align: center;">1</td>
+<td style="text-align: center;">1.36</td>
+</tr>
+<tr class="even">
+<td style="text-align: center;">A_E0_T7</td>
+<td style="text-align: center;">2</td>
+<td style="text-align: center;">1.44</td>
+</tr>
+<tr class="odd">
+<td style="text-align: center;">A_E0_T7</td>
+<td style="text-align: center;">3</td>
+<td style="text-align: center;">1.44</td>
+</tr>
+<tr class="even">
+<td style="text-align: center;">A_E0_T14</td>
+<td style="text-align: center;">1</td>
+<td style="text-align: center;">1.46</td>
+</tr>
+<tr class="odd">
+<td style="text-align: center;">A_E0_T14</td>
+<td style="text-align: center;">2</td>
+<td style="text-align: center;">1.44</td>
+</tr>
+<tr class="even">
+<td style="text-align: center;">A_E0_T14</td>
+<td style="text-align: center;">3</td>
+<td style="text-align: center;">1.47</td>
+</tr>
+<tr class="odd">
+<td style="text-align: center;">A_E0_T21</td>
+<td style="text-align: center;">1</td>
+<td style="text-align: center;">1.47</td>
+</tr>
+<tr class="even">
+<td style="text-align: center;">A_E0_T21</td>
+<td style="text-align: center;">2</td>
+<td style="text-align: center;">1.53</td>
+</tr>
+<tr class="odd">
+<td style="text-align: center;">A_E0_T21</td>
+<td style="text-align: center;">3</td>
+<td style="text-align: center;">1.50</td>
+</tr>
+<tr class="even">
+<td style="text-align: center;">A_E0_T28</td>
+<td style="text-align: center;">1</td>
+<td style="text-align: center;">1.54</td>
+</tr>
+<tr class="odd">
+<td style="text-align: center;">A_E0_T28</td>
+<td style="text-align: center;">2</td>
+<td style="text-align: center;">1.55</td>
+</tr>
+<tr class="even">
+<td style="text-align: center;">A_E0_T28</td>
+<td style="text-align: center;">3</td>
+<td style="text-align: center;">1.52</td>
+</tr>
+<tr class="odd">
+<td style="text-align: center;">A_E0_T35</td>
+<td style="text-align: center;">1</td>
+<td style="text-align: center;">1.56</td>
+</tr>
+<tr class="even">
+<td style="text-align: center;">A_E0_T35</td>
+<td style="text-align: center;">2</td>
+<td style="text-align: center;">1.44</td>
+</tr>
+<tr class="odd">
+<td style="text-align: center;">A_E0_T35</td>
+<td style="text-align: center;">3</td>
+<td style="text-align: center;">1.46</td>
+</tr>
+<tr class="even">
+<td style="text-align: center;">A_E1_T7</td>
+<td style="text-align: center;">1</td>
+<td style="text-align: center;">1.48</td>
+</tr>
+<tr class="odd">
+<td style="text-align: center;">A_E1_T7</td>
+<td style="text-align: center;">2</td>
+<td style="text-align: center;">1.44</td>
+</tr>
+<tr class="even">
+<td style="text-align: center;">A_E1_T7</td>
+<td style="text-align: center;">3</td>
+<td style="text-align: center;">1.44</td>
+</tr>
+<tr class="odd">
+<td style="text-align: center;">A_E1_T14</td>
+<td style="text-align: center;">1</td>
+<td style="text-align: center;">1.44</td>
+</tr>
+<tr class="even">
+<td style="text-align: center;">A_E1_T14</td>
+<td style="text-align: center;">2</td>
+<td style="text-align: center;">1.48</td>
+</tr>
+<tr class="odd">
+<td style="text-align: center;">A_E1_T14</td>
+<td style="text-align: center;">3</td>
+<td style="text-align: center;">1.44</td>
+</tr>
+<tr class="even">
+<td style="text-align: center;">A_E1_T21</td>
+<td style="text-align: center;">1</td>
+<td style="text-align: center;">1.47</td>
+</tr>
+<tr class="odd">
+<td style="text-align: center;">A_E1_T21</td>
+<td style="text-align: center;">2</td>
+<td style="text-align: center;">1.52</td>
+</tr>
+<tr class="even">
+<td style="text-align: center;">A_E1_T21</td>
+<td style="text-align: center;">3</td>
+<td style="text-align: center;">1.44</td>
+</tr>
+<tr class="odd">
+<td style="text-align: center;">A_E1_T28</td>
+<td style="text-align: center;">1</td>
+<td style="text-align: center;">1.66</td>
+</tr>
+<tr class="even">
+<td style="text-align: center;">A_E1_T28</td>
+<td style="text-align: center;">2</td>
+<td style="text-align: center;">1.55</td>
+</tr>
+<tr class="odd">
+<td style="text-align: center;">A_E1_T28</td>
+<td style="text-align: center;">3</td>
+<td style="text-align: center;">1.55</td>
+</tr>
+<tr class="even">
+<td style="text-align: center;">A_E1_T35</td>
+<td style="text-align: center;">1</td>
+<td style="text-align: center;">1.74</td>
+</tr>
+<tr class="odd">
+<td style="text-align: center;">A_E1_T35</td>
+<td style="text-align: center;">2</td>
+<td style="text-align: center;">1.78</td>
+</tr>
+<tr class="even">
+<td style="text-align: center;">A_E1_T35</td>
+<td style="text-align: center;">3</td>
+<td style="text-align: center;">1.47</td>
+</tr>
+<tr class="odd">
+<td style="text-align: center;">B_E0_T7</td>
+<td style="text-align: center;">1</td>
+<td style="text-align: center;">1.29</td>
+</tr>
+<tr class="even">
+<td style="text-align: center;">B_E0_T7</td>
+<td style="text-align: center;">2</td>
+<td style="text-align: center;">1.36</td>
+</tr>
+<tr class="odd">
+<td style="text-align: center;">B_E0_T7</td>
+<td style="text-align: center;">3</td>
+<td style="text-align: center;">1.29</td>
+</tr>
+<tr class="even">
+<td style="text-align: center;">B_E0_T14</td>
+<td style="text-align: center;">1</td>
+<td style="text-align: center;">1.43</td>
+</tr>
+<tr class="odd">
+<td style="text-align: center;">B_E0_T14</td>
+<td style="text-align: center;">2</td>
+<td style="text-align: center;">1.45</td>
+</tr>
+<tr class="even">
+<td style="text-align: center;">B_E0_T14</td>
+<td style="text-align: center;">3</td>
+<td style="text-align: center;">1.46</td>
+</tr>
+<tr class="odd">
+<td style="text-align: center;">B_E0_T21</td>
+<td style="text-align: center;">1</td>
+<td style="text-align: center;">1.40</td>
+</tr>
+<tr class="even">
+<td style="text-align: center;">B_E0_T21</td>
+<td style="text-align: center;">2</td>
+<td style="text-align: center;">1.44</td>
+</tr>
+<tr class="odd">
+<td style="text-align: center;">B_E0_T21</td>
+<td style="text-align: center;">3</td>
+<td style="text-align: center;">1.44</td>
+</tr>
+<tr class="even">
+<td style="text-align: center;">B_E0_T28</td>
+<td style="text-align: center;">1</td>
+<td style="text-align: center;">1.34</td>
+</tr>
+<tr class="odd">
+<td style="text-align: center;">B_E0_T28</td>
+<td style="text-align: center;">2</td>
+<td style="text-align: center;">1.36</td>
+</tr>
+<tr class="even">
+<td style="text-align: center;">B_E0_T28</td>
+<td style="text-align: center;">3</td>
+<td style="text-align: center;">1.40</td>
+</tr>
+<tr class="odd">
+<td style="text-align: center;">B_E0_T35</td>
+<td style="text-align: center;">1</td>
+<td style="text-align: center;">1.35</td>
+</tr>
+<tr class="even">
+<td style="text-align: center;">B_E0_T35</td>
+<td style="text-align: center;">2</td>
+<td style="text-align: center;">1.14</td>
+</tr>
+<tr class="odd">
+<td style="text-align: center;">B_E0_T35</td>
+<td style="text-align: center;">3</td>
+<td style="text-align: center;">1.24</td>
+</tr>
+<tr class="even">
+<td style="text-align: center;">B_E1_T7</td>
+<td style="text-align: center;">1</td>
+<td style="text-align: center;">1.29</td>
+</tr>
+<tr class="odd">
+<td style="text-align: center;">B_E1_T7</td>
+<td style="text-align: center;">2</td>
+<td style="text-align: center;">1.36</td>
+</tr>
+<tr class="even">
+<td style="text-align: center;">B_E1_T7</td>
+<td style="text-align: center;">3</td>
+<td style="text-align: center;">1.36</td>
+</tr>
+<tr class="odd">
+<td style="text-align: center;">B_E1_T14</td>
+<td style="text-align: center;">1</td>
+<td style="text-align: center;">1.21</td>
+</tr>
+<tr class="even">
+<td style="text-align: center;">B_E1_T14</td>
+<td style="text-align: center;">2</td>
+<td style="text-align: center;">1.38</td>
+</tr>
+<tr class="odd">
+<td style="text-align: center;">B_E1_T14</td>
+<td style="text-align: center;">3</td>
+<td style="text-align: center;">1.41</td>
+</tr>
+<tr class="even">
+<td style="text-align: center;">B_E1_T21</td>
+<td style="text-align: center;">1</td>
+<td style="text-align: center;">1.40</td>
+</tr>
+<tr class="odd">
+<td style="text-align: center;">B_E1_T21</td>
+<td style="text-align: center;">2</td>
+<td style="text-align: center;">1.40</td>
+</tr>
+<tr class="even">
+<td style="text-align: center;">B_E1_T21</td>
+<td style="text-align: center;">3</td>
+<td style="text-align: center;">1.40</td>
+</tr>
+<tr class="odd">
+<td style="text-align: center;">B_E1_T28</td>
+<td style="text-align: center;">1</td>
+<td style="text-align: center;">1.32</td>
+</tr>
+<tr class="even">
+<td style="text-align: center;">B_E1_T28</td>
+<td style="text-align: center;">2</td>
+<td style="text-align: center;">1.32</td>
+</tr>
+<tr class="odd">
+<td style="text-align: center;">B_E1_T28</td>
+<td style="text-align: center;">3</td>
+<td style="text-align: center;">1.40</td>
+</tr>
+<tr class="even">
+<td style="text-align: center;">B_E1_T35</td>
+<td style="text-align: center;">1</td>
+<td style="text-align: center;">1.29</td>
+</tr>
+<tr class="odd">
+<td style="text-align: center;">B_E1_T35</td>
+<td style="text-align: center;">2</td>
+<td style="text-align: center;">1.29</td>
+</tr>
+<tr class="even">
+<td style="text-align: center;">B_E1_T35</td>
+<td style="text-align: center;">3</td>
+<td style="text-align: center;">1.25</td>
+</tr>
+<tr class="odd">
+<td style="text-align: center;">B_E0_T7</td>
+<td style="text-align: center;">1</td>
+<td style="text-align: center;">1.36</td>
+</tr>
+<tr class="even">
+<td style="text-align: center;">B_E0_T7</td>
+<td style="text-align: center;">2</td>
+<td style="text-align: center;">1.44</td>
+</tr>
+<tr class="odd">
+<td style="text-align: center;">B_E0_T7</td>
+<td style="text-align: center;">3</td>
+<td style="text-align: center;">1.44</td>
+</tr>
+<tr class="even">
+<td style="text-align: center;">B_E0_T14</td>
+<td style="text-align: center;">1</td>
+<td style="text-align: center;">1.46</td>
+</tr>
+<tr class="odd">
+<td style="text-align: center;">B_E0_T14</td>
+<td style="text-align: center;">2</td>
+<td style="text-align: center;">1.44</td>
+</tr>
+<tr class="even">
+<td style="text-align: center;">B_E0_T14</td>
+<td style="text-align: center;">3</td>
+<td style="text-align: center;">1.47</td>
+</tr>
+<tr class="odd">
+<td style="text-align: center;">B_E0_T21</td>
+<td style="text-align: center;">1</td>
+<td style="text-align: center;">1.47</td>
+</tr>
+<tr class="even">
+<td style="text-align: center;">B_E0_T21</td>
+<td style="text-align: center;">2</td>
+<td style="text-align: center;">1.53</td>
+</tr>
+<tr class="odd">
+<td style="text-align: center;">B_E0_T21</td>
+<td style="text-align: center;">3</td>
+<td style="text-align: center;">1.50</td>
+</tr>
+<tr class="even">
+<td style="text-align: center;">B_E0_T28</td>
+<td style="text-align: center;">1</td>
+<td style="text-align: center;">1.54</td>
+</tr>
+<tr class="odd">
+<td style="text-align: center;">B_E0_T28</td>
+<td style="text-align: center;">2</td>
+<td style="text-align: center;">1.55</td>
+</tr>
+<tr class="even">
+<td style="text-align: center;">B_E0_T28</td>
+<td style="text-align: center;">3</td>
+<td style="text-align: center;">1.52</td>
+</tr>
+<tr class="odd">
+<td style="text-align: center;">B_E0_T35</td>
+<td style="text-align: center;">1</td>
+<td style="text-align: center;">1.56</td>
+</tr>
+<tr class="even">
+<td style="text-align: center;">B_E0_T35</td>
+<td style="text-align: center;">2</td>
+<td style="text-align: center;">1.44</td>
+</tr>
+<tr class="odd">
+<td style="text-align: center;">B_E0_T35</td>
+<td style="text-align: center;">3</td>
+<td style="text-align: center;">1.46</td>
+</tr>
+<tr class="even">
+<td style="text-align: center;">B_E1_T7</td>
+<td style="text-align: center;">1</td>
+<td style="text-align: center;">1.48</td>
+</tr>
+<tr class="odd">
+<td style="text-align: center;">B_E1_T7</td>
+<td style="text-align: center;">2</td>
+<td style="text-align: center;">1.44</td>
+</tr>
+<tr class="even">
+<td style="text-align: center;">B_E1_T7</td>
+<td style="text-align: center;">3</td>
+<td style="text-align: center;">1.44</td>
+</tr>
+<tr class="odd">
+<td style="text-align: center;">B_E1_T14</td>
+<td style="text-align: center;">1</td>
+<td style="text-align: center;">1.44</td>
+</tr>
+<tr class="even">
+<td style="text-align: center;">B_E1_T14</td>
+<td style="text-align: center;">2</td>
+<td style="text-align: center;">1.48</td>
+</tr>
+<tr class="odd">
+<td style="text-align: center;">B_E1_T14</td>
+<td style="text-align: center;">3</td>
+<td style="text-align: center;">1.44</td>
+</tr>
+<tr class="even">
+<td style="text-align: center;">B_E1_T21</td>
+<td style="text-align: center;">1</td>
+<td style="text-align: center;">1.47</td>
+</tr>
+<tr class="odd">
+<td style="text-align: center;">B_E1_T21</td>
+<td style="text-align: center;">2</td>
+<td style="text-align: center;">1.52</td>
+</tr>
+<tr class="even">
+<td style="text-align: center;">B_E1_T21</td>
+<td style="text-align: center;">3</td>
+<td style="text-align: center;">1.44</td>
+</tr>
+<tr class="odd">
+<td style="text-align: center;">B_E1_T28</td>
+<td style="text-align: center;">1</td>
+<td style="text-align: center;">1.66</td>
+</tr>
+<tr class="even">
+<td style="text-align: center;">B_E1_T28</td>
+<td style="text-align: center;">2</td>
+<td style="text-align: center;">1.55</td>
+</tr>
+<tr class="odd">
+<td style="text-align: center;">B_E1_T28</td>
+<td style="text-align: center;">3</td>
+<td style="text-align: center;">1.55</td>
+</tr>
+<tr class="even">
+<td style="text-align: center;">B_E1_T35</td>
+<td style="text-align: center;">1</td>
+<td style="text-align: center;">1.74</td>
+</tr>
+<tr class="odd">
+<td style="text-align: center;">B_E1_T35</td>
+<td style="text-align: center;">2</td>
+<td style="text-align: center;">1.78</td>
+</tr>
+<tr class="even">
+<td style="text-align: center;">B_E1_T35</td>
+<td style="text-align: center;">3</td>
+<td style="text-align: center;">1.47</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+<ol start="19" type="1">
+<li>Um experimento foi conduzido para avaliar o comportamento de diferentes cultivares de soja em diversas épocas de semeadura. Os tratamentos, combinações das épocas e cultivares, foram aleatorizados conforme o delineamento em blocos casualizados (DBC) com três repetições. Os dados da porcentagem de germinação foram:</li>
+</ol>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb19"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb19-1"><a href="#cb19-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Vetores</span></span>
+<span id="cb19-2"><a href="#cb19-2" aria-hidden="true" tabindex="-1"></a>epoca <span class="ot">&lt;-</span> <span class="fu">rep</span>(<span class="fu">c</span>(<span class="st">&quot;Outubro&quot;</span>, <span class="st">&quot;Novembro&quot;</span>, <span class="st">&quot;Dezembro&quot;</span>), <span class="at">each =</span> <span class="dv">12</span>)</span>
+<span id="cb19-3"><a href="#cb19-3" aria-hidden="true" tabindex="-1"></a>bloco <span class="ot">&lt;-</span> <span class="fu">rep</span>(<span class="fu">rep</span>(<span class="dv">1</span><span class="sc">:</span><span class="dv">3</span>, <span class="at">each =</span> <span class="dv">4</span>), <span class="at">times =</span> <span class="dv">3</span>)</span>
+<span id="cb19-4"><a href="#cb19-4" aria-hidden="true" tabindex="-1"></a>cultivar <span class="ot">&lt;-</span> <span class="fu">rep</span>(<span class="fu">c</span>(<span class="st">&quot;E316&quot;</span>, <span class="st">&quot;Emb1&quot;</span>, <span class="st">&quot;Rai&quot;</span>, <span class="st">&quot;Iti&quot;</span>), <span class="at">times =</span> <span class="dv">9</span>)</span>
+<span id="cb19-5"><a href="#cb19-5" aria-hidden="true" tabindex="-1"></a>germinacao <span class="ot">&lt;-</span> <span class="fu">c</span>(</span>
+<span id="cb19-6"><a href="#cb19-6" aria-hidden="true" tabindex="-1"></a>  <span class="dv">81</span>, <span class="dv">60</span>, <span class="dv">94</span>, <span class="dv">57</span>, <span class="dv">77</span>, <span class="dv">56</span>, <span class="dv">90</span>, <span class="dv">53</span>, <span class="dv">85</span>, <span class="dv">64</span>, <span class="dv">97</span>, <span class="dv">61</span>,  <span class="co"># Outubro</span></span>
+<span id="cb19-7"><a href="#cb19-7" aria-hidden="true" tabindex="-1"></a>  <span class="dv">90</span>, <span class="dv">92</span>, <span class="dv">96</span>, <span class="dv">90</span>, <span class="dv">94</span>, <span class="dv">96</span>, <span class="dv">99</span>, <span class="dv">94</span>, <span class="dv">86</span>, <span class="dv">88</span>, <span class="dv">92</span>, <span class="dv">86</span>,  <span class="co"># Novembro</span></span>
+<span id="cb19-8"><a href="#cb19-8" aria-hidden="true" tabindex="-1"></a>  <span class="dv">86</span>, <span class="dv">90</span>, <span class="dv">90</span>, <span class="dv">91</span>, <span class="dv">82</span>, <span class="dv">94</span>, <span class="dv">94</span>, <span class="dv">95</span>, <span class="dv">90</span>, <span class="dv">86</span>, <span class="dv">86</span>, <span class="dv">87</span>   <span class="co"># Dezembro</span></span>
+<span id="cb19-9"><a href="#cb19-9" aria-hidden="true" tabindex="-1"></a>)</span>
+<span id="cb19-10"><a href="#cb19-10" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb19-11"><a href="#cb19-11" aria-hidden="true" tabindex="-1"></a><span class="co"># Definição do tratamento combinado</span></span>
+<span id="cb19-12"><a href="#cb19-12" aria-hidden="true" tabindex="-1"></a>tratamento <span class="ot">&lt;-</span> <span class="fu">paste0</span>(cultivar, <span class="st">&quot;_&quot;</span>, epoca)</span>
+<span id="cb19-13"><a href="#cb19-13" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb19-14"><a href="#cb19-14" aria-hidden="true" tabindex="-1"></a><span class="co"># Data Frame</span></span>
+<span id="cb19-15"><a href="#cb19-15" aria-hidden="true" tabindex="-1"></a>dados <span class="ot">&lt;-</span> <span class="fu">data.frame</span>(</span>
+<span id="cb19-16"><a href="#cb19-16" aria-hidden="true" tabindex="-1"></a>  tratamento,</span>
+<span id="cb19-17"><a href="#cb19-17" aria-hidden="true" tabindex="-1"></a>  bloco,</span>
+<span id="cb19-18"><a href="#cb19-18" aria-hidden="true" tabindex="-1"></a>  germinacao</span>
+<span id="cb19-19"><a href="#cb19-19" aria-hidden="true" tabindex="-1"></a>)</span>
+<span id="cb19-20"><a href="#cb19-20" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb19-21"><a href="#cb19-21" aria-hidden="true" tabindex="-1"></a><span class="co"># Visualização</span></span>
+<span id="cb19-22"><a href="#cb19-22" aria-hidden="true" tabindex="-1"></a>knitr<span class="sc">::</span><span class="fu">kable</span>(dados, <span class="at">align =</span> <span class="st">&quot;c&quot;</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output-display">
+<table class="caption-top table table-sm table-striped small">
+<thead>
+<tr class="header">
+<th style="text-align: center;">tratamento</th>
+<th style="text-align: center;">bloco</th>
+<th style="text-align: center;">germinacao</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: center;">E316_Outubro</td>
+<td style="text-align: center;">1</td>
+<td style="text-align: center;">81</td>
+</tr>
+<tr class="even">
+<td style="text-align: center;">Emb1_Outubro</td>
+<td style="text-align: center;">1</td>
+<td style="text-align: center;">60</td>
+</tr>
+<tr class="odd">
+<td style="text-align: center;">Rai_Outubro</td>
+<td style="text-align: center;">1</td>
+<td style="text-align: center;">94</td>
+</tr>
+<tr class="even">
+<td style="text-align: center;">Iti_Outubro</td>
+<td style="text-align: center;">1</td>
+<td style="text-align: center;">57</td>
+</tr>
+<tr class="odd">
+<td style="text-align: center;">E316_Outubro</td>
+<td style="text-align: center;">2</td>
+<td style="text-align: center;">77</td>
+</tr>
+<tr class="even">
+<td style="text-align: center;">Emb1_Outubro</td>
+<td style="text-align: center;">2</td>
+<td style="text-align: center;">56</td>
+</tr>
+<tr class="odd">
+<td style="text-align: center;">Rai_Outubro</td>
+<td style="text-align: center;">2</td>
+<td style="text-align: center;">90</td>
+</tr>
+<tr class="even">
+<td style="text-align: center;">Iti_Outubro</td>
+<td style="text-align: center;">2</td>
+<td style="text-align: center;">53</td>
+</tr>
+<tr class="odd">
+<td style="text-align: center;">E316_Outubro</td>
+<td style="text-align: center;">3</td>
+<td style="text-align: center;">85</td>
+</tr>
+<tr class="even">
+<td style="text-align: center;">Emb1_Outubro</td>
+<td style="text-align: center;">3</td>
+<td style="text-align: center;">64</td>
+</tr>
+<tr class="odd">
+<td style="text-align: center;">Rai_Outubro</td>
+<td style="text-align: center;">3</td>
+<td style="text-align: center;">97</td>
+</tr>
+<tr class="even">
+<td style="text-align: center;">Iti_Outubro</td>
+<td style="text-align: center;">3</td>
+<td style="text-align: center;">61</td>
+</tr>
+<tr class="odd">
+<td style="text-align: center;">E316_Novembro</td>
+<td style="text-align: center;">1</td>
+<td style="text-align: center;">90</td>
+</tr>
+<tr class="even">
+<td style="text-align: center;">Emb1_Novembro</td>
+<td style="text-align: center;">1</td>
+<td style="text-align: center;">92</td>
+</tr>
+<tr class="odd">
+<td style="text-align: center;">Rai_Novembro</td>
+<td style="text-align: center;">1</td>
+<td style="text-align: center;">96</td>
+</tr>
+<tr class="even">
+<td style="text-align: center;">Iti_Novembro</td>
+<td style="text-align: center;">1</td>
+<td style="text-align: center;">90</td>
+</tr>
+<tr class="odd">
+<td style="text-align: center;">E316_Novembro</td>
+<td style="text-align: center;">2</td>
+<td style="text-align: center;">94</td>
+</tr>
+<tr class="even">
+<td style="text-align: center;">Emb1_Novembro</td>
+<td style="text-align: center;">2</td>
+<td style="text-align: center;">96</td>
+</tr>
+<tr class="odd">
+<td style="text-align: center;">Rai_Novembro</td>
+<td style="text-align: center;">2</td>
+<td style="text-align: center;">99</td>
+</tr>
+<tr class="even">
+<td style="text-align: center;">Iti_Novembro</td>
+<td style="text-align: center;">2</td>
+<td style="text-align: center;">94</td>
+</tr>
+<tr class="odd">
+<td style="text-align: center;">E316_Novembro</td>
+<td style="text-align: center;">3</td>
+<td style="text-align: center;">86</td>
+</tr>
+<tr class="even">
+<td style="text-align: center;">Emb1_Novembro</td>
+<td style="text-align: center;">3</td>
+<td style="text-align: center;">88</td>
+</tr>
+<tr class="odd">
+<td style="text-align: center;">Rai_Novembro</td>
+<td style="text-align: center;">3</td>
+<td style="text-align: center;">92</td>
+</tr>
+<tr class="even">
+<td style="text-align: center;">Iti_Novembro</td>
+<td style="text-align: center;">3</td>
+<td style="text-align: center;">86</td>
+</tr>
+<tr class="odd">
+<td style="text-align: center;">E316_Dezembro</td>
+<td style="text-align: center;">1</td>
+<td style="text-align: center;">86</td>
+</tr>
+<tr class="even">
+<td style="text-align: center;">Emb1_Dezembro</td>
+<td style="text-align: center;">1</td>
+<td style="text-align: center;">90</td>
+</tr>
+<tr class="odd">
+<td style="text-align: center;">Rai_Dezembro</td>
+<td style="text-align: center;">1</td>
+<td style="text-align: center;">90</td>
+</tr>
+<tr class="even">
+<td style="text-align: center;">Iti_Dezembro</td>
+<td style="text-align: center;">1</td>
+<td style="text-align: center;">91</td>
+</tr>
+<tr class="odd">
+<td style="text-align: center;">E316_Dezembro</td>
+<td style="text-align: center;">2</td>
+<td style="text-align: center;">82</td>
+</tr>
+<tr class="even">
+<td style="text-align: center;">Emb1_Dezembro</td>
+<td style="text-align: center;">2</td>
+<td style="text-align: center;">94</td>
+</tr>
+<tr class="odd">
+<td style="text-align: center;">Rai_Dezembro</td>
+<td style="text-align: center;">2</td>
+<td style="text-align: center;">94</td>
+</tr>
+<tr class="even">
+<td style="text-align: center;">Iti_Dezembro</td>
+<td style="text-align: center;">2</td>
+<td style="text-align: center;">95</td>
+</tr>
+<tr class="odd">
+<td style="text-align: center;">E316_Dezembro</td>
+<td style="text-align: center;">3</td>
+<td style="text-align: center;">90</td>
+</tr>
+<tr class="even">
+<td style="text-align: center;">Emb1_Dezembro</td>
+<td style="text-align: center;">3</td>
+<td style="text-align: center;">86</td>
+</tr>
+<tr class="odd">
+<td style="text-align: center;">Rai_Dezembro</td>
+<td style="text-align: center;">3</td>
+<td style="text-align: center;">86</td>
+</tr>
+<tr class="even">
+<td style="text-align: center;">Iti_Dezembro</td>
+<td style="text-align: center;">3</td>
+<td style="text-align: center;">87</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+<ol start="20" type="1">
+<li>Um experimento foi realizado para avaliar o comportamento de três cultivares de trigo submetidos a três níveis de irrigação. Os tratamentos, combinações das irrigações e cultivares, foram aleatorizados conforme o delineamento em blocos casualizados (DBC) com três repetições. Os valores de índice de glúten (<span class="math inline">\(%\)</span>) foram:</li>
+</ol>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb20"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb20-1"><a href="#cb20-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Vetores</span></span>
+<span id="cb20-2"><a href="#cb20-2" aria-hidden="true" tabindex="-1"></a>cultivar <span class="ot">&lt;-</span> <span class="fu">rep</span>(<span class="fu">c</span>(<span class="st">&quot;A&quot;</span>, <span class="st">&quot;B&quot;</span>, <span class="st">&quot;C&quot;</span>), <span class="at">each =</span> <span class="dv">9</span>)</span>
+<span id="cb20-3"><a href="#cb20-3" aria-hidden="true" tabindex="-1"></a>irrigacao <span class="ot">&lt;-</span> <span class="fu">rep</span>(<span class="fu">c</span>(<span class="dv">0</span>, <span class="dv">40</span>, <span class="dv">80</span>), <span class="at">each =</span> <span class="dv">3</span>, <span class="at">times =</span> <span class="dv">3</span>)</span>
+<span id="cb20-4"><a href="#cb20-4" aria-hidden="true" tabindex="-1"></a>bloco <span class="ot">&lt;-</span> <span class="fu">rep</span>(<span class="dv">1</span><span class="sc">:</span><span class="dv">3</span>, <span class="at">times =</span> <span class="dv">9</span>)</span>
+<span id="cb20-5"><a href="#cb20-5" aria-hidden="true" tabindex="-1"></a>indice_gluten <span class="ot">&lt;-</span> <span class="fu">c</span>(</span>
+<span id="cb20-6"><a href="#cb20-6" aria-hidden="true" tabindex="-1"></a>  <span class="dv">75</span>, <span class="dv">83</span>, <span class="dv">74</span>, <span class="dv">81</span>, <span class="dv">85</span>, <span class="dv">80</span>, <span class="dv">84</span>, <span class="dv">90</span>, <span class="dv">85</span>,  <span class="co"># Cultivar A</span></span>
+<span id="cb20-7"><a href="#cb20-7" aria-hidden="true" tabindex="-1"></a>  <span class="dv">80</span>, <span class="dv">82</span>, <span class="dv">80</span>, <span class="dv">84</span>, <span class="dv">89</span>, <span class="dv">83</span>, <span class="dv">90</span>, <span class="dv">93</span>, <span class="dv">89</span>,  <span class="co"># Cultivar B</span></span>
+<span id="cb20-8"><a href="#cb20-8" aria-hidden="true" tabindex="-1"></a>  <span class="dv">79</span>, <span class="dv">82</span>, <span class="dv">78</span>, <span class="dv">87</span>, <span class="dv">93</span>, <span class="dv">88</span>, <span class="dv">96</span>, <span class="dv">97</span>, <span class="dv">95</span>   <span class="co"># Cultivar C</span></span>
+<span id="cb20-9"><a href="#cb20-9" aria-hidden="true" tabindex="-1"></a>)</span>
+<span id="cb20-10"><a href="#cb20-10" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb20-11"><a href="#cb20-11" aria-hidden="true" tabindex="-1"></a><span class="co"># Definição do tratamento combinado</span></span>
+<span id="cb20-12"><a href="#cb20-12" aria-hidden="true" tabindex="-1"></a>tratamento <span class="ot">&lt;-</span> <span class="fu">paste0</span>(cultivar, <span class="st">&quot;_I&quot;</span>, irrigacao)</span>
+<span id="cb20-13"><a href="#cb20-13" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb20-14"><a href="#cb20-14" aria-hidden="true" tabindex="-1"></a><span class="co"># Data Frame</span></span>
+<span id="cb20-15"><a href="#cb20-15" aria-hidden="true" tabindex="-1"></a>dados <span class="ot">&lt;-</span> <span class="fu">data.frame</span>(</span>
+<span id="cb20-16"><a href="#cb20-16" aria-hidden="true" tabindex="-1"></a>  tratamento,</span>
+<span id="cb20-17"><a href="#cb20-17" aria-hidden="true" tabindex="-1"></a>  bloco,</span>
+<span id="cb20-18"><a href="#cb20-18" aria-hidden="true" tabindex="-1"></a>  indice_gluten</span>
+<span id="cb20-19"><a href="#cb20-19" aria-hidden="true" tabindex="-1"></a>)</span>
+<span id="cb20-20"><a href="#cb20-20" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb20-21"><a href="#cb20-21" aria-hidden="true" tabindex="-1"></a><span class="co"># Visualização</span></span>
+<span id="cb20-22"><a href="#cb20-22" aria-hidden="true" tabindex="-1"></a>knitr<span class="sc">::</span><span class="fu">kable</span>(dados, <span class="at">align =</span> <span class="st">&quot;c&quot;</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output-display">
+<table class="caption-top table table-sm table-striped small">
+<thead>
+<tr class="header">
+<th style="text-align: center;">tratamento</th>
+<th style="text-align: center;">bloco</th>
+<th style="text-align: center;">indice_gluten</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: center;">A_I0</td>
+<td style="text-align: center;">1</td>
+<td style="text-align: center;">75</td>
+</tr>
+<tr class="even">
+<td style="text-align: center;">A_I0</td>
+<td style="text-align: center;">2</td>
+<td style="text-align: center;">83</td>
+</tr>
+<tr class="odd">
+<td style="text-align: center;">A_I0</td>
+<td style="text-align: center;">3</td>
+<td style="text-align: center;">74</td>
+</tr>
+<tr class="even">
+<td style="text-align: center;">A_I40</td>
+<td style="text-align: center;">1</td>
+<td style="text-align: center;">81</td>
+</tr>
+<tr class="odd">
+<td style="text-align: center;">A_I40</td>
+<td style="text-align: center;">2</td>
+<td style="text-align: center;">85</td>
+</tr>
+<tr class="even">
+<td style="text-align: center;">A_I40</td>
+<td style="text-align: center;">3</td>
+<td style="text-align: center;">80</td>
+</tr>
+<tr class="odd">
+<td style="text-align: center;">A_I80</td>
+<td style="text-align: center;">1</td>
+<td style="text-align: center;">84</td>
+</tr>
+<tr class="even">
+<td style="text-align: center;">A_I80</td>
+<td style="text-align: center;">2</td>
+<td style="text-align: center;">90</td>
+</tr>
+<tr class="odd">
+<td style="text-align: center;">A_I80</td>
+<td style="text-align: center;">3</td>
+<td style="text-align: center;">85</td>
+</tr>
+<tr class="even">
+<td style="text-align: center;">B_I0</td>
+<td style="text-align: center;">1</td>
+<td style="text-align: center;">80</td>
+</tr>
+<tr class="odd">
+<td style="text-align: center;">B_I0</td>
+<td style="text-align: center;">2</td>
+<td style="text-align: center;">82</td>
+</tr>
+<tr class="even">
+<td style="text-align: center;">B_I0</td>
+<td style="text-align: center;">3</td>
+<td style="text-align: center;">80</td>
+</tr>
+<tr class="odd">
+<td style="text-align: center;">B_I40</td>
+<td style="text-align: center;">1</td>
+<td style="text-align: center;">84</td>
+</tr>
+<tr class="even">
+<td style="text-align: center;">B_I40</td>
+<td style="text-align: center;">2</td>
+<td style="text-align: center;">89</td>
+</tr>
+<tr class="odd">
+<td style="text-align: center;">B_I40</td>
+<td style="text-align: center;">3</td>
+<td style="text-align: center;">83</td>
+</tr>
+<tr class="even">
+<td style="text-align: center;">B_I80</td>
+<td style="text-align: center;">1</td>
+<td style="text-align: center;">90</td>
+</tr>
+<tr class="odd">
+<td style="text-align: center;">B_I80</td>
+<td style="text-align: center;">2</td>
+<td style="text-align: center;">93</td>
+</tr>
+<tr class="even">
+<td style="text-align: center;">B_I80</td>
+<td style="text-align: center;">3</td>
+<td style="text-align: center;">89</td>
+</tr>
+<tr class="odd">
+<td style="text-align: center;">C_I0</td>
+<td style="text-align: center;">1</td>
+<td style="text-align: center;">79</td>
+</tr>
+<tr class="even">
+<td style="text-align: center;">C_I0</td>
+<td style="text-align: center;">2</td>
+<td style="text-align: center;">82</td>
+</tr>
+<tr class="odd">
+<td style="text-align: center;">C_I0</td>
+<td style="text-align: center;">3</td>
+<td style="text-align: center;">78</td>
+</tr>
+<tr class="even">
+<td style="text-align: center;">C_I40</td>
+<td style="text-align: center;">1</td>
+<td style="text-align: center;">87</td>
+</tr>
+<tr class="odd">
+<td style="text-align: center;">C_I40</td>
+<td style="text-align: center;">2</td>
+<td style="text-align: center;">93</td>
+</tr>
+<tr class="even">
+<td style="text-align: center;">C_I40</td>
+<td style="text-align: center;">3</td>
+<td style="text-align: center;">88</td>
+</tr>
+<tr class="odd">
+<td style="text-align: center;">C_I80</td>
+<td style="text-align: center;">1</td>
+<td style="text-align: center;">96</td>
+</tr>
+<tr class="even">
+<td style="text-align: center;">C_I80</td>
+<td style="text-align: center;">2</td>
+<td style="text-align: center;">97</td>
+</tr>
+<tr class="odd">
+<td style="text-align: center;">C_I80</td>
+<td style="text-align: center;">3</td>
+<td style="text-align: center;">95</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
 <hr>
 <div style="text-align: center;">
 <p><a href="https://instagram.com/profjulianobortolini">@profjulianobortolini</a>      <a href="http://www.julianobortolini.com.br">www.julianobortolini.com.br</a>      <a href="https://linkedin.com/in/julianobortolini">linkedin</a>      <a href="https://github.com/julianobortolini">github</a>       <a href="http://lattes.cnpq.br/6210909768845403">lattes</a></p>
