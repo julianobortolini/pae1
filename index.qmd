@@ -19,7 +19,7 @@ engine: knitr
 ### Avisos:
 
 -   Última atualização do site às **`r format(Sys.time(), "%H:%M", tz='America/Cuiaba')`** do dia **`r format(Sys.time(), "%d/%m/%Y")`**.
--   Monitores: 
+
 
 
 ### Ementa:
@@ -34,7 +34,7 @@ Princípios gerais da experimentação. Análise de Variância e suas pressuposi
 -   Aula 1: apresentação geral do que é estatística experimental. Diferença entre estudo observacional e experimento. Exemplo de experimento de análise sensorial de café: variáveis influentes e controláveis, variáveis influentes e não-controláveis e variáveis respostas. Exemplos de experimentos: área da saúde, educação, medicina veterinária e agricultura. Origem da experimentação com Ronald Fisher. Experimento das xícaras de chá (e leite). Desenvolvimento matemático das possibilidades de acerto (1 em 70 possibilidades = 1,43%). **Tarefa para casa:** ler o capítulo 2 do livro The design of experiments do R. Fisher (1935). Próxima aula será realizado experimento em sala de aula.
 
 
--   Aula 2:
+-   Aula 2: revisão da aula anterior com comentários sobre o experimento das xícaras de chá (e leite). Realização do experimento de comparar dois tipos de água, simulando o experimento das xícaras de chá (e leite). Cálculo das probabilidades de acertar 1, 2, 3 e 4 xícaras.
 
 
 
@@ -47,30 +47,35 @@ Princípios gerais da experimentação. Análise de Variância e suas pressuposi
 
 ### Avaliações:
 
-<!-- -   $A_1$: escrita, computacional e arguição oral. -->
+-   $A_1$: escrita, computacional e arguição oral. Nota: 0 a 10.
 
-<!-- *Conteúdo:* análise de correlação, regressão linear simples e múltipla. -->
+*Conteúdo:* Planejamento de experimentos e princípios básicos, ideias gerais dos delineamentos experimentais e  análise de variância para o delineamento inteiramente casualidade e comparação múltipla pelo teste de Tukey.
 
-<!-- -   $A_2$: escrita, computacional e arguição oral. -->
+-   $A_2$: escrita, computacional e arguição oral. Nota: 0 a 10.
 
-<!-- *Conteúdo:* todo o conteúdo da disciplina. -->
+*Conteúdo:* Planejamento de experimentos e princípios básicos, ideias gerais dos delineamentos experimentais, análise de variância para o delineamento inteiramente casualidade, em blocos casualidades e quadrado latino, testes de comparações múltiplas pelos testes de Tukey, Duncan, Dunnett, SNK, t e Scott-Knott, análise dos pressupostos da ANOVA, regressão na ANOVA, transformação de variáveis, testes não paramétricos e introdução aos experimentos fatoriais.
 
-<!-- -   $A_3$: relatório de análise de dados. -->
+A média final ($MF$) será calculada por:
 
-<!-- -   $A_4$: média de todas as atividades realizadas em sala de aula. -->
-
-<!-- A média parcial ($MP$) será calculada por: -->
-
-<!-- $$MP = 0,35 A_1 + 0,35 A_2 + 0,2 A_3 + 0,1 A_4.$$ -->
+$$MF = 0,5 A_1 + 0,5 A_2.$$
 
 
 ### Livro texto:
 
+- Sônia Vieira, Delineamento e análise de experimentos nas ciências agrárias. FEALQ, 2021.
+
+- Banzatto D.A. e Kronka, S.N., Experimentação agrícola. 4ª ed. Jaboticabal: FUNEP, 2006.
 
 
-### Referências:
+### Referências complementares:
 
+- Montgomery, D. C. (2019). Design and analysis of experiments. 10th ed. Wiley.
 
+- Dean, A. M., Voss, D. D., & Draguljić, D. (2017). Design and analysis of experiments. 2nd ed. Springer.
+
+- Quinn, G. P., & Keough, M. J. (2024). Experimental design and data analysis for biologists. 2nd ed. Cambridge University Press.
+
+- Mason, R. L., Gunst, R. F., & Hess, J. L. (2003). Statistical design and analysis of experiments: with applications to engineering and science. 2nd ed. Wiley.
 
 
 
