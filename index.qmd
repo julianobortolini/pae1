@@ -38,7 +38,10 @@ Princípios gerais da experimentação. Análise de Variância e suas pressuposi
 
 
 
--   Aula 3:
+-   Aula 3: diferenças entre estudo observacional e experimental. O que é um experimento. Objetivos da experimentação (D. Montgomery). Desenvolvimento histórico da experimentação (Eras) (D. Montgomery). Origem do teste t (cervejaria Guiness e William Sealy Gosset). Definição de planejar um experimento. Conceitos básicos: unidade experimental, unidade experimental básica, parcela e exemplos de parcelas (vaso de plantas, linhas de plantio, árvores, animais (pequeno, médio e grande porte). O que é variável e os tipos de variáveis na experimentação: variável independente (fator ou tratamentos) e variável dependente ou resposta. Mais sobre conceitos básicos: grupo controle ou tratamento controle/testemunha, variáveis de confusão, parcela, repetição, casualização, controle local, bloco e delineamento. Tipos de delineamentos: delineamento inteiramente casualizado, delineamento em blocos casualizados, delineamento em blocos incompletos, delineamento em quadrado latino, entre outros. Bordadura e área útil (exemplo com linhas de plantio). Exemplo de experimento sobre dieta de suínos, descrever: fatores, tratamentos, parcela, bloco, número de repetições, variável resposta e delineamento. **Tarefa:** 1. pesquisar sobre o experimento com helicóptero de papel, 2. ler o artigo [Guidelines for the Design and Statistical Analysis of Experiments Using Laboratory Animals](https://academic.oup.com/ilarjournal/article/43/4/244/981872) dos autores Festing, M. F. W. e  Altman, D. G. (ILAR Journal. Volume 43, Number 4, 2002) e 3. Estudar os princípios básicos da experimentação e responder as seguintes perguntas: a. O que é? b. Para que serve?
+
+
+-   [Lista 1](lista1_20251.html): conceitos básicos em experimentação.
 
 
 -   Aula 4:
