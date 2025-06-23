@@ -44,6 +44,12 @@ Princípios gerais da experimentação. Análise de Variância e suas pressuposi
 -   [Lista 1](lista1_20251.html): conceitos básicos em experimentação.
 
 
+- Sugestão de leitura: [Guidelines for the Design and Statistical Analysis of Experiments Using Laboratory Animals](https://academic.oup.com/ilarjournal/article/43/4/244/981872). Artigo com conceitos básicos de experimentação e questões éticas relacionadas à experimentação com animais.
+
+
+-  Sugestão de leitura: [Alternativas para a experimentação industrial em esquema fatorial: um estudo de caso para adesivo estrutural de base acrílica](https://revistas.utfpr.edu.br/revistagi/article/view/1472/1023). Artigo com conceitos básicos de experimentação na indústria e experimentos fatoriais $2^k$.
+
+
 -   Aula 4:
 
 
