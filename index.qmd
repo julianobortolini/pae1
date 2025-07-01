@@ -50,7 +50,12 @@ Princípios gerais da experimentação. Análise de Variância e suas pressuposi
 -  Sugestão de leitura: [Alternativas para a experimentação industrial em esquema fatorial: um estudo de caso para adesivo estrutural de base acrílica](https://revistas.utfpr.edu.br/revistagi/article/view/1472/1023). Artigo com conceitos básicos de experimentação na indústria e experimentos fatoriais $2^k$.
 
 
--   Aula 4:
+-   Aula 4: revisão da aula anterior, conceitos básicos da experimentação, princípios básicos da experimentação: repetição, casualização e controle local. Definição e objetivos dos princípios básicos. Tipos de esquemas fatoriais, tipos de variáveis, cálculo de número de repetições (por grau de liberdade do resíduo ou quantidade de parcelas no experimento). Teste de hipótese na experimentação: comparação entre efeitos de tratamentos. Exemplo de análise de dados: dados de crescimento de cães submetidos a dois tratamentos de suplementação.
+
+
+-   [Lista 2](lista2_20251.html): conceitos básicos em experimentação, delineamento inteiramente casualizado e análise de variância (ANOVA) de um fator.
+
+-   Aula 5:
 
 
 
