@@ -1,0 +1,106 @@
+---
+title: "Planejamento e Análise de Experimentos I"
+author:
+  - name: Prof. Dr. Juliano Bortolini
+    email: profjulianobortolini@gmail.com
+    url: http://www.julianobortolini.com.br
+    affiliations:
+      - name: Universidade Federal de Mato Grosso
+format:
+  html:
+    embed-resources: true
+engine: knitr
+---
+
+*Bacharelado em Estatística - UFMT*
+
+*Período letivo: 2025/1*
+
+### Avisos:
+
+-   Última atualização do site às **`r format(Sys.time(), "%H:%M", tz='America/Cuiaba')`** do dia **`r format(Sys.time(), "%d/%m/%Y")`**.
+
+
+
+### Ementa:
+
+Princípios gerais da experimentação. Análise de Variância e suas pressuposições. Comparações Múltiplas. Regressão na Análise de Variância. Delineamentos experimentais básicos: inteiramente casualizados, blocos casualizados e quadrados latinos. Transformação de Dados e Testes Não Paramétricos. Introdução aos experimentos em esquema fatorial.
+
+
+
+### Notas de aula:
+
+
+-   Aula 1: apresentação geral do que é estatística experimental. Diferença entre estudo observacional e experimento. Exemplo de experimento de análise sensorial de café: variáveis influentes e controláveis, variáveis influentes e não-controláveis e variáveis respostas. Exemplos de experimentos: área da saúde, educação, medicina veterinária e agricultura. Origem da experimentação com Ronald Fisher. Experimento das xícaras de chá (e leite). Desenvolvimento matemático das possibilidades de acerto (1 em 70 possibilidades = 1,43%). **Tarefa para casa:** ler o capítulo 2 do livro The design of experiments do R. Fisher (1935). Próxima aula será realizado experimento em sala de aula.
+
+
+-   Aula 2: revisão da aula anterior com comentários sobre o experimento das xícaras de chá (e leite). Realização do experimento de comparar dois tipos de água, simulando o experimento das xícaras de chá (e leite). Cálculo das probabilidades de acertar 1, 2, 3 e 4 xícaras.
+
+
+
+-   Aula 3: diferenças entre estudo observacional e experimental. O que é um experimento. Objetivos da experimentação (D. Montgomery). Desenvolvimento histórico da experimentação (Eras) (D. Montgomery). Origem do teste t (cervejaria Guiness e William Sealy Gosset). Definição de planejar um experimento. Conceitos básicos: unidade experimental, unidade experimental básica, parcela e exemplos de parcelas (vaso de plantas, linhas de plantio, árvores, animais (pequeno, médio e grande porte). O que é variável e os tipos de variáveis na experimentação: variável independente (fator ou tratamentos) e variável dependente ou resposta. Mais sobre conceitos básicos: grupo controle ou tratamento controle/testemunha, variáveis de confusão, parcela, repetição, casualização, controle local, bloco e delineamento. Tipos de delineamentos: delineamento inteiramente casualizado, delineamento em blocos casualizados, delineamento em blocos incompletos, delineamento em quadrado latino, entre outros. Bordadura e área útil (exemplo com linhas de plantio). Exemplo de experimento sobre dieta de suínos, descrever: fatores, tratamentos, parcela, bloco, número de repetições, variável resposta e delineamento. **Tarefa:** 1. pesquisar sobre o experimento com helicóptero de papel, 2. ler o artigo [Guidelines for the Design and Statistical Analysis of Experiments Using Laboratory Animals](https://academic.oup.com/ilarjournal/article/43/4/244/981872) dos autores Festing, M. F. W. e  Altman, D. G. (ILAR Journal. Volume 43, Number 4, 2002) e 3. Estudar os princípios básicos da experimentação e responder as seguintes perguntas: a. O que é? b. Para que serve?
+
+
+-   [Lista 1](lista1_20251.html): conceitos básicos em experimentação.
+
+
+- Sugestão de leitura: [Guidelines for the Design and Statistical Analysis of Experiments Using Laboratory Animals](https://academic.oup.com/ilarjournal/article/43/4/244/981872). Artigo com conceitos básicos de experimentação e questões éticas relacionadas à experimentação com animais.
+
+
+-  Sugestão de leitura: [Alternativas para a experimentação industrial em esquema fatorial: um estudo de caso para adesivo estrutural de base acrílica](https://revistas.utfpr.edu.br/revistagi/article/view/1472/1023). Artigo com conceitos básicos de experimentação na indústria e experimentos fatoriais $2^k$.
+
+
+-   Aula 4: revisão da aula anterior, conceitos básicos da experimentação, princípios básicos da experimentação: repetição, casualização e controle local. Definição e objetivos dos princípios básicos. Tipos de esquemas fatoriais, tipos de variáveis, cálculo de número de repetições (por grau de liberdade do resíduo ou quantidade de parcelas no experimento). Teste de hipótese na experimentação: comparação entre efeitos de tratamentos. Exemplo de análise de dados: dados de crescimento de cães submetidos a dois tratamentos de suplementação.
+
+
+-   [Lista 2](lista2_20251.html): conceitos básicos em experimentação, delineamento inteiramente casualizado e análise de variância (ANOVA) de um fator.
+
+-   Aula 5: delineamento inteiramente casualizado, exemplos, aleatorização, modelo estatístico, definição das componentes, estimação dos parâmetros (exercício: método dos mínimos quadrados com restrições nos parâmetros), análise de variância, decomposição da soma de quadrados total em entre tratamentos (ou simplesmente tratamentos) e dentro de tratamentos (também chamada de erro ou resíduo). Fórmulas para os cálculos dos graus de liberdade, somas de quadrados, quadrados médios e teste F. Exemplo de cálculo da análise de variância para o DIC com interpretação dos resultados. Teste de Tukey para experimentos balanceados (mesma quantidade de repetições em todos os tratamentos). Exemplo de aplicação do teste de Tukey e interpretação dos resultados. [Tabela q (Tukey)](tab_q_tukey.pdf). [Tabela F (5%)](tab_F_5.pdf). [F (1%)](tab_F_1.pdf). Exemplo de cálculo do q (Tukey) no R, para um experimento com 3 tratamentos e grau de liberdade igual a 12 para o resíduo: `qtukey(p = 0.05, nmeans = 3, df = 12, lower.tail = FALSE)`. Exemplo do cálculo do quantil da distribuição F no R: `qf(p = 0.05, df1 = 2, df2 = 12, lower.tail = FALSE)`. Cálculo de somas de quadrados na [Casio fx-82MS](casio_fx82ms.html).
+
+
+-   [Lista 3](lista3_20251.html): conceitos básicos em experimentação, delineamento inteiramente casualizado e análise de variância (ANOVA) de um fator e teste de Tukey.
+
+
+
+
+
+### Avaliações:
+
+-   $A_1$: escrita, computacional e arguição oral. Nota: 0 a 10.
+
+*Conteúdo:* Planejamento de experimentos e princípios básicos, ideias gerais dos delineamentos experimentais e  análise de variância para o delineamento inteiramente casualidade e comparação múltipla pelo teste de Tukey.
+
+-   $A_2$: escrita, computacional e arguição oral. Nota: 0 a 10.
+
+*Conteúdo:* Planejamento de experimentos e princípios básicos, ideias gerais dos delineamentos experimentais, análise de variância para o delineamento inteiramente casualidade, em blocos casualidades e quadrado latino, testes de comparações múltiplas pelos testes de Tukey, Duncan, Dunnett, SNK, t e Scott-Knott, análise dos pressupostos da ANOVA, regressão na ANOVA, transformação de variáveis, testes não paramétricos e introdução aos experimentos fatoriais.
+
+A média final ($MF$) será calculada por:
+
+$$MF = 0,5 A_1 + 0,5 A_2.$$
+
+
+### Livro texto:
+
+- Sônia Vieira, Delineamento e análise de experimentos nas ciências agrárias. FEALQ, 2021.
+
+- Banzatto D.A. e Kronka, S.N., Experimentação agrícola. 4ª ed. Jaboticabal: FUNEP, 2006.
+
+
+### Referências complementares:
+
+- Montgomery, D. C. (2019). Design and analysis of experiments. 10th ed. Wiley.
+
+- Dean, A. M., Voss, D. D., & Draguljić, D. (2017). Design and analysis of experiments. 2nd ed. Springer.
+
+- Quinn, G. P., & Keough, M. J. (2024). Experimental design and data analysis for biologists. 2nd ed. Cambridge University Press.
+
+- Mason, R. L., Gunst, R. F., & Hess, J. L. (2003). Statistical design and analysis of experiments: with applications to engineering and science. 2nd ed. Wiley.
+
+
+
+
+------------------------------------------------------------------------
+
+::: {style="text-align: center;"}
+[\@profjulianobortolini](https://instagram.com/profjulianobortolini)      [www.julianobortolini.com.br](http://www.julianobortolini.com.br)      [linkedin](https://linkedin.com/in/julianobortolini)      [github](https://github.com/julianobortolini)       [lattes](http://lattes.cnpq.br/6210909768845403)
+:::
