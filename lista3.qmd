@@ -1,0 +1,138 @@
+---
+title: "Planejamento e Análise de Experimentos I"
+author:
+  - name: Prof. Dr. Juliano Bortolini
+    email: profjulianobortolini@gmail.com
+    url: http://www.julianobortolini.com.br
+    affiliations:
+      - name: Universidade Federal de Mato Grosso
+format:
+  html:
+    embed-resources: true
+engine: knitr
+---
+
+*Bacharelado em Estatística - UFMT*
+
+*Período letivo: 2024/2*
+
+
+### Lista de exercícios 3
+
+ 
+
+1. (UFLA, adaptado) Um experimento foi conduzido para verificar a viabilidade do plantio de palmito na região de Lavras, MG, sob quatro diferentes ambientes de plantio: **sob eucalipto, sob mata, sob pinus e a pleno sol**. Foram medidas as alturas das plantas palmeiras (em cm) em **cinco repetições** para cada tratamento. Os dados coletados são apresentados na tabela abaixo:
+
+| Tratamento  | Repetição 1 | Repetição 2 | Repetição 3 | Repetição 4 | Repetição 5 |
+|------------|------------|------------|------------|------------|------------|
+| Eucalipto  | 37         | 51         | 42         | 57         | 55         |
+| Mata       | 44         | 62         | 40         | 71         | 55         |
+| Pinus      | 56         | 58         | 62         | 70         | 65         |
+| Pleno Sol  | 53         | 33         | 42         | 38         | 35         |
+
+a) Aplique o **teste F** e interprete os resultados.
+b) Realize o teste de Tukey, ao nível de $5\%$ de significância, para verificar quais efeitos dos tratamentos diferem entre si.
+c) Realize o teste de Duncan, ao nível de $5\%$ de significância, para verificar quais efeitos dos tratamentos diferem entre si.
+d) Realize o teste SNK, ao nível de $5\%$ de significância, para verificar quais efeitos dos tratamentos diferem entre si.
+e) Realize o teste Dunnett, ao nível de $5\%$ de significância, para verificar quais efeitos dos tratamentos diferem com a testemunha (Pleno Sol).
+
+
+
+2. (UFLA, adaptado) Um experimento foi conduzido no **delineamento inteiramente casualizado (DIC)**, com **quatro repetições**, para avaliar a altura de plantas da espécie florestal **acácia** (*Acacia holocericea*) submetidas a diferentes substratos para formação de mudas. Os tratamentos e os valores de altura de planta (em cm) foram registrados na seguinte tabela:
+
+| Substratos  | Rep. 1 | Rep. 2 | Rep. 3 | Rep. 4 |
+|------------|--------|--------|--------|--------|
+| CaC+EB     | 18,2   | 16,4   | 20,5   | 19,4   |
+| CaC+EA     | 12,8   | 14,5   | 10,3   | 11,5   |
+| HM         | 21,8   | 19,3   | 24,5   | 22,6   |
+| Cap+EA     | 14,8   | 16,4   | 12,3   | 13,7   |
+| Cap+EB     | 13,0   | 11,2   | 15,4   | 12,6   |
+| Plantmax   | 16,0   | 14,2   | 18,1   | 16,4   |
+
+a) Aplique o **teste F** e interprete os resultados.
+b) Realize o teste de Tukey, ao nível de $5\%$ de significância, para verificar quais efeitos dos tratamentos diferem entre si.
+c) Realize o teste de Duncan, ao nível de $5\%$ de significância, para verificar quais efeitos dos tratamentos diferem entre si.
+d) Realize o teste SNK, ao nível de $5\%$ de significância, para verificar quais efeitos dos tratamentos diferem entre si.
+e) Realize o teste Dunnett, ao nível de $5\%$ de significância, para verificar quais efeitos dos tratamentos diferem com o controle (Plantmax).
+f) Formule 5 contrastes ortogonais entre si e realize o teste t.
+g) Há diferença entre os efeitos do uso de CaC e CaP? Utilize contrastes.
+h) Há diferença entre os efeitos do uso de EB e EA? Utilize contrastes.
+i) Há diferença entre os efeitos do uso de EB e EA com HM? Utilize contrastes.
+
+
+3. (UFLA, adaptado) Um experimento foi realizado para verificar se três suplementos alimentares resultam em diferentes produções médias de leite. Foram selecionadas 15 vacas de mesma idade, e a cada 5 foi atribuído um tipo de suplemento alimentar.
+
+Tabela. Produção de Leite (litros) por Suplemento.
+
+| Repetição | Suplemento 1 | Suplemento 2 | Suplemento 3 |
+|-----------|-------------|-------------|-------------|
+| 1         | 25,40       | 23,40       | 20,00       |
+| 2         | 26,31       | 21,80       | 22,20       |
+| 3         | 24,10       | 23,50       | 19,75       |
+| 4         | 23,74       | 22,75       | 20,60       |
+| 5         | 25,10       | 21,60       | 20,40       |
+
+
+a) Aplique o **teste F** e interprete os resultados.
+b) Realize o teste de Tukey, ao nível de $5\%$ de significância, para verificar quais efeitos dos tratamentos diferem entre si.
+c) Realize o teste de Duncan, ao nível de $5\%$ de significância, para verificar quais efeitos dos tratamentos diferem entre si.
+
+
+4. (UFLA, adaptado) Um experimento foi realizado para verificar o efeito de antiparasitários no peso dos animais. Foram selecionadas 5 amostras de tamanho 5. Para cada amostra foi aplicado um antiparasitário diferente (tratamentos).
+
+Tabela. Peso dos Animais por Tratamento e Repetição.
+
+| Tratamento  | 1   | 2   | 3   | 4   | 5   |
+|------------|----|----|----|----|----|
+| Controle   | 279 | 240 | 266 | 269 | 250 |
+| Neguvon    | 330 | 314 | 331 | 311 | 320 |
+| Methiridim | 315 | 304 | 307 | 320 | 305 |
+| TH         | 298 | 289 | 273 | 240 | 121 |
+| Haloxon    | 286 | 273 | 269 | 278 | 274 |
+
+
+a) Aplique o **teste F** e interprete os resultados.
+b) Realize o teste de Tukey, ao nível de $5\%$ de significância, para verificar quais efeitos dos tratamentos diferem entre si.
+c) Realize o teste de Duncan, ao nível de $5\%$ de significância, para verificar quais efeitos dos tratamentos diferem entre si.
+e) Realize o teste Dunnett, ao nível de $5\%$ de significância, para verificar quais efeitos dos tratamentos diferem com o controle.
+
+
+
+
+5. (UFLA, adaptado) Um experimento foi realizado para verificar a força de tensão do cimento portland. Quatro diferentes técnicas de mistura podem ser utilizadas economicamente. Os seguintes dados foram coletados:
+
+Tabela. Força de Tensão (lb/in²) por Técnica de Mistura.
+
+| Técnica de Mistura | 1    | 2    | 3    | 4    |
+|--------------------|------|------|------|------|
+| A                | 3129 | 3000 | 2865 | 2890 |
+| B                | 3200 | 3300 | 2975 | 3150 |
+| C                | 2800 | 2900 | 2985 | 3050 |
+| D                | 2600 | 2700 | 2600 | 2765 |
+
+
+a) Aplique o **teste F** e interprete os resultados.
+b) Realize o teste de Tukey, ao nível de $5\%$ de significância, para verificar quais efeitos dos tratamentos diferem entre si.
+c) Realize o teste SNK, ao nível de $5\%$ de significância, para verificar quais efeitos dos tratamentos diferem entre si.
+
+
+6. (UFLA, adaptado) Um estudo foi realizado para verificar o teor de flúor em água mineral. Foram escolhidas 3 localidades produtoras de água mineral, e obtidas 5 repetições para cada localidade:
+
+Tabela. Teor de Flúor (mg/L) por Localidade e Repetição.
+
+| Localidade | 1   | 2   | 3   | 4   | 5   |
+|-----------|-----|-----|-----|-----|-----|
+| A         | 1,1 | 2,0 | 0,5 | 1,6 | 1,4 |
+| B         | 0,7 | 2,0 | 0,7 | 2,1 | 0,8 |
+| C         | 0,8 | 2,5 | 1,0 | 2,4 | 0,8 |
+
+
+a) Aplique o **teste F** e interprete os resultados.
+b) Realize o teste de Tukey, ao nível de $5\%$ de significância, para verificar quais efeitos dos tratamentos diferem entre si.
+c) Realize o teste SNK, ao nível de $5\%$ de significância, para verificar quais efeitos dos tratamentos diferem entre si.
+
+------------------------------------------------------------------------
+
+::: {style="text-align: center;"}
+[\@profjulianobortolini](https://instagram.com/profjulianobortolini)      [www.julianobortolini.com.br](http://www.julianobortolini.com.br)      [linkedin](https://linkedin.com/in/julianobortolini)      [github](https://github.com/julianobortolini)       [lattes](http://lattes.cnpq.br/6210909768845403)
+:::

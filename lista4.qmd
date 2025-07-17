@@ -1,0 +1,114 @@
+---
+title: "Planejamento e Análise de Experimentos I"
+author:
+  - name: Prof. Dr. Juliano Bortolini
+    email: profjulianobortolini@gmail.com
+    url: http://www.julianobortolini.com.br
+    affiliations:
+      - name: Universidade Federal de Mato Grosso
+format:
+  html:
+    embed-resources: true
+engine: knitr
+---
+
+*Bacharelado em Estatística - UFMT*
+
+*Período letivo: 2024/2*
+
+
+### Lista de exercícios 4
+
+ 
+
+1. Os dados da Tabela 1 referem-se a um ensaio sobre a influência de quatro épocas de corte na produtividade de matéria verde de uma variedade de alfafa. As épocas estudadas foram $A$, $B$, $C$ e $D$, sendo $A$ a mais precoce e $D$ a mais tardia. Foi utilizado o delineamento em Blocos Casualizados para controlar um possível gradiente de fertilidade do solo, já que a área experimental apresentava uma declividade de $12\%$.
+
+**Tabela 1**: Produções em $\text{Kg/parcela}$ de matéria verde de alfafa.
+
+| Blocos | $A$  | $B$  | $C$  | $D$  | Totais |
+|--------|------|------|------|------|--------|
+| $I$    | 2,89 | 1,58 | 2,29 | 2,56 | 9,32   |
+| $II$   | 2,88 | 1,28 | 2,98 | 2,00 | 9,14   |
+| $III$  | 1,88 | 1,22 | 1,55 | 1,82 | 6,47   |
+| $IV$   | 2,90 | 1,21 | 1,95 | 2,20 | 8,26   |
+| $V$    | 2,20 | 1,30 | 1,15 | 1,33 | 5,98   |
+| $VI$   | 2,65 | 1,66 | 1,12 | 1,00 | 6,43   |
+| **Totais** | **15,40** | **8,25** | **11,04** | **10,91** | **45,60** |
+
+
+2. Um experimento foi desenvolvido visando comparar a eficiência de técnicos treinados em amostragem. Uma cultura foi dividida em seis áreas, sendo cada área amostrada por seis técnicos diferentes ($A$, $B$, $C$, $D$, $E$ e $F$). Cada técnico deveria escolher oito plantas consideradas representativas da altura média da área e registrar a média dessas alturas. 
+
+Para análise estatística, foi considerada a diferença entre a altura média obtida pela amostra e a altura média real da área, determinada pela medição de todas as plantas da respectiva área. Essas diferenças constituem os erros amostrais e estão apresentados na Tabela 2, juntamente com a ordem de visita a cada área.
+
+**Tabela 2**: Erros amostrais referentes às alturas médias de trigo. Área amostrada por seis técnicos ($A, B, C, D, E, F$).
+
+| Ordem de Visita | I       | II      | III     | IV      | V       | VI      |
+|-----------------|---------|---------|---------|---------|---------|---------|
+| 1ª              | 3,5 (F) | 4,2 (B) | 6,7 (A) | 6,6 (D) | 4,1 (C) | 3,8 (E) |
+| 2ª              | 8,9 (B) | 1,9 (F) | 5,8 (D) | 4,5 (A) | 2,4 (E) | 5,8 (C) |
+| 3ª              | 9,6 (C) | 3,7 (E) | -2,7 (F)| 3,7 (B) | 6,0 (D) | 7,0 (A) |
+| 4ª              | 10,5 (D)| 10,2 (C)| 4,6 (B) | 3,7 (E) | 5,1 (A) | 3,8 (F) |
+| 5ª              | 3,1 (E) | 7,2 (A) | 4,0 (C) | -3,0 (F)| 5,7 (B) | 5,0 (D) |
+| 6ª              | 5,9 (A) | 7,6 (D) | -0,7 (E)| 3,0 (C) | 4,0 (F) | 6,1 (B) |
+
+**Tabela 3**: Totais para a amostragem de plantas de trigo.
+
+| Critérios   | 1    | 2    | 3    | 4    | 5    | 6    |
+|-------------|------|------|------|------|------|------|
+| Tratamentos | 36,4 | 33,5 | 36,7 | 41,5 | 16,0 | 7,2  |
+| Áreas       | 41,5 | 34,8 | 17,7 | 18,2 | 25,1 | 34,0 |
+| Visita      | 28,9 | 29,3 | 27,3 | 37,9 | 19,5 | 28,4 |
+
+
+
+3. No trabalho "Estudos dos efeitos do Promalin sobre frutos de macieiras ($Malus$ spp) cultivares Brasil e Rainha", Mestriner (1980) utilizou 4 repetições dos seguintes tratamentos:
+
+    1. $12,5\;ppm$ de Promalin em plena floração.
+    2. $25,0\;ppm$ de Promalin em plena floração.
+    3. $50,0\;ppm$ de Promalin em plena floração.
+    4. $12,5\;ppm$ de Promalin em plena floração + $12,5\;ppm$ de Promalin no início da frutificação.
+    5. Testemunha.
+
+O experimento foi instalado na Fazenda Chapadão, no município de Angatuba-SP. O delineamento experimental foi o de blocos casualizados, sendo as parcelas constituídas por 4 plantas espaçadas de $6 \times 7$ metros, com 12 anos de idade na época de instalação do experimento.
+
+Os pesos médios dos frutos, em gramas, foram obtidos pela pesagem de 250 frutos por parcela e estão apresentados na tabela abaixo:
+
+**Tabela 4**: Pesos médios dos frutos da macieira (gramas).
+
+| Tratamentos | Bloco 1 | Bloco 2 | Bloco 3 | Bloco 4 | Totais |
+|-------------|---------|---------|---------|---------|--------|
+| 1           | 142,4   | 144,8   | 145,2   | 138,9   | 571,3  |
+| 2           | 139,3   | 137,8   | 144,4   | 130,6   | 552,1  |
+| 3           | 140,7   | 134,1   | 136,1   | 144,1   | 555,0  |
+| 4           | 150,9   | 135,8   | 137,0   | 136,4   | 560,1  |
+| 5           | 153,5   | 165,0   | 151,8   | 150,2   | 620,5  |
+| **Totais**  | 726,8   | 717,5   | 714,5   | 700,2   | 2859,0 |
+
+
+
+4. Um engenheiro aeroespacial está estudando os efeitos de cinco formulações diferentes de um propulsor de foguete usado em sistemas de evacuação da tripulação.
+
+- Variável observada: velocidade de queima das formulações.
+- Cada formulação é misturada a partir de um lote de matéria-prima suficiente para cinco formulações.
+- As formulações são preparadas por diversos operadores.
+- Duas fontes de perturbação: lotes e operadores.
+- Delineamento apropriado: testar cada formulação apenas uma vez em cada lote de matéria-prima e cada operador preparar uma vez cada formulação.
+
+**Tabela 5**: Velocidade de queima de diferentes formulações (A, B, C, D, E) para diferentes lotes de matéria-prima e operadores.
+
+| Lote/Operador | 1  | 2  | 3  | 4  | 5  |
+|---------------|----|----|----|----|----|
+| 1             | A=24 | B=20 | C=19 | D=24 | E=24 |
+| 2             | B=17 | C=24 | D=30 | E=27 | A=36 |
+| 3             | C=18 | D=38 | E=26 | A=27 | B=21 |
+| 4             | D=26 | E=31 | A=26 | B=23 | C=22 |
+| 5             | E=22 | A=30 | B=20 | C=29 | D=31 |
+
+
+
+
+------------------------------------------------------------------------
+
+::: {style="text-align: center;"}
+[\@profjulianobortolini](https://instagram.com/profjulianobortolini)      [www.julianobortolini.com.br](http://www.julianobortolini.com.br)      [linkedin](https://linkedin.com/in/julianobortolini)      [github](https://github.com/julianobortolini)       [lattes](http://lattes.cnpq.br/6210909768845403)
+:::

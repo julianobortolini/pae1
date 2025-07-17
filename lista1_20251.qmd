@@ -1,0 +1,41 @@
+---
+title: "Planejamento e Análise de Experimentos I"
+author:
+  - name: Prof. Dr. Juliano Bortolini
+    email: profjulianobortolini@gmail.com
+    url: http://www.julianobortolini.com.br
+    affiliations:
+      - name: Universidade Federal de Mato Grosso
+format:
+  html:
+    embed-resources: true
+engine: knitr
+---
+
+*Bacharelado em Estatística - UFMT*
+
+
+
+### Lista de exercícios 1
+
+
+1. Identifique: fatores, tratamentos, número de repetições, parcela ou tipo de parcela, número de parcelas, bloco, número de repetições, variável resposta, presença de bordadura e delineamento. Apresente também o croqui do experimento.
+
+a.  Um pesquisador pretende avaliar o comportamento produtivo de diferentes cultivares de milho para produção de forragem, com vista a sua utilização na alimentação animal. Foi avaliado cinco cultivares ($A$, $B$, $C$, $D$ e $E$), sendo que cada cultivar foi repetido por seis vezes. A parcela experimental foi constituída por cinco linhas de seis ($6$) metros de comprimento, espaçadas de um metro entre si; como área útil de avaliação foi considerada as três linhas centrais, eliminando-se $50$ centímetros em ambas as extremidades. Após a germinação e feito o desbaste foram deixadas cinco plantas por metro linear. Foram medidos a produção de grãos, produção de matéria verde e de matéria seca, e teores de macro e micro nutrientes.
+
+
+b. Um pesquisador tem interesse em avaliar se misturas de proteína e de carboidrato forem adicionadas em uma ração, se esta vai melhorar sua qualidade. A pesquisa foi realizada em uma granja de aves poedeiras, sendo que as aves escolhidas pertenciam a uma mesma faixa de idade e peso. Cada amostra da ração foi servida a grupos de cinco aves, e os avaliadores pesavam as aves antes de iniciar o fornecimento da ração e depois ao final do experimento. Os tipos de misturas elaboradas foram: $i.$ ração comum, $ii.$ ração comum $+$ carboidrato, $iii.$ ração comum $+$ proteína e $iv.$ ração comum $+$ carboidrato $+$ proteína.
+
+
+c. Um pesquisador pretende estudar o efeito que a aplicação de cloreto de cálcio pode provocar nas características físico-químicas durante o armazenamento de uvas para consumo {\it in natura}. Foram preparadas soluções de $CaCl_2$ nas concentrações de $0, 1, 2, 3$ e $4\%$. Foram escolhidos aleatoriamente $120$ cachos de uvas de um conjunto uniforme, previamente colhidos e limpos de qualquer injúria. Cada repetição foi constituída por quatro cachos e cada tratamento foi repetido por seis vezes. Algumas das características avaliadas foram: perda de peso, teores de sólidos solúveis, acidez titulável, açúcares e vitamina $C$.
+
+
+d. Um pesquisador tem interesse avaliar se a utilização de determinados medicamentos podem afetar o nível de colesterol no sangue de ratos (cobaias experimentais). Cada animal foi tratado com três medicamentos ($A$, $B$ e $C$), com suficiente tempo entre as aplicações para que o efeito residual de cada medicamento desaparecesse. Os medicamentos foram aplicados em $20$ animais distintos.
+
+
+
+------------------------------------------------------------------------
+
+::: {style="text-align: center;"}
+[\@profjulianobortolini](https://instagram.com/profjulianobortolini)      [www.julianobortolini.com.br](http://www.julianobortolini.com.br)      [linkedin](https://linkedin.com/in/julianobortolini)      [github](https://github.com/julianobortolini)       [lattes](http://lattes.cnpq.br/6210909768845403)
+:::

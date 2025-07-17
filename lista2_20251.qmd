@@ -1,0 +1,89 @@
+---
+title: "Planejamento e Análise de Experimentos I"
+author:
+  - name: Prof. Dr. Juliano Bortolini
+    email: profjulianobortolini@gmail.com
+    url: http://www.julianobortolini.com.br
+    affiliations:
+      - name: Universidade Federal de Mato Grosso
+format:
+  html:
+    embed-resources: true
+engine: knitr
+---
+
+*Bacharelado em Estatística - UFMT*
+
+
+
+### Lista de exercícios 2
+
+
+Marque **verdadeiro (V) ou falso (F)**:
+
+a. O DIC é indicado quando as unidades experimentais são homogêneas, pois a variabilidade dentro dos tratamentos é reduzida.  
+   <!-- **(V)**   -->
+
+b. O DIC não requer aleatorização, pois a distribuição dos tratamentos nas unidades experimentais é feita de maneira fixa.  
+   <!-- **(F)**   -->
+
+c. O número de repetições no DIC pode ser diferente entre tratamentos, mas o ideal é manter o mesmo número para garantir equilíbrio na análise.  
+   <!-- **(V)**   -->
+
+d. O DIC é mais eficiente em condições de campo do que em laboratórios, pois a variabilidade ambiental não afeta os resultados.  
+   <!-- **(F)**   -->
+
+e. Em experimentos com animais, plantas ou amostras biológicas, a homogeneidade das unidades experimentais é um fator importante para a escolha do DIC.  
+   <!-- **(V)**   -->
+
+f. O DIC é recomendado quando há fatores adicionais de variação conhecidos, como blocos ou covariáveis.  
+   <!-- **(F)**   -->
+
+g. O principal critério para usar o DIC é garantir que todas as unidades experimentais tenham a mesma probabilidade de receber qualquer tratamento.  
+   <!-- **(V)**   -->
+
+h. No DIC, os tratamentos precisam ser distribuídos sistematicamente nas unidades experimentais, sem sorteio ou randomização.  
+   <!-- **(F)**   -->
+
+i. O DIC é amplamente utilizado em experimentos laboratoriais, estufas e casas de vegetação, onde as condições ambientais são mais controladas.  
+   <!-- **(V)**   -->
+
+j. Para evitar a influência de fatores externos, o DIC deve ser sempre utilizado em condições de campo ao invés de laboratório.  
+   <!-- **(F)**   -->
+
+k. A análise estatística do DIC baseia-se na **Análise de Variância (ANOVA)** de um fator.  
+   <!-- **(V)**   -->
+
+l. No DIC, a variabilidade dentro dos tratamentos não influencia a significância estatística dos resultados.  
+   <!-- **(F)**   -->
+
+m. A hipótese nula na ANOVA para o DIC assume que **não há diferença** entre os efeitos dos tratamentos.  
+   <!-- **(V)**   -->
+
+n. A principal suposição do DIC é que os erros sejam **dependentes** e tenham variância diferente entre os tratamentos.  
+   <!-- **(F)**   -->
+
+o. A distribuição dos resíduos no DIC deve ser aproximadamente **normal** e homogênea para que a ANOVA seja válida.  
+   <!-- **(V)**   -->
+
+p. Quando a suposição de homogeneidade de variâncias não é atendida, testes como **Levene ou Bartlett** podem ser utilizados para verificar essa condição.  
+   <!-- **(V)**   -->
+
+q. A ANOVA no DIC pode ser aplicada mesmo que os resíduos não tenham distribuição normal, sem necessidade de transformação dos dados.  
+   <!-- **(F)**   -->
+
+r. Se a ANOVA indicar diferença significativa entre os efeitos dos tratamentos, testes de comparação múltipla, como **Tukey ou Duncan**, podem ser aplicados para identificar quais efeitos de tratamentos diferem entre si.  
+   <!-- **(V)**   -->
+
+s. Quando há grande variação dentro dos tratamentos no DIC, pode ser necessário aumentar o número de repetições para melhorar a precisão do experimento.  
+   <!-- **(V)**   -->
+
+t. O teste F na ANOVA para o DIC é realizado pelo quociente do quadrado médio dentro de tratamentos pelo quadrado médio entre tratamentos.  
+   <!-- **(F)**   -->
+
+
+------------------------------------------------------------------------
+
+::: {style="text-align: center;"}
+[\@profjulianobortolini](https://instagram.com/profjulianobortolini)      [www.julianobortolini.com.br](http://www.julianobortolini.com.br)      [linkedin](https://linkedin.com/in/julianobortolini)      [github](https://github.com/julianobortolini)       [lattes](http://lattes.cnpq.br/6210909768845403)
+:::
