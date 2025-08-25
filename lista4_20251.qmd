@@ -1,0 +1,669 @@
+---
+title: "Planejamento e Análise de Experimentos I"
+author:
+  - name: Prof. Dr. Juliano Bortolini
+    email: profjulianobortolini@gmail.com
+    url: http://www.julianobortolini.com.br
+    affiliations:
+      - name: Universidade Federal de Mato Grosso
+format:
+  html:
+    embed-resources: true
+engine: knitr
+---
+
+*Bacharelado em Estatística - UFMT*
+
+
+### Lista de exercícios 4
+
+
+
+**Para todos os experimentos apresentados, realize a análise completa do experimento, incluindo as comparações múltiplas entre os tratamentos, análise de pressupostos (gráfica e por testes de hipóteses) e interpretação dos resultados. Caso os pressupostos não sejam atendidos, refaça a análise usando transformação de variáveis ou métodos não paramétricos ou modelos lineares generalizados.**
+
+
+
+1. Um estudo foi realizado para verificar o teor de flúor em água mineral. Foram escolhidas 3 localidades produtoras de água mineral, e obtidas 5 repetições para cada localidade:
+
+
+```{r}
+# Vetores
+localidade <- rep(c("A", "B", "C"), each = 5)
+repeticao <- rep(1:5, times = 3)
+teor_fluor <- c(
+  1.1, 2.0, 0.5, 1.6, 1.4,  # Localidade A
+  0.7, 2.0, 0.7, 2.1, 0.8,  # Localidade B
+  0.8, 2.5, 1.0, 2.4, 0.8   # Localidade C
+)
+
+# Data Frame
+dados <- data.frame(
+  localidade,
+  repeticao,
+  teor_fluor
+)
+
+
+# Visualização
+knitr::kable(dados, align = "c")
+```
+
+
+2. Os dados da tabela a seguir referem-se a um ensaio sobre a influência de quatro épocas de corte na produtividade de matéria verde de uma variedade de alfafa. As épocas estudadas foram $A$, $B$, $C$ e $D$, sendo $A$ a mais precoce e $D$ a mais tardia. Foi utilizado o delineamento em Blocos Casualizados para controlar um possível gradiente de fertilidade do solo, já que a área experimental apresentava uma declividade de $12\%$.
+
+```{r}
+# Vetores
+bloco <- rep(1:6, each = 4)
+tratamento <- rep(c("A", "B", "C", "D"), times = 6)
+producao_materia_verde <- c(
+  2.89, 1.58, 2.29, 2.56,  # Bloco 1
+  2.88, 1.28, 2.98, 2.00,  # Bloco 2
+  1.88, 1.22, 1.55, 1.82,  # Bloco 3
+  2.90, 1.21, 1.95, 2.20,  # Bloco 4
+  2.20, 1.30, 1.15, 1.33,  # Bloco 5
+  2.65, 1.66, 1.12, 1.00   # Bloco 6
+)
+
+# Data Frame
+dados <- data.frame(
+  bloco,
+  tratamento,
+  producao_materia_verde
+)
+
+
+# Visualização
+knitr::kable(dados, align = "c")
+```
+
+
+3. Um experimento foi desenvolvido visando comparar a eficiência de técnicos treinados em amostragem. Uma cultura foi dividida em seis áreas, sendo cada área amostrada por seis técnicos diferentes ($A$, $B$, $C$, $D$, $E$ e $F$). Cada técnico deveria escolher oito plantas consideradas representativas da altura média da área e registrar a média dessas alturas. 
+
+Para análise estatística, foi considerada a diferença entre a altura média obtida pela amostra e a altura média real da área, determinada pela medição de todas as plantas da respectiva área. Essas diferenças constituem os erros amostrais e estão apresentados na tabela a seguir, juntamente com a ordem de visita a cada área.
+
+
+```{r}
+# Vetores
+ordem_visita <- rep(1:6, times = 6)
+area <- rep(c("I", "II", "III", "IV", "V", "VI"), each = 6)
+tecnico <- c(
+  "F", "B", "A", "D", "C", "E",  # 1ª visita
+  "B", "F", "D", "A", "E", "C",  # 2ª visita
+  "C", "E", "F", "B", "D", "A",  # 3ª visita
+  "D", "C", "B", "E", "A", "F",  # 4ª visita
+  "E", "A", "C", "F", "B", "D",  # 5ª visita
+  "A", "D", "E", "C", "F", "B"   # 6ª visita
+)
+erro <- c(
+  3.5, 4.2, 6.7, 6.6, 4.1, 3.8,   # 1ª visita
+  8.9, 1.9, 5.8, 4.5, 2.4, 5.8,   # 2ª visita
+  9.6, 3.7, -2.7, 3.7, 6.0, 7.0,  # 3ª visita
+  10.5, 10.2, 4.6, 3.7, 5.1, 3.8, # 4ª visita
+  3.1, 7.2, 4.0, -3.0, 5.7, 5.0,  # 5ª visita
+  5.9, 7.6, -0.7, 3.0, 4.0, 6.1   # 6ª visita
+)
+
+# Data Frame
+dados <- data.frame(
+  ordem_visita,
+  area,
+  tecnico,
+  erro
+)
+
+# Visualização
+knitr::kable(dados, align = "c")
+```
+
+
+4. No trabalho "Estudos dos efeitos do Promalin sobre frutos de macieiras ($Malus$ spp) cultivares Brasil e Rainha", Mestriner (1980) utilizou 4 repetições dos seguintes tratamentos:
+
+    1. $12,5\;ppm$ de Promalin em plena floração.
+    2. $25,0\;ppm$ de Promalin em plena floração.
+    3. $50,0\;ppm$ de Promalin em plena floração.
+    4. $12,5\;ppm$ de Promalin em plena floração + $12,5\;ppm$ de Promalin no início da frutificação.
+    5. Testemunha.
+
+O experimento foi instalado na Fazenda Chapadão, no município de Angatuba-SP. O delineamento experimental foi o de blocos casualizados, sendo as parcelas constituídas por 4 plantas espaçadas de $6 \times 7$ metros, com 12 anos de idade na época de instalação do experimento.
+
+Os pesos médios dos frutos, em gramas, foram obtidos pela pesagem de 250 frutos por parcela e estão apresentados na tabela abaixo:
+
+
+
+```{r}
+# Vetores
+tratamento <- rep(1:5, each = 4)
+bloco <- rep(1:4, times = 5)
+peso_medio <- c(
+  142.4, 144.8, 145.2, 138.9,   # Tratamento 1
+  139.3, 137.8, 144.4, 130.6,   # Tratamento 2
+  140.7, 134.1, 136.1, 144.1,   # Tratamento 3
+  150.9, 135.8, 137.0, 136.4,   # Tratamento 4
+  153.5, 165.0, 151.8, 150.2    # Tratamento 5
+)
+
+# Data Frame
+dados <- data.frame(
+  tratamento,
+  bloco,
+  peso_medio
+)
+
+# Visualização
+knitr::kable(dados, align = "c")
+```
+
+
+5. Um engenheiro aeroespacial está estudando os efeitos de cinco formulações diferentes de um propulsor de foguete usado em sistemas de evacuação da tripulação.
+
+- Variável observada: velocidade de queima das formulações.
+- Cada formulação é misturada a partir de um lote de matéria-prima suficiente para cinco formulações.
+- As formulações são preparadas por diversos operadores.
+- Duas fontes de perturbação: lotes e operadores.
+- Delineamento apropriado: testar cada formulação apenas uma vez em cada lote de matéria-prima e cada operador preparar uma vez cada formulação.
+
+
+
+```{r}
+# Vetores
+lote <- rep(1:5, each = 5)
+operador <- rep(1:5, times = 5)
+formulacao <- c(
+  "A", "B", "C", "D", "E",   # Lote 1
+  "B", "C", "D", "E", "A",   # Lote 2
+  "C", "D", "E", "A", "B",   # Lote 3
+  "D", "E", "A", "B", "C",   # Lote 4
+  "E", "A", "B", "C", "D"    # Lote 5
+)
+velocidade_queima <- c(
+  24, 20, 19, 24, 24,   # Lote 1
+  17, 24, 30, 27, 36,   # Lote 2
+  18, 38, 26, 27, 21,   # Lote 3
+  26, 31, 26, 23, 22,   # Lote 4
+  22, 30, 20, 29, 31    # Lote 5
+)
+
+# Data Frame
+dados <- data.frame(
+  lote,
+  operador,
+  formulacao,
+  velocidade_queima
+)
+
+# Visualização
+knitr::kable(dados, align = "c")
+
+```
+
+
+
+
+
+6. Um experimento foi conduzido para verificar a viabilidade do plantio de palmito na região de Lavras, MG, sob quatro diferentes ambientes de plantio: **sob eucalipto, sob mata, sob pinus e a pleno sol**. Foram medidas as alturas das plantas palmeiras (em cm) em **cinco repetições** para cada tratamento. Os dados coletados são apresentados na tabela abaixo:
+
+
+```{r}
+# Vetores
+tratamento <- rep(c("Eucalipto", "Mata", "Pinus", "Pleno Sol"), each = 5)
+repeticao <- rep(1:5, times = 4)
+altura <- c(
+  37, 51, 42, 57, 55,    # Eucalipto
+  44, 62, 40, 71, 55,    # Mata
+  56, 58, 62, 70, 65,    # Pinus
+  53, 33, 42, 38, 35     # Pleno Sol
+)
+
+# Data Frame
+dados <- data.frame(
+  tratamento,
+  repeticao,
+  altura
+)
+
+# Visualização
+knitr::kable(dados, align = "c")
+```
+
+
+
+
+
+7. Um experimento foi conduzido no **delineamento inteiramente casualizado (DIC)**, com **quatro repetições**, para avaliar a altura de plantas da espécie florestal **acácia** (*Acacia holocericea*) submetidas a diferentes substratos para formação de mudas. Os tratamentos e os valores de altura de planta (em cm) foram registrados na seguinte tabela:
+
+
+```{r}
+# Vetores
+substrato <- rep(c("CaC+EB", "CaC+EA", "HM", "Cap+EA", "Cap+EB", "Plantmax"), each = 4)
+repeticao <- rep(1:4, times = 6)
+altura <- c(
+  18.2, 16.4, 20.5, 19.4,    # CaC+EB
+  12.8, 14.5, 10.3, 11.5,    # CaC+EA
+  21.8, 19.3, 24.5, 22.6,    # HM
+  14.8, 16.4, 12.3, 13.7,    # Cap+EA
+  13.0, 11.2, 15.4, 12.6,    # Cap+EB
+  16.0, 14.2, 18.1, 16.4     # Plantmax
+)
+
+# Data Frame
+dados <- data.frame(
+  substrato,
+  repeticao,
+  altura
+)
+
+# Visualização
+knitr::kable(dados, align = "c")
+```
+
+
+8. Um experimento foi realizado para verificar se três suplementos alimentares resultam em diferentes produções médias de leite. Foram selecionadas 15 vacas de mesma idade, e a cada 5 foi atribuído um tipo de suplemento alimentar.
+
+
+```{r}
+# Vetores
+suplemento <- rep(1:3, each = 5)
+repeticao <- rep(1:5, times = 3)
+producao_leite <- c(
+  25.40, 26.31, 24.10, 23.74, 25.10,  # Suplemento 1
+  23.40, 21.80, 23.50, 22.75, 21.60,  # Suplemento 2
+  20.00, 22.20, 19.75, 20.60, 20.40   # Suplemento 3
+)
+
+# Data Frame
+dados <- data.frame(
+  suplemento,
+  repeticao,
+  producao_leite
+)
+
+# Visualização
+knitr::kable(dados, align = "c")
+```
+
+
+9. Um experimento foi realizado para verificar o efeito de antiparasitários no peso dos animais. Foram selecionadas 5 amostras de tamanho 5. Para cada amostra foi aplicado um antiparasitário diferente (tratamentos).
+
+
+
+```{r}
+# Vetores
+tratamento <- rep(c("Controle", "Neguvon", "Methiridim", "TH", "Haloxon"), each = 5)
+repeticao <- rep(1:5, times = 5)
+peso <- c(
+  279, 240, 266, 269, 250,   # Controle
+  330, 314, 331, 311, 320,   # Neguvon
+  315, 304, 307, 320, 305,   # Methiridim
+  298, 289, 273, 240, 121,   # TH
+  286, 273, 269, 278, 274    # Haloxon
+)
+
+# Data Frame
+dados <- data.frame(
+  tratamento,
+  repeticao,
+  peso
+)
+
+# Visualização
+knitr::kable(dados, align = "c")
+```
+
+
+10. Um experimento foi realizado para verificar a força de tensão do cimento portland. Quatro diferentes técnicas de mistura podem ser utilizadas economicamente. Os seguintes dados foram coletados:
+
+```{r}
+# Vetores
+tecnica_mistura <- rep(c("A", "B", "C", "D"), each = 4)
+repeticao <- rep(1:4, times = 4)
+forca_tensao <- c(
+  3129, 3000, 2865, 2890,   # Técnica A
+  3200, 3300, 2975, 3150,   # Técnica B
+  2800, 2900, 2985, 3050,   # Técnica C
+  2600, 2700, 2600, 2765    # Técnica D
+)
+
+# Data Frame
+dados <- data.frame(
+  tecnica_mistura,
+  repeticao,
+  forca_tensao
+)
+
+
+# Visualização
+knitr::kable(dados, align = "c")
+```
+
+
+
+11. Um experimento avaliou o efeito do uso da adubação (0: nível baixo ou 1: nível alto) e da aplicação de calcário (0: nível baixo ou 1: nível alto) na cultura de milho. O experimento foi instalado utilizando um delineamento em blocos casualizados com três repetições. As produções obtidas, em $kg/parcela$ foram as seguintes:
+
+
+```{r}
+# Vetores
+adubacao <- rep(c(0, 0, 1, 1), each = 3)
+calcario <- rep(c(0, 1, 0, 1), each = 3)
+bloco <- rep(1:3, times = 4)
+producao <- c(
+  4, 3, 8,    # Adubação 0, Calcário 0
+  6, 8, 10,   # Adubação 0, Calcário 1
+  8, 10, 12,  # Adubação 1, Calcário 0
+  18, 17, 16  # Adubação 1, Calcário 1
+)
+
+# Definição dos tratamentos combinados
+tratamento <- paste0("A", adubacao, "_C", calcario)
+
+# Data Frame
+dados <- data.frame(
+  tratamento,
+  bloco,
+  producao
+)
+
+# Visualização
+knitr::kable(dados, align = "c")
+```
+
+
+
+12. Num experimento com suínos foram comparadas quatro rações ($A$, $B$, $C$, $D$) e duas doses de vitaminas ($2$ e $4 mg$) com três repetições. Foi utilizado um delineamento em blocos casualizados para controlar o peso inicial dos animais. A parcela constituiu-se de um animal e o ganho de peso, em $kg$, dos animais no período experimental foi o seguinte:
+
+```{r}
+# Vetores
+bloco <- rep(1:3, each = 8)
+racao <- rep(c("A", "B", "C", "D", "A", "B", "C", "D"), times = 3)
+dose <- rep(c(2, 2, 2, 2, 4, 4, 4, 4), times = 3)
+ganho_peso <- c(
+  65, 56, 56, 56, 62, 58, 55, 60,   # Bloco 1
+  63, 58, 54, 56, 64, 62, 56, 56,   # Bloco 2
+  64, 57, 54, 60, 66, 59, 62, 68    # Bloco 3
+)
+
+# Definição dos tratamentos combinados
+tratamento <- paste0(racao, dose)
+
+# Data Frame
+dados <- data.frame(
+  tratamento,
+  bloco,
+  ganho_peso
+)
+
+
+# Visualização
+knitr::kable(dados, align = "c")
+
+```
+
+
+13. Os resultados seguintes foram obtidos de um experimento em que foram avaliados três tipos de vinho ($A$, $B$, $C$) servidos em duas condições de temperatura ($1: gelado$, $2: ambiente$). Foram utilizados quatro provadores que atribuíram as seguintes notas numa escala de $1$ a $10$ (média de três determinações):
+
+
+```{r}
+# Vetores
+provador <- rep(1:4, each = 6)
+vinho <- rep(c("A", "A", "B", "B", "C", "C"), times = 4)
+temperatura <- rep(c(1, 2, 1, 2, 1, 2), times = 4)
+nota <- c(
+  8.2, 4.5, 4.2, 5.6, 9.3, 9.6,  # Provador 1
+  7.8, 3.5, 4.4, 4.9, 8.7, 8.9,  # Provador 2
+  6.0, 3.8, 5.3, 5.4, 6.5, 7.3,  # Provador 3
+  8.0, 4.7, 6.8, 6.8, 7.9, 9.3   # Provador 4
+)
+
+# Definição dos tratamentos combinados
+tratamento <- paste0(vinho, temperatura)
+
+# Data Frame
+dados <- data.frame(
+  tratamento,
+  provador,
+  nota
+)
+
+# Visualização
+knitr::kable(dados, align = "c")
+```
+
+
+14. Em um experimento foram avaliados os teores de frutose ($\%$) dos frutos de três cultivares de pêssego ($A$, $B$, $C$) em cinco tempos de armazenamento ($7dias$,  $14dias$, $21dias$, $28dias$ e $35dias$). O experimento foi conduzido em laboratório e o delineamento foi inteiramente ao acaso.
+
+
+```{r}
+# Vetores
+cultivar <- rep(c("A", "A", "A", "A", "A", 
+                  "B", "B", "B", "B", "B", 
+                  "C", "C", "C", "C", "C"), each = 2)
+
+tempo <- rep(rep(c(7, 14, 21, 28, 35), each = 2), times = 3)
+
+repeticao <- rep(1:2, times = 15)
+
+tratamento <- paste0(cultivar, tempo)
+
+teor_frutose <- c(
+  # Cultivar A
+  1.29, 1.36,
+  1.42, 1.46,
+  1.41, 1.43,
+  1.44, 1.42,
+  1.60, 1.80,
+  # Cultivar B
+  1.26, 1.30,
+  1.41, 1.41,
+  1.45, 1.49,
+  1.60, 1.68,
+  1.61, 1.64,
+  # Cultivar C
+  1.30, 1.34,
+  1.38, 1.43,
+  1.22, 1.64,
+  1.65, 1.66,
+  1.65, 1.67
+)
+
+# Data Frame
+dados <- data.frame(
+  tratamento,
+  repeticao,
+  teor_frutose
+)
+
+# Visualização
+knitr::kable(dados, align = "c")
+```
+
+
+
+15. Um experimento foi realizado com o objetivo de avaliar o tempo de cozimento, em minutos, de seis tratamentos constituídos pelas combinações dos fatores: cultivar (Carioca, Jalo e Esal5) e embalagens de polietileno (espessuras de $30\mu$ e $40\mu$). Os feijões foram colhidos e armazenados nas embalagens por um período de seis meses, após o qual foi feito as avaliações. Os resultados do tempo de cozimento obtidos foram:
+
+```{r}
+# Vetores
+cultivar <- rep(c("Carioca", "Carioca", "Esal5", "Esal5", "Jalo", "Jalo"), each = 4)
+embalagem <- rep(c(30, 40, 30, 40, 30, 40), each = 4)
+repeticao <- rep(1:4, times = 6)
+
+tratamento <- paste0(cultivar, embalagem)
+
+tempo_cozimento <- c(
+  57, 53, 47, 55,   # Carioca 30μ
+  52, 50, 41, 45,   # Carioca 40μ
+  66, 61, 63, 66,   # Esal5 30μ
+  70, 68, 58, 68,   # Esal5 40μ
+  57, 61, 55, 59,   # Jalo 30μ
+  50, 50, 45, 47    # Jalo 40μ
+)
+
+
+# Data Frame
+dados <- data.frame(
+  tratamento,
+  repeticao,
+  tempo_cozimento
+  )
+
+# Visualização
+knitr::kable(dados, align = "c")
+```
+
+
+16. Um estudo foi realizado para investigar o rendimento de um processo químico. As duas variáveis mais importantes no processo analisado são a pressão e a temperatura. Três níveis de cada fator foram selecionados e um experimento fatorial no delineamento inteiramente casualizado (DIC) com duas repetições foi conduzido. Os dados de rendimento obtidos foram:
+
+```{r}
+# Vetores
+temperatura <- rep(c(150, 160, 170), each = 6)
+pressao <- rep(c(200, 200, 215, 215, 230, 230), times = 3)
+repeticao <- rep(1:2, times = 9)
+
+tratamento <- paste0("T", temperatura, "P", pressao)
+
+rendimento <- c(
+  90.4, 90.2, 90.7, 90.6, 90.2, 90.4,    # Temperatura 150°C
+  90.1, 90.3, 90.5, 90.6, 89.9, 90.1,    # Temperatura 160°C
+  90.5, 90.7, 90.8, 90.9, 90.1, 90.4     # Temperatura 170°C
+)
+
+
+
+# Data Frame
+dados <- data.frame(
+  tratamento,
+  repeticao,
+  rendimento
+)
+
+# Visualização
+knitr::kable(dados, align = "c")
+```
+
+
+17. Um estudo foi realizado para investigar os fatores que influenciam a resistência à ruptura de uma fibra sintética. Foram escolhidas quatro máquinas de produção e três operadores, sendo conduzido um experimento fatorial $4 \times 3$ utilizando as fibras do mesmo lote de produção. Os resultados obtidos foram:
+
+
+```{r}
+# Vetores
+maquina <- rep(c(1, 2, 3, 4), each = 6)
+operador <- rep(c(1, 1, 2, 2, 3, 3), times = 4)
+repeticao <- rep(1:2, times = 12)
+forca_ruptura <- c(
+  109, 110, 110, 112, 116, 114,   # Máquina 1
+  110, 115, 110, 111, 112, 115,   # Máquina 2
+  108, 109, 111, 109, 114, 119,   # Máquina 3
+  110, 108, 114, 112, 120, 117    # Máquina 4
+)
+
+# Definição do tratamento combinado
+tratamento <- paste0("M", maquina, "_O", operador)
+
+# Data Frame
+dados <- data.frame(
+  tratamento,
+  repeticao,
+  forca_ruptura
+)
+
+# Visualização
+knitr::kable(dados, align = "c")
+```
+
+
+18. Um experimento foi conduzido para avaliar os teores de açúcares ($%$) em frutos de duas cultivares de ameixa ($A$, $B$), utilizando embalagens (0: sem embalagem, 1: com embalagem) em cinco tempos de armazenamento (dias: $7$, $14$, $21$, $28$, $35$). Os frutos foram colhidos em pomares de três produtores (blocos) ($1$, $2$, $3$), no delineamento em blocos casualizados. Os dados obtidos foram:
+
+```{r}
+# Vetores
+cultivar <- rep(c("A", "A", "B", "B"), each = 30)
+embalagem <- rep(rep(c(0, 1), each = 15), 2)
+tempo <- rep(rep(c(7, 14, 21, 28, 35), each = 3), 4)
+produtor <- rep(1:3, times = 20)
+teor_acucar <- c(
+  1.29, 1.36, 1.29, 1.43, 1.45, 
+  1.46, 1.40, 1.44, 1.44, 1.34, 
+  1.36, 1.40, 1.35, 1.14, 1.24,
+  1.29, 1.36, 1.36, 1.21, 1.38, 
+  1.41, 1.40, 1.40, 1.40, 1.32, 
+  1.32, 1.40, 1.29, 1.29, 1.25,
+  1.36, 1.44, 1.44, 1.46, 1.44, 
+  1.47, 1.47, 1.53, 1.50, 1.54, 
+  1.55, 1.52, 1.56, 1.44, 1.46,
+  1.48, 1.44, 1.44, 1.44, 1.48, 
+  1.44, 1.47, 1.52, 1.44, 1.66, 
+  1.55, 1.55, 1.74, 1.78, 1.47
+)
+
+# Definição do tratamento combinado
+tratamento <- paste0(cultivar, "_E", embalagem, "_T", tempo)
+
+# Data Frame
+dados <- data.frame(
+  tratamento,
+  produtor,
+  teor_acucar
+)
+
+# Visualização
+knitr::kable(dados, align = "c")
+```
+
+19. Um experimento foi conduzido para avaliar o comportamento de diferentes cultivares de soja em diversas épocas de semeadura. Os tratamentos, combinações das épocas e cultivares, foram aleatorizados conforme o delineamento em blocos casualizados (DBC) com três repetições. Os dados da porcentagem de germinação foram:
+
+```{r}
+# Vetores
+epoca <- rep(c("Outubro", "Novembro", "Dezembro"), each = 12)
+bloco <- rep(rep(1:3, each = 4), times = 3)
+cultivar <- rep(c("E316", "Emb1", "Rai", "Iti"), times = 9)
+germinacao <- c(
+  81, 60, 94, 57, 77, 56, 90, 53, 85, 64, 97, 61,  # Outubro
+  90, 92, 96, 90, 94, 96, 99, 94, 86, 88, 92, 86,  # Novembro
+  86, 90, 90, 91, 82, 94, 94, 95, 90, 86, 86, 87   # Dezembro
+)
+
+# Definição do tratamento combinado
+tratamento <- paste0(cultivar, "_", epoca)
+
+# Data Frame
+dados <- data.frame(
+  tratamento,
+  bloco,
+  germinacao
+)
+
+# Visualização
+knitr::kable(dados, align = "c")
+```
+
+
+20. Um experimento foi realizado para avaliar o comportamento de três cultivares de trigo submetidos a três níveis de irrigação. Os tratamentos, combinações das irrigações e cultivares, foram aleatorizados conforme o delineamento em blocos casualizados (DBC) com três repetições. Os valores de índice de glúten ($%$) foram:
+
+```{r}
+# Vetores
+cultivar <- rep(c("A", "B", "C"), each = 9)
+irrigacao <- rep(c(0, 40, 80), each = 3, times = 3)
+bloco <- rep(1:3, times = 9)
+indice_gluten <- c(
+  75, 83, 74, 81, 85, 80, 84, 90, 85,  # Cultivar A
+  80, 82, 80, 84, 89, 83, 90, 93, 89,  # Cultivar B
+  79, 82, 78, 87, 93, 88, 96, 97, 95   # Cultivar C
+)
+
+# Definição do tratamento combinado
+tratamento <- paste0(cultivar, "_I", irrigacao)
+
+# Data Frame
+dados <- data.frame(
+  tratamento,
+  bloco,
+  indice_gluten
+)
+
+# Visualização
+knitr::kable(dados, align = "c")
+```
+
+
+------------------------------------------------------------------------
+
+::: {style="text-align: center;"}
+[\@profjulianobortolini](https://instagram.com/profjulianobortolini)      [www.julianobortolini.com.br](http://www.julianobortolini.com.br)      [linkedin](https://linkedin.com/in/julianobortolini)      [github](https://github.com/julianobortolini)       [lattes](http://lattes.cnpq.br/6210909768845403)
+:::

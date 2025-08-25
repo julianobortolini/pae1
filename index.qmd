@@ -61,7 +61,15 @@ Princípios gerais da experimentação. Análise de Variância e suas pressuposi
 -   [Lista 3](lista3_20251.html): conceitos básicos em experimentação, delineamento inteiramente casualizado e análise de variância (ANOVA) de um fator e teste de Tukey.
 
 
+- Aula 6: avaliação 1.
 
+- Aula 7: revisão da avaliação 1. Delineamentos experimentais: revisão do DIC, delineamento em blocos casualizados e em quadrado latino. Modelo estatístico de cada delineamento, exemplos ilustrando a aplicação de cada delineamento e método de aleatorização dos tratamentos às unidades experimentais. Análise de variância e teste F.
+
+
+- Aula 8: testes de comparações múltiplas: revisão do teste de Tukey, teste de Duncan, teste de Dunnett, teste de Student-Newman-Keuls (SNK), teste t e teste de Scott-Knott. Exemplos ilustrando a aplicação dos testes e interpretação dos resultados. Pressupostos da ANOVA: normalidade, homocedasticidade e independência dos erros. Verificação dos pressupostos por análise gráfica: histograma, gráfico de resíduos versus valores estimados, gráfico de probabilidade normal (QQ-plot) e gráfico de resíduos versus ordem de coleta. Exemplos de aplicação dos gráficos e interpretação dos resultados. Testes para verificação dos pressupostos. Normalidade: Shapiro-Wilk e Kolmogorov-Smirnov. Homocedasticidade: Bartlett e Levene. Independência: Durbin-Watson e Ljung-Box.
+Exemplos de aplicação dos testes no R e interpretação dos resultados. Transformação de variáveis: motivos para transformar, tipos de transformação (logarítmica, raiz quadrada, raiz cúbica, inversa, Box-Cox) e exemplos.
+
+-   [Lista 4](lista4_20251.html): delineamento em blocos casualizados e em quadrado latino, testes de comparações múltiplas, análise dos pressupostos da ANOVA e transformação de variáveis.
 
 
 ### Avaliações:
