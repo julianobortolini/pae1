@@ -19,7 +19,7 @@ engine: knitr
 ### Avisos:
 
 -   Última atualização do site às **`r format(Sys.time(), "%H:%M", tz='America/Cuiaba')`** do dia **`r format(Sys.time(), "%d/%m/%Y")`**.
-
+-   Avaliação 2: 15/09/2025 (segunda-feira) - escrita, computacional e arguição oral. Todo o conteúdo da disciplina.
 
 
 ### Ementa:
@@ -71,6 +71,17 @@ Exemplos de aplicação dos testes no R e interpretação dos resultados. Transf
 
 -   [Lista 4](lista4_20251.html): delineamento em blocos casualizados e em quadrado latino, testes de comparações múltiplas, análise dos pressupostos da ANOVA e transformação de variáveis.
 
+-   Aula 9: continuação da aula 8 sobre métodos de comparações múltiplas e pressupostos da análise de variância.
+
+-   Aula 10: experimentos fatoriais: exemplos motivacionais, definição, aleatorização, análise de variância, efeitos simples, principais e de interação, gráficos de efeitos principais e de interação. Exemplo prático no R. Tarefa: resolver o exemplo de experimento fatorial triplo do livro do Banzatto e Kronka.
+
+
+-   Aula 11: resolução de exercícios da lista 4.
+
+
+-  Aula 12: aula de reposição.
+
+-  Aula 13: avaliação 2.
 
 ### Avaliações:
 
