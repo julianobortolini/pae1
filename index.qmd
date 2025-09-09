@@ -83,6 +83,7 @@ Exemplos de aplicação dos testes no R e interpretação dos resultados. Transf
 
 -  Aula 13: avaliação 2.
 
+
 ### Avaliações:
 
 -   $A_1$: escrita, computacional e arguição oral. Nota: 0 a 10.
