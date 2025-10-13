@@ -102,7 +102,7 @@ Princípios gerais da experimentação. Análise de Variância e suas pressuposi
 
 A média final ($MF$) será calculada por:
 
-$$MF = 0,4 A_1 + 0,4 A_2 + 0,2 A_3.$$
+$$MF = 0,3 A_1 + 0,3 A_2 + 0,4 A_3.$$
 
 
 ### Livro texto:
