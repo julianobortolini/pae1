@@ -96,9 +96,13 @@ Princípios gerais da experimentação. Análise de Variância e suas pressuposi
 
 *Conteúdo:* Planejamento de experimentos e princípios básicos, ideias gerais dos delineamentos experimentais, análise de variância para o delineamento inteiramente casualidade, em blocos casualidades e quadrado latino, testes de comparações múltiplas pelos testes de Tukey, Duncan, Dunnett, SNK, t e Scott-Knott, análise dos pressupostos da ANOVA, regressão na ANOVA, transformação de variáveis, testes não paramétricos e introdução aos experimentos fatoriais.
 
+
+-   $A_3$: listas de exercícios (escrita, computacional e arguição oral), participação na semana da estatística e relatórios de análises. Nota: 0 a 10.
+
+
 A média final ($MF$) será calculada por:
 
-$$MF = 0,5 A_1 + 0,5 A_2.$$
+$$MF = 0,4 A_1 + 0,4 A_2 + 0,2 A_3.$$
 
 
 ### Livro texto:
