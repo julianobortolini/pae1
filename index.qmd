@@ -19,7 +19,7 @@ engine: knitr
 ### Avisos:
 
 -   Última atualização do site às **`r format(Sys.time(), "%H:%M", tz='America/Cuiaba')`** do dia **`r format(Sys.time(), "%d/%m/%Y")`**.
-
+- Avaliação 1: 15/12/2025 (escrita e arguição oral).
 
 ### Ementa:
 
@@ -30,7 +30,33 @@ Princípios gerais da experimentação. Análise de Variância e suas pressuposi
 ### Notas de aula:
 
 
--   Aula 1: apresentação geral da disciplina. O que é estatística experimental? Diferença entre estudo observacional e experimento. 
+-   Aula 1: apresentação geral da disciplina. O que é estatística experimental? Diferença entre estudo observacional e experimento. Identidade fundamental da Análise de Variância. Exercício: demonstrar a identidade fundamental da ANOVA.
+
+- Aula 2: entrega do exercício da aula anterior.
+
+- Aula 3: semana da estatística
+
+- Aula 4: diferenças entre estudo observacional e experimental. O que é um experimento. Objetivos da experimentação (D. Montgomery). Desenvolvimento histórico da experimentação (Eras) (D. Montgomery). Origem do teste t (cervejaria Guiness e William Sealy Gosset). Definição de planejar um experimento. Conceitos básicos: unidade experimental, unidade experimental básica, parcela e exemplos de parcelas (vaso de plantas, linhas de plantio, árvores, animais (pequeno, médio e grande porte). O que é variável e os tipos de variáveis na experimentação: variável independente (fator ou tratamentos) e variável dependente ou resposta. Mais sobre conceitos básicos: grupo controle ou tratamento controle/testemunha, variáveis de confusão, parcela, repetição, casualização, controle local, bloco e delineamento. Tipos de delineamentos: delineamento inteiramente casualizado, delineamento em blocos casualizados, delineamento em blocos incompletos, delineamento em quadrado latino, entre outros. Bordadura e área útil (exemplo com linhas de plantio). Exemplo de experimento sobre dieta de suínos, descrever: fatores, tratamentos, parcela, bloco, número de repetições, variável resposta e delineamento. **Tarefa:** ler o artigo [Guidelines for the Design and Statistical Analysis of Experiments Using Laboratory Animals](https://academic.oup.com/ilarjournal/article/43/4/244/981872) dos autores Festing, M. F. W. e  Altman, D. G. (ILAR Journal. Volume 43, Number 4, 2002)
+
+- Aula 5: revisão da aula anterior, conceitos básicos da experimentação, princípios básicos da experimentação: repetição, casualização e controle local. Definição e objetivos dos princípios básicos. Tipos de esquemas fatoriais, tipos de variáveis, cálculo de número de repetições (por grau de liberdade do resíduo ou quantidade de parcelas no experimento). Teste de hipótese na experimentação: comparação entre efeitos de tratamentos. Exemplo de análise de dados: dados de crescimento de cães submetidos a dois tratamentos de suplementação.
+
+
+-   Aula 6: delineamento inteiramente casualizado, exemplos, aleatorização, modelo estatístico, definição das componentes, estimação dos parâmetros (exercício: método dos mínimos quadrados com restrições nos parâmetros), análise de variância, decomposição da soma de quadrados total em entre tratamentos (ou simplesmente tratamentos) e dentro de tratamentos (também chamada de erro ou resíduo). Fórmulas para os cálculos dos graus de liberdade, somas de quadrados, quadrados médios e teste F. Exemplo de cálculo da análise de variância para o DIC com interpretação dos resultados.
+
+- [Lista 1](lista1_2025_2.html): conceitos básicos em experimentação, delineamento inteiramente casualizado e análise de variância (ANOVA) de um fator e teste Tukey.
+
+- Aula 7: exercício da aula anterior (supressão do crescimento de bactérias),  teste de Tukey para experimentos balanceados (mesma quantidade de repetições em todos os tratamentos). Exemplo de aplicação do teste de Tukey e interpretação dos resultados. [Tabela q (Tukey)](tab_q_tukey.pdf). [Tabela F (5%)](tab_F_5.pdf). [F (1%)](tab_F_1.pdf). Exemplo de cálculo do q (Tukey) no R, para um experimento com 3 tratamentos e grau de liberdade igual a 12 para o resíduo: `qtukey(p = 0.05, nmeans = 3, df = 12, lower.tail = FALSE)`. Exemplo do cálculo do quantil da distribuição F no R: `qf(p = 0.05, df1 = 2, df2 = 12, lower.tail = FALSE)`. Cálculo de somas de quadrados na [Casio fx-82MS](casio_fx82ms.html). Atividade em sala: resolver o exercício 3 da [lista 1](lista1_2025_2.html).
+
+
+- Aula 8: feriado, 8 de dezembro. Dia de Nossa Senhora da Conceição.
+
+- Aula 9: avaliação 1 (escrita e arguição oral).
+
+
+<!-- -   [Lista 3](lista3_20251.html): conceitos básicos em experimentação, delineamento inteiramente casualizado e análise de variância (ANOVA) de um fator e teste de Tukey. -->
+
+
+<!-- - Aula 6: avaliação 1. -->
 
 
 <!-- Exemplo de experimento de análise sensorial de café: variáveis influentes e controláveis, variáveis influentes e não-controláveis e variáveis respostas. Exemplos de experimentos: área da saúde, educação, medicina veterinária e agricultura. Origem da experimentação com Ronald Fisher. Experimento das xícaras de chá (e leite). Desenvolvimento matemático das possibilidades de acerto (1 em 70 possibilidades = 1,43%). **Tarefa para casa:** ler o capítulo 2 do livro The design of experiments do R. Fisher (1935). Próxima aula será realizado experimento em sala de aula. -->
