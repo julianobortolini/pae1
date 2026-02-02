@@ -52,6 +52,8 @@ Princípios gerais da experimentação. Análise de Variância e suas pressuposi
 
 - Aula 9: avaliação 1 (escrita e arguição oral).
 
+- Aula 10: (...) Tabela para o teste de [Duncan](tab_duncan.pdf) e tabela para o teste de [Dunnett](tab_dunnett.pdf). 
+
 
 <!-- -   [Lista 3](lista3_20251.html): conceitos básicos em experimentação, delineamento inteiramente casualizado e análise de variância (ANOVA) de um fator e teste de Tukey. -->
 
