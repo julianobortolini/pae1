@@ -20,40 +20,6 @@ ul.task-list li input[type="checkbox"] {
 width: 0.8em;
 margin: 0 0.8em 0.2em -1em;  vertical-align: middle;
 }
-
-pre > code.sourceCode { white-space: pre; position: relative; }
-pre > code.sourceCode > span { line-height: 1.25; }
-pre > code.sourceCode > span:empty { height: 1.2em; }
-.sourceCode { overflow: visible; }
-code.sourceCode > span { color: inherit; text-decoration: inherit; }
-div.sourceCode { margin: 1em 0; }
-pre.sourceCode { margin: 0; }
-@media screen {
-div.sourceCode { overflow: auto; }
-}
-@media print {
-pre > code.sourceCode { white-space: pre-wrap; }
-pre > code.sourceCode > span { display: inline-block; text-indent: -5em; padding-left: 5em; }
-}
-pre.numberSource code
-{ counter-reset: source-line 0; }
-pre.numberSource code > span
-{ position: relative; left: -4em; counter-increment: source-line; }
-pre.numberSource code > span > a:first-child::before
-{ content: counter(source-line);
-position: relative; left: -1em; text-align: right; vertical-align: baseline;
-border: none; display: inline-block;
--webkit-touch-callout: none; -webkit-user-select: none;
--khtml-user-select: none; -moz-user-select: none;
--ms-user-select: none; user-select: none;
-padding: 0 4px; width: 4em;
-}
-pre.numberSource { margin-left: 3em; padding-left: 4px; }
-div.sourceCode
-{ }
-@media screen {
-pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
-}
 </style>
 
 
@@ -3258,12 +3224,12 @@ window.Quarto = {
 
 
 <p><em>Bacharelado em Estatística - UFMT</em></p>
-<p><em>Período letivo: 2025/2</em></p>
+<p><em>Período letivo: 2026/1</em></p>
 <section id="avisos" class="level3">
 <h3 class="anchored" data-anchor-id="avisos">Avisos:</h3>
 <ul>
-<li>Última atualização do site às <strong>12:38</strong> do dia <strong>23/02/2026</strong>.</li>
-<li>Avaliação 1: 15/12/2025 (escrita e arguição oral).</li>
+<li>Última atualização do site às <strong>10:30</strong> do dia <strong>23/03/2026</strong>.</li>
+<li>Monitores: André Riul e Elyonara.</li>
 </ul>
 </section>
 <section id="ementa" class="level3">
@@ -3273,43 +3239,43 @@ window.Quarto = {
 <section id="notas-de-aula" class="level3">
 <h3 class="anchored" data-anchor-id="notas-de-aula">Notas de aula:</h3>
 <ul>
-<li><p>Aula 1: apresentação geral da disciplina. O que é estatística experimental? Diferença entre estudo observacional e experimento. Identidade fundamental da Análise de Variância. Exercício: demonstrar a identidade fundamental da ANOVA.</p></li>
-<li><p>Aula 2: entrega do exercício da aula anterior.</p></li>
-<li><p>Aula 3: semana da estatística</p></li>
-<li><p>Aula 4: diferenças entre estudo observacional e experimental. O que é um experimento. Objetivos da experimentação (D. Montgomery). Desenvolvimento histórico da experimentação (Eras) (D. Montgomery). Origem do teste t (cervejaria Guiness e William Sealy Gosset). Definição de planejar um experimento. Conceitos básicos: unidade experimental, unidade experimental básica, parcela e exemplos de parcelas (vaso de plantas, linhas de plantio, árvores, animais (pequeno, médio e grande porte). O que é variável e os tipos de variáveis na experimentação: variável independente (fator ou tratamentos) e variável dependente ou resposta. Mais sobre conceitos básicos: grupo controle ou tratamento controle/testemunha, variáveis de confusão, parcela, repetição, casualização, controle local, bloco e delineamento. Tipos de delineamentos: delineamento inteiramente casualizado, delineamento em blocos casualizados, delineamento em blocos incompletos, delineamento em quadrado latino, entre outros. Bordadura e área útil (exemplo com linhas de plantio). Exemplo de experimento sobre dieta de suínos, descrever: fatores, tratamentos, parcela, bloco, número de repetições, variável resposta e delineamento. <strong>Tarefa:</strong> ler o artigo <a href="https://academic.oup.com/ilarjournal/article/43/4/244/981872">Guidelines for the Design and Statistical Analysis of Experiments Using Laboratory Animals</a> dos autores Festing, M. F. W. e Altman, D. G. (ILAR Journal. Volume 43, Number 4, 2002)</p></li>
-<li><p>Aula 5: revisão da aula anterior, conceitos básicos da experimentação, princípios básicos da experimentação: repetição, casualização e controle local. Definição e objetivos dos princípios básicos. Tipos de esquemas fatoriais, tipos de variáveis, cálculo de número de repetições (por grau de liberdade do resíduo ou quantidade de parcelas no experimento). Teste de hipótese na experimentação: comparação entre efeitos de tratamentos. Exemplo de análise de dados: dados de crescimento de cães submetidos a dois tratamentos de suplementação.</p></li>
-<li><p>Aula 6: delineamento inteiramente casualizado, exemplos, aleatorização, modelo estatístico, definição das componentes, estimação dos parâmetros (exercício: método dos mínimos quadrados com restrições nos parâmetros), análise de variância, decomposição da soma de quadrados total em entre tratamentos (ou simplesmente tratamentos) e dentro de tratamentos (também chamada de erro ou resíduo). Fórmulas para os cálculos dos graus de liberdade, somas de quadrados, quadrados médios e teste F. Exemplo de cálculo da análise de variância para o DIC com interpretação dos resultados.</p></li>
-<li><p><a href="lista1_2025_2.html">Lista 1</a>: conceitos básicos em experimentação, delineamento inteiramente casualizado e análise de variância (ANOVA) de um fator e teste Tukey.</p></li>
-<li><p>Aula 7: exercício da aula anterior (supressão do crescimento de bactérias), teste de Tukey para experimentos balanceados (mesma quantidade de repetições em todos os tratamentos). Exemplo de aplicação do teste de Tukey e interpretação dos resultados. <a href="tab_q_tukey.pdf">Tabela q (Tukey)</a>. <a href="tab_F_5.pdf">Tabela F (5%)</a>. <a href="tab_F_1.pdf">F (1%)</a>. Exemplo de cálculo do q (Tukey) no R, para um experimento com 3 tratamentos e grau de liberdade igual a 12 para o resíduo: <code>qtukey(p = 0.05, nmeans = 3, df = 12, lower.tail = FALSE)</code>. Exemplo do cálculo do quantil da distribuição F no R: <code>qf(p = 0.05, df1 = 2, df2 = 12, lower.tail = FALSE)</code>. Cálculo de somas de quadrados na <a href="casio_fx82ms.html">Casio fx-82MS</a>. Atividade em sala: resolver o exercício 3 da <a href="lista1_2025_2.html">lista 1</a>.</p></li>
-<li><p>Aula 8: feriado, 8 de dezembro. Dia de Nossa Senhora da Conceição.</p></li>
-<li><p>Aula 9: avaliação 1 (escrita e arguição oral).</p></li>
-<li><p>Aula 10: revisão da disciplina e resolução da prova 1. Análise de experimentos em DIC no R, com comparações múltipla. Mais sobre testes de comparações múltipla: Tukey (HSD), Duncan, SNK (Student-Newman-Keuls), Dunnett, Scott-Knott e t (LSD). Tabela para o teste de <a href="tab_duncan.pdf">Duncan</a> e tabela para o teste de <a href="tab_dunnett.pdf">Dunnett</a>. Resolver a <a href="lista2_2025_2.html">lista 2</a>. <strong>Tarefa</strong>: realizar os testes de comparações múltipla Tukey, SNK e Scott-Knott para os dados do exercício 3 da prova 1 e comentar os resultados. Dados do exercício 3 da <a href="prova1_20252.pdf">prova 1</a>:</p></li>
+<li>Aula 1:</li>
 </ul>
-<div class="cell">
-<div class="sourceCode cell-code" id="cb1"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a>substrato <span class="ot">&lt;-</span> <span class="fu">rep</span>(<span class="fu">c</span>(<span class="st">&quot;CaC+EB&quot;</span>, <span class="st">&quot;CaC+EA&quot;</span>, <span class="st">&quot;HM&quot;</span>, </span>
-<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a>                   <span class="st">&quot;Cap+EA&quot;</span>, <span class="st">&quot;Cap+EB&quot;</span>, <span class="st">&quot;Plantmax&quot;</span>), <span class="at">each =</span> <span class="dv">5</span>)</span>
-<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a>repeticao <span class="ot">&lt;-</span> <span class="fu">rep</span>(<span class="dv">1</span><span class="sc">:</span><span class="dv">5</span>, <span class="at">times =</span> <span class="dv">6</span>)</span>
-<span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a>altura <span class="ot">&lt;-</span> <span class="fu">c</span>(</span>
-<span id="cb1-5"><a href="#cb1-5" aria-hidden="true" tabindex="-1"></a>   <span class="dv">18</span>, <span class="dv">16</span>, <span class="dv">20</span>, <span class="dv">17</span>, <span class="dv">18</span>,    <span class="co"># CaC+EB</span></span>
-<span id="cb1-6"><a href="#cb1-6" aria-hidden="true" tabindex="-1"></a>   <span class="dv">12</span>, <span class="dv">14</span>, <span class="dv">10</span>, <span class="dv">15</span>, <span class="dv">12</span>,    <span class="co"># CaC+EA</span></span>
-<span id="cb1-7"><a href="#cb1-7" aria-hidden="true" tabindex="-1"></a>   <span class="dv">21</span>, <span class="dv">19</span>, <span class="dv">24</span>, <span class="dv">20</span>, <span class="dv">21</span>,    <span class="co"># HM</span></span>
-<span id="cb1-8"><a href="#cb1-8" aria-hidden="true" tabindex="-1"></a>   <span class="dv">14</span>, <span class="dv">16</span>, <span class="dv">12</span>, <span class="dv">17</span>, <span class="dv">14</span>,    <span class="co"># Cap+EA</span></span>
-<span id="cb1-9"><a href="#cb1-9" aria-hidden="true" tabindex="-1"></a>   <span class="dv">13</span>, <span class="dv">11</span>, <span class="dv">15</span>, <span class="dv">12</span>, <span class="dv">13</span>,    <span class="co"># Cap+EB</span></span>
-<span id="cb1-10"><a href="#cb1-10" aria-hidden="true" tabindex="-1"></a>   <span class="dv">16</span>, <span class="dv">14</span>, <span class="dv">18</span>, <span class="dv">15</span>, <span class="dv">16</span>     <span class="co"># Plantmax</span></span>
-<span id="cb1-11"><a href="#cb1-11" aria-hidden="true" tabindex="-1"></a>)</span>
-<span id="cb1-12"><a href="#cb1-12" aria-hidden="true" tabindex="-1"></a><span class="co"># Data Frame</span></span>
-<span id="cb1-13"><a href="#cb1-13" aria-hidden="true" tabindex="-1"></a>dados <span class="ot">&lt;-</span> <span class="fu">data.frame</span>(</span>
-<span id="cb1-14"><a href="#cb1-14" aria-hidden="true" tabindex="-1"></a>   substrato,</span>
-<span id="cb1-15"><a href="#cb1-15" aria-hidden="true" tabindex="-1"></a>   repeticao,</span>
-<span id="cb1-16"><a href="#cb1-16" aria-hidden="true" tabindex="-1"></a>   altura</span>
-<span id="cb1-17"><a href="#cb1-17" aria-hidden="true" tabindex="-1"></a>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-</div>
-<ul>
-<li><p><a href="lista2_2025_2.html">Lista 2</a>: testes de comparações múltiplas.</p></li>
-<li><p>Aula 11: delineamentos em blocos casualizados e em quadrado latino: definição, modelo estatístico, exemplos ilustrando a aplicação de cada delineamento e método de aleatorização dos tratamentos às unidades experimentais. Análise de variância e teste F. Análises no software <code>R</code>. Tarefa: resolver a <a href="lista3_2025_2.html">lista 3</a>, até comparações múltiplas.</p></li>
-<li><p><a href="lista3_2025_2.html">Lista 3</a>: delineamentos inteiramente casualizados, em blocos casualizados e em quadrado latino, testes de comparações múltiplas, análise dos pressupostos da ANOVA, transformação de variáveis e testes não paramétricos.</p></li>
-<li><p>Aula 12: análise dos pressupostos da ANOVA: normalidade, homocedasticidade e independência dos erros. Verificação dos pressupostos por análise gráfica e testes de hipóteses. Transformação de variáveis: motivos para transformar e tipos de transformação (logarítmica, raiz quadrada, raiz cúbica, inversa, Box-Cox). <a href="pae1_comp.html">Análise no <code>R</code></a>. Exemplos no <code>R</code>. Tarefa: resolver a <a href="lista3_2025_2.html">lista 3</a>.</p></li>
-</ul>
+<!-- -   Aula 1: apresentação geral da disciplina. O que é estatística experimental? Diferença entre estudo observacional e experimento. Identidade fundamental da Análise de Variância. Exercício: demonstrar a identidade fundamental da ANOVA. -->
+<!-- - Aula 2: entrega do exercício da aula anterior. -->
+<!-- - Aula 3: semana da estatística -->
+<!-- - Aula 4: diferenças entre estudo observacional e experimental. O que é um experimento. Objetivos da experimentação (D. Montgomery). Desenvolvimento histórico da experimentação (Eras) (D. Montgomery). Origem do teste t (cervejaria Guiness e William Sealy Gosset). Definição de planejar um experimento. Conceitos básicos: unidade experimental, unidade experimental básica, parcela e exemplos de parcelas (vaso de plantas, linhas de plantio, árvores, animais (pequeno, médio e grande porte). O que é variável e os tipos de variáveis na experimentação: variável independente (fator ou tratamentos) e variável dependente ou resposta. Mais sobre conceitos básicos: grupo controle ou tratamento controle/testemunha, variáveis de confusão, parcela, repetição, casualização, controle local, bloco e delineamento. Tipos de delineamentos: delineamento inteiramente casualizado, delineamento em blocos casualizados, delineamento em blocos incompletos, delineamento em quadrado latino, entre outros. Bordadura e área útil (exemplo com linhas de plantio). Exemplo de experimento sobre dieta de suínos, descrever: fatores, tratamentos, parcela, bloco, número de repetições, variável resposta e delineamento. **Tarefa:** ler o artigo [Guidelines for the Design and Statistical Analysis of Experiments Using Laboratory Animals](https://academic.oup.com/ilarjournal/article/43/4/244/981872) dos autores Festing, M. F. W. e  Altman, D. G. (ILAR Journal. Volume 43, Number 4, 2002) -->
+<!-- - Aula 5: revisão da aula anterior, conceitos básicos da experimentação, princípios básicos da experimentação: repetição, casualização e controle local. Definição e objetivos dos princípios básicos. Tipos de esquemas fatoriais, tipos de variáveis, cálculo de número de repetições (por grau de liberdade do resíduo ou quantidade de parcelas no experimento). Teste de hipótese na experimentação: comparação entre efeitos de tratamentos. Exemplo de análise de dados: dados de crescimento de cães submetidos a dois tratamentos de suplementação. -->
+<!-- -   Aula 6: delineamento inteiramente casualizado, exemplos, aleatorização, modelo estatístico, definição das componentes, estimação dos parâmetros (exercício: método dos mínimos quadrados com restrições nos parâmetros), análise de variância, decomposição da soma de quadrados total em entre tratamentos (ou simplesmente tratamentos) e dentro de tratamentos (também chamada de erro ou resíduo). Fórmulas para os cálculos dos graus de liberdade, somas de quadrados, quadrados médios e teste F. Exemplo de cálculo da análise de variância para o DIC com interpretação dos resultados. -->
+<!-- - [Lista 1](lista1_2025_2.html): conceitos básicos em experimentação, delineamento inteiramente casualizado e análise de variância (ANOVA) de um fator e teste Tukey. -->
+<!-- - Aula 7: exercício da aula anterior (supressão do crescimento de bactérias),  teste de Tukey para experimentos balanceados (mesma quantidade de repetições em todos os tratamentos). Exemplo de aplicação do teste de Tukey e interpretação dos resultados. [Tabela q (Tukey)](tab_q_tukey.pdf). [Tabela F (5%)](tab_F_5.pdf). [F (1%)](tab_F_1.pdf). Exemplo de cálculo do q (Tukey) no R, para um experimento com 3 tratamentos e grau de liberdade igual a 12 para o resíduo: `qtukey(p = 0.05, nmeans = 3, df = 12, lower.tail = FALSE)`. Exemplo do cálculo do quantil da distribuição F no R: `qf(p = 0.05, df1 = 2, df2 = 12, lower.tail = FALSE)`. Cálculo de somas de quadrados na [Casio fx-82MS](casio_fx82ms.html). Atividade em sala: resolver o exercício 3 da [lista 1](lista1_2025_2.html). -->
+<!-- - Aula 8: feriado, 8 de dezembro. Dia de Nossa Senhora da Conceição. -->
+<!-- - Aula 9: avaliação 1 (escrita e arguição oral). -->
+<!-- - Aula 10: revisão da disciplina e resolução da prova 1. Análise de experimentos em DIC no R, com comparações múltipla. Mais sobre testes de comparações múltipla: Tukey (HSD), Duncan, SNK (Student-Newman-Keuls), Dunnett, Scott-Knott e t (LSD). Tabela para o teste de [Duncan](tab_duncan.pdf) e tabela para o teste de [Dunnett](tab_dunnett.pdf). Resolver a [lista 2](lista2_2025_2.html). **Tarefa**: realizar os testes de comparações múltipla Tukey, SNK e Scott-Knott para os dados do exercício 3 da prova 1 e comentar os resultados. Dados do exercício 3 da [prova 1](prova1_20252.pdf): -->
+<!-- ```{r} -->
+<!-- #| eval: false -->
+<!-- substrato <- rep(c("CaC+EB", "CaC+EA", "HM",  -->
+<!--                    "Cap+EA", "Cap+EB", "Plantmax"), each = 5) -->
+<!-- repeticao <- rep(1:5, times = 6) -->
+<!-- altura <- c( -->
+<!--    18, 16, 20, 17, 18,    # CaC+EB -->
+<!--    12, 14, 10, 15, 12,    # CaC+EA -->
+<!--    21, 19, 24, 20, 21,    # HM -->
+<!--    14, 16, 12, 17, 14,    # Cap+EA -->
+<!--    13, 11, 15, 12, 13,    # Cap+EB -->
+<!--    16, 14, 18, 15, 16     # Plantmax -->
+<!-- ) -->
+<!-- # Data Frame -->
+<!-- dados <- data.frame( -->
+<!--    substrato, -->
+<!--    repeticao, -->
+<!--    altura -->
+<!-- ) -->
+<!-- ``` -->
+<!-- - [Lista 2](lista2_2025_2.html): testes de comparações múltiplas. -->
+<!-- - Aula 11: delineamentos em blocos casualizados e em quadrado latino: definição, modelo estatístico, exemplos ilustrando a aplicação de cada delineamento e método de aleatorização dos tratamentos às unidades experimentais. Análise de variância e teste F. Análises no software `R`. Tarefa: resolver a [lista 3](lista3_2025_2.html), até comparações múltiplas. -->
+<!-- - [Lista 3](lista3_2025_2.html): delineamentos inteiramente casualizados, em blocos casualizados e em quadrado latino, testes de comparações múltiplas, análise dos pressupostos da ANOVA, transformação de variáveis e testes não paramétricos. -->
+<!-- - Aula 12: análise dos pressupostos da ANOVA: normalidade, homocedasticidade e independência dos erros. Verificação dos pressupostos por análise gráfica e testes de hipóteses. Transformação de variáveis: motivos para transformar e tipos de transformação (logarítmica, raiz quadrada, raiz cúbica, inversa, Box-Cox). [Análise no `R`](pae1_comp.html). Exemplos no `R`. Tarefa: resolver a [lista 3](lista3_2025_2.html). -->
 <!-- -   [Lista 3](lista3_20251.html): conceitos básicos em experimentação, delineamento inteiramente casualizado e análise de variância (ANOVA) de um fator e teste de Tukey. -->
 <!-- - Aula 6: avaliação 1. -->
 <!-- Exemplo de experimento de análise sensorial de café: variáveis influentes e controláveis, variáveis influentes e não-controláveis e variáveis respostas. Exemplos de experimentos: área da saúde, educação, medicina veterinária e agricultura. Origem da experimentação com Ronald Fisher. Experimento das xícaras de chá (e leite). Desenvolvimento matemático das possibilidades de acerto (1 em 70 possibilidades = 1,43%). **Tarefa para casa:** ler o capítulo 2 do livro The design of experiments do R. Fisher (1935). Próxima aula será realizado experimento em sala de aula. -->
@@ -3343,11 +3309,8 @@ window.Quarto = {
 <li><span class="math inline">\(A_2\)</span>: escrita, computacional e arguição oral. Nota: 0 a 10.</li>
 </ul>
 <p><em>Conteúdo:</em> Planejamento de experimentos e princípios básicos, ideias gerais dos delineamentos experimentais, análise de variância para o delineamento inteiramente casualidade, em blocos casualidades e quadrado latino, testes de comparações múltiplas pelos testes de Tukey, Duncan, Dunnett, SNK, t e Scott-Knott, análise dos pressupostos da ANOVA, regressão na ANOVA, transformação de variáveis, testes não paramétricos e introdução aos experimentos fatoriais.</p>
-<ul>
-<li><span class="math inline">\(A_3\)</span>: listas de exercícios (escrita, computacional e arguição oral), participação na semana da estatística e relatórios de análises. Nota: 0 a 10.</li>
-</ul>
 <p>A média final (<span class="math inline">\(MF\)</span>) será calculada por:</p>
-<p><span class="math display">\[MF = 0,3 A_1 + 0,3 A_2 + 0,4 A_3.\]</span></p>
+<p><span class="math display">\[MF = 0,5 A_1 + 0,5 A_2.\]</span></p>
 </section>
 <section id="livro-texto" class="level3">
 <h3 class="anchored" data-anchor-id="livro-texto">Livro texto:</h3>
