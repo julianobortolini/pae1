@@ -3224,112 +3224,171 @@ window.Quarto = {
 
 
 <p><em>Bacharelado em Estatística - UFMT</em></p>
-<p><em>Período letivo: 2026/1</em></p>
-<section id="avisos" class="level3">
-<h3 class="anchored" data-anchor-id="avisos">Avisos:</h3>
-<ul>
-<li>Última atualização do site às <strong>14:20</strong> do dia <strong>30/03/2026</strong>.</li>
-<li>Monitores: André Riul e Elyonara.</li>
-</ul>
-</section>
-<section id="ementa" class="level3">
-<h3 class="anchored" data-anchor-id="ementa">Ementa:</h3>
-<p>Princípios gerais da experimentação. Análise de Variância e suas pressuposições. Comparações Múltiplas. Regressão na Análise de Variância. Delineamentos experimentais básicos: inteiramente casualizados, blocos casualizados e quadrados latinos. Transformação de Dados e Testes Não Paramétricos. Introdução aos experimentos em esquema fatorial.</p>
-</section>
-<section id="notas-de-aula" class="level3">
-<h3 class="anchored" data-anchor-id="notas-de-aula">Notas de aula:</h3>
-<ul>
-<li><p>Aula 1: apresentação da disciplina: ementa, livro texto, bibliografia e avaliações. O que é estatística experimental? Diferença entre estudo observacional e experimento. Conceitos básicos e os princípios da experimentação. Exercícios.</p></li>
-<li><p><a href="lista1_2026_1.html">Lista 1</a>: conceitos básicos em experimentação.</p></li>
-</ul>
-<!-- -   Aula 1: apresentação geral da disciplina. O que é estatística experimental? Diferença entre estudo observacional e experimento. Identidade fundamental da Análise de Variância. Exercício: demonstrar a identidade fundamental da ANOVA. -->
-<!-- - Aula 2: entrega do exercício da aula anterior. -->
-<!-- - Aula 3: semana da estatística -->
-<!-- - Aula 4: diferenças entre estudo observacional e experimental. O que é um experimento. Objetivos da experimentação (D. Montgomery). Desenvolvimento histórico da experimentação (Eras) (D. Montgomery). Origem do teste t (cervejaria Guiness e William Sealy Gosset). Definição de planejar um experimento. Conceitos básicos: unidade experimental, unidade experimental básica, parcela e exemplos de parcelas (vaso de plantas, linhas de plantio, árvores, animais (pequeno, médio e grande porte). O que é variável e os tipos de variáveis na experimentação: variável independente (fator ou tratamentos) e variável dependente ou resposta. Mais sobre conceitos básicos: grupo controle ou tratamento controle/testemunha, variáveis de confusão, parcela, repetição, casualização, controle local, bloco e delineamento. Tipos de delineamentos: delineamento inteiramente casualizado, delineamento em blocos casualizados, delineamento em blocos incompletos, delineamento em quadrado latino, entre outros. Bordadura e área útil (exemplo com linhas de plantio). Exemplo de experimento sobre dieta de suínos, descrever: fatores, tratamentos, parcela, bloco, número de repetições, variável resposta e delineamento. **Tarefa:** ler o artigo [Guidelines for the Design and Statistical Analysis of Experiments Using Laboratory Animals](https://academic.oup.com/ilarjournal/article/43/4/244/981872) dos autores Festing, M. F. W. e  Altman, D. G. (ILAR Journal. Volume 43, Number 4, 2002) -->
-<!-- - Aula 5: revisão da aula anterior, conceitos básicos da experimentação, princípios básicos da experimentação: repetição, casualização e controle local. Definição e objetivos dos princípios básicos. Tipos de esquemas fatoriais, tipos de variáveis, cálculo de número de repetições (por grau de liberdade do resíduo ou quantidade de parcelas no experimento). Teste de hipótese na experimentação: comparação entre efeitos de tratamentos. Exemplo de análise de dados: dados de crescimento de cães submetidos a dois tratamentos de suplementação. -->
-<!-- -   Aula 6: delineamento inteiramente casualizado, exemplos, aleatorização, modelo estatístico, definição das componentes, estimação dos parâmetros (exercício: método dos mínimos quadrados com restrições nos parâmetros), análise de variância, decomposição da soma de quadrados total em entre tratamentos (ou simplesmente tratamentos) e dentro de tratamentos (também chamada de erro ou resíduo). Fórmulas para os cálculos dos graus de liberdade, somas de quadrados, quadrados médios e teste F. Exemplo de cálculo da análise de variância para o DIC com interpretação dos resultados. -->
-<!-- - [Lista 1](lista1_2025_2.html): conceitos básicos em experimentação, delineamento inteiramente casualizado e análise de variância (ANOVA) de um fator e teste Tukey. -->
-<!-- - Aula 7: exercício da aula anterior (supressão do crescimento de bactérias),  teste de Tukey para experimentos balanceados (mesma quantidade de repetições em todos os tratamentos). Exemplo de aplicação do teste de Tukey e interpretação dos resultados. [Tabela q (Tukey)](tab_q_tukey.pdf). [Tabela F (5%)](tab_F_5.pdf). [F (1%)](tab_F_1.pdf). Exemplo de cálculo do q (Tukey) no R, para um experimento com 3 tratamentos e grau de liberdade igual a 12 para o resíduo: `qtukey(p = 0.05, nmeans = 3, df = 12, lower.tail = FALSE)`. Exemplo do cálculo do quantil da distribuição F no R: `qf(p = 0.05, df1 = 2, df2 = 12, lower.tail = FALSE)`. Cálculo de somas de quadrados na [Casio fx-82MS](casio_fx82ms.html). Atividade em sala: resolver o exercício 3 da [lista 1](lista1_2025_2.html). -->
-<!-- - Aula 8: feriado, 8 de dezembro. Dia de Nossa Senhora da Conceição. -->
-<!-- - Aula 9: avaliação 1 (escrita e arguição oral). -->
-<!-- - Aula 10: revisão da disciplina e resolução da prova 1. Análise de experimentos em DIC no R, com comparações múltipla. Mais sobre testes de comparações múltipla: Tukey (HSD), Duncan, SNK (Student-Newman-Keuls), Dunnett, Scott-Knott e t (LSD). Tabela para o teste de [Duncan](tab_duncan.pdf) e tabela para o teste de [Dunnett](tab_dunnett.pdf). Resolver a [lista 2](lista2_2025_2.html). **Tarefa**: realizar os testes de comparações múltipla Tukey, SNK e Scott-Knott para os dados do exercício 3 da prova 1 e comentar os resultados. Dados do exercício 3 da [prova 1](prova1_20252.pdf): -->
-<!-- ```{r} -->
-<!-- #| eval: false -->
-<!-- substrato <- rep(c("CaC+EB", "CaC+EA", "HM",  -->
-<!--                    "Cap+EA", "Cap+EB", "Plantmax"), each = 5) -->
-<!-- repeticao <- rep(1:5, times = 6) -->
-<!-- altura <- c( -->
-<!--    18, 16, 20, 17, 18,    # CaC+EB -->
-<!--    12, 14, 10, 15, 12,    # CaC+EA -->
-<!--    21, 19, 24, 20, 21,    # HM -->
-<!--    14, 16, 12, 17, 14,    # Cap+EA -->
-<!--    13, 11, 15, 12, 13,    # Cap+EB -->
-<!--    16, 14, 18, 15, 16     # Plantmax -->
-<!-- ) -->
-<!-- # Data Frame -->
-<!-- dados <- data.frame( -->
-<!--    substrato, -->
-<!--    repeticao, -->
-<!--    altura -->
-<!-- ) -->
-<!-- ``` -->
-<!-- - [Lista 2](lista2_2025_2.html): testes de comparações múltiplas. -->
-<!-- - Aula 11: delineamentos em blocos casualizados e em quadrado latino: definição, modelo estatístico, exemplos ilustrando a aplicação de cada delineamento e método de aleatorização dos tratamentos às unidades experimentais. Análise de variância e teste F. Análises no software `R`. Tarefa: resolver a [lista 3](lista3_2025_2.html), até comparações múltiplas. -->
-<!-- - [Lista 3](lista3_2025_2.html): delineamentos inteiramente casualizados, em blocos casualizados e em quadrado latino, testes de comparações múltiplas, análise dos pressupostos da ANOVA, transformação de variáveis e testes não paramétricos. -->
-<!-- - Aula 12: análise dos pressupostos da ANOVA: normalidade, homocedasticidade e independência dos erros. Verificação dos pressupostos por análise gráfica e testes de hipóteses. Transformação de variáveis: motivos para transformar e tipos de transformação (logarítmica, raiz quadrada, raiz cúbica, inversa, Box-Cox). [Análise no `R`](pae1_comp.html). Exemplos no `R`. Tarefa: resolver a [lista 3](lista3_2025_2.html). -->
-<!-- -   [Lista 3](lista3_20251.html): conceitos básicos em experimentação, delineamento inteiramente casualizado e análise de variância (ANOVA) de um fator e teste de Tukey. -->
-<!-- - Aula 6: avaliação 1. -->
-<!-- Exemplo de experimento de análise sensorial de café: variáveis influentes e controláveis, variáveis influentes e não-controláveis e variáveis respostas. Exemplos de experimentos: área da saúde, educação, medicina veterinária e agricultura. Origem da experimentação com Ronald Fisher. Experimento das xícaras de chá (e leite). Desenvolvimento matemático das possibilidades de acerto (1 em 70 possibilidades = 1,43%). **Tarefa para casa:** ler o capítulo 2 do livro The design of experiments do R. Fisher (1935). Próxima aula será realizado experimento em sala de aula. -->
-<!-- -   Aula 2: revisão da aula anterior com comentários sobre o experimento das xícaras de chá (e leite). Realização do experimento de comparar dois tipos de água, simulando o experimento das xícaras de chá (e leite). Cálculo das probabilidades de acertar 1, 2, 3 e 4 xícaras. -->
-<!-- -   Aula 3: diferenças entre estudo observacional e experimental. O que é um experimento. Objetivos da experimentação (D. Montgomery). Desenvolvimento histórico da experimentação (Eras) (D. Montgomery). Origem do teste t (cervejaria Guiness e William Sealy Gosset). Definição de planejar um experimento. Conceitos básicos: unidade experimental, unidade experimental básica, parcela e exemplos de parcelas (vaso de plantas, linhas de plantio, árvores, animais (pequeno, médio e grande porte). O que é variável e os tipos de variáveis na experimentação: variável independente (fator ou tratamentos) e variável dependente ou resposta. Mais sobre conceitos básicos: grupo controle ou tratamento controle/testemunha, variáveis de confusão, parcela, repetição, casualização, controle local, bloco e delineamento. Tipos de delineamentos: delineamento inteiramente casualizado, delineamento em blocos casualizados, delineamento em blocos incompletos, delineamento em quadrado latino, entre outros. Bordadura e área útil (exemplo com linhas de plantio). Exemplo de experimento sobre dieta de suínos, descrever: fatores, tratamentos, parcela, bloco, número de repetições, variável resposta e delineamento. **Tarefa:** 1. pesquisar sobre o experimento com helicóptero de papel, 2. ler o artigo [Guidelines for the Design and Statistical Analysis of Experiments Using Laboratory Animals](https://academic.oup.com/ilarjournal/article/43/4/244/981872) dos autores Festing, M. F. W. e  Altman, D. G. (ILAR Journal. Volume 43, Number 4, 2002) e 3. Estudar os princípios básicos da experimentação e responder as seguintes perguntas: a. O que é? b. Para que serve? -->
-<!-- -   [Lista 1](lista1_20251.html): conceitos básicos em experimentação. -->
-<!-- - Sugestão de leitura: [Guidelines for the Design and Statistical Analysis of Experiments Using Laboratory Animals](https://academic.oup.com/ilarjournal/article/43/4/244/981872). Artigo com conceitos básicos de experimentação e questões éticas relacionadas à experimentação com animais. -->
-<!-- -  Sugestão de leitura: [Alternativas para a experimentação industrial em esquema fatorial: um estudo de caso para adesivo estrutural de base acrílica](https://revistas.utfpr.edu.br/revistagi/article/view/1472/1023). Artigo com conceitos básicos de experimentação na indústria e experimentos fatoriais $2^k$. -->
-<!-- -   Aula 4: revisão da aula anterior, conceitos básicos da experimentação, princípios básicos da experimentação: repetição, casualização e controle local. Definição e objetivos dos princípios básicos. Tipos de esquemas fatoriais, tipos de variáveis, cálculo de número de repetições (por grau de liberdade do resíduo ou quantidade de parcelas no experimento). Teste de hipótese na experimentação: comparação entre efeitos de tratamentos. Exemplo de análise de dados: dados de crescimento de cães submetidos a dois tratamentos de suplementação. -->
-<!-- -   [Lista 2](lista2_20251.html): conceitos básicos em experimentação, delineamento inteiramente casualizado e análise de variância (ANOVA) de um fator. -->
-<!-- -   Aula 5: delineamento inteiramente casualizado, exemplos, aleatorização, modelo estatístico, definição das componentes, estimação dos parâmetros (exercício: método dos mínimos quadrados com restrições nos parâmetros), análise de variância, decomposição da soma de quadrados total em entre tratamentos (ou simplesmente tratamentos) e dentro de tratamentos (também chamada de erro ou resíduo). Fórmulas para os cálculos dos graus de liberdade, somas de quadrados, quadrados médios e teste F. Exemplo de cálculo da análise de variância para o DIC com interpretação dos resultados. Teste de Tukey para experimentos balanceados (mesma quantidade de repetições em todos os tratamentos). Exemplo de aplicação do teste de Tukey e interpretação dos resultados. [Tabela q (Tukey)](tab_q_tukey.pdf). [Tabela F (5%)](tab_F_5.pdf). [F (1%)](tab_F_1.pdf). Exemplo de cálculo do q (Tukey) no R, para um experimento com 3 tratamentos e grau de liberdade igual a 12 para o resíduo: `qtukey(p = 0.05, nmeans = 3, df = 12, lower.tail = FALSE)`. Exemplo do cálculo do quantil da distribuição F no R: `qf(p = 0.05, df1 = 2, df2 = 12, lower.tail = FALSE)`. Cálculo de somas de quadrados na [Casio fx-82MS](casio_fx82ms.html). -->
-<!-- -   [Lista 3](lista3_20251.html): conceitos básicos em experimentação, delineamento inteiramente casualizado e análise de variância (ANOVA) de um fator e teste de Tukey. -->
-<!-- - Aula 6: avaliação 1. -->
-<!-- - Aula 7: revisão da avaliação 1. Delineamentos experimentais: revisão do DIC, delineamento em blocos casualizados e em quadrado latino. Modelo estatístico de cada delineamento, exemplos ilustrando a aplicação de cada delineamento e método de aleatorização dos tratamentos às unidades experimentais. Análise de variância e teste F. -->
-<!-- - Aula 8: testes de comparações múltiplas: revisão do teste de Tukey, teste de Duncan, teste de Dunnett, teste de Student-Newman-Keuls (SNK), teste t e teste de Scott-Knott. Exemplos ilustrando a aplicação dos testes e interpretação dos resultados. Pressupostos da ANOVA: normalidade, homocedasticidade e independência dos erros. Verificação dos pressupostos por análise gráfica: histograma, gráfico de resíduos versus valores estimados, gráfico de probabilidade normal (QQ-plot) e gráfico de resíduos versus ordem de coleta. Exemplos de aplicação dos gráficos e interpretação dos resultados. Testes para verificação dos pressupostos. Normalidade: Shapiro-Wilk e Kolmogorov-Smirnov. Homocedasticidade: Bartlett e Levene. Independência: Durbin-Watson e Ljung-Box. -->
-<!-- Exemplos de aplicação dos testes no R e interpretação dos resultados. Transformação de variáveis: motivos para transformar, tipos de transformação (logarítmica, raiz quadrada, raiz cúbica, inversa, Box-Cox) e exemplos. -->
-<!-- -   [Lista 4](lista4_20251.html): delineamento em blocos casualizados e em quadrado latino, testes de comparações múltiplas, análise dos pressupostos da ANOVA e transformação de variáveis. -->
-<!-- -   Aula 9: continuação da aula 8 sobre métodos de comparações múltiplas e pressupostos da análise de variância. -->
-<!-- -   Aula 10: experimentos fatoriais: exemplos motivacionais, definição, aleatorização, análise de variância, efeitos simples, principais e de interação, gráficos de efeitos principais e de interação. Exemplo prático no R. Tarefa: resolver o exemplo de experimento fatorial triplo do livro do Banzatto e Kronka. -->
-<!-- -   Aula 11: resolução de exercícios da lista 4. -->
-<!-- -  Aula 12: aula de reposição. -->
-<!-- -  Aula 13: avaliação 2. -->
-</section>
-<section id="avaliações" class="level3">
-<h3 class="anchored" data-anchor-id="avaliações">Avaliações:</h3>
-<ul>
-<li><span class="math inline">\(A_1\)</span>: escrita, computacional e arguição oral. Nota: 0 a 10.</li>
-</ul>
-<p><em>Conteúdo:</em> Planejamento de experimentos e princípios básicos, ideias gerais dos delineamentos experimentais e análise de variância para o delineamento inteiramente casualidade e comparação múltipla pelo teste de Tukey.</p>
-<ul>
-<li><span class="math inline">\(A_2\)</span>: escrita, computacional e arguição oral. Nota: 0 a 10.</li>
-</ul>
-<p><em>Conteúdo:</em> Planejamento de experimentos e princípios básicos, ideias gerais dos delineamentos experimentais, análise de variância para o delineamento inteiramente casualidade, em blocos casualidades e quadrado latino, testes de comparações múltiplas pelos testes de Tukey, Duncan, Dunnett, SNK, t e Scott-Knott, análise dos pressupostos da ANOVA, regressão na ANOVA, transformação de variáveis, testes não paramétricos e introdução aos experimentos fatoriais.</p>
-<p>A média final (<span class="math inline">\(MF\)</span>) será calculada por:</p>
-<p><span class="math display">\[MF = 0,5 A_1 + 0,5 A_2.\]</span></p>
-</section>
-<section id="livro-texto" class="level3">
-<h3 class="anchored" data-anchor-id="livro-texto">Livro texto:</h3>
-<p>Conceitos gerais, sem formalidade matemática:</p>
-<ul>
-<li><p>Sônia Vieira, Delineamento e análise de experimentos nas ciências agrárias. FEALQ, 2021.</p></li>
-<li><p>Banzatto D.A. e Kronka, S.N., Experimentação agrícola. 4ª ed. Jaboticabal: FUNEP, 2006.</p></li>
-</ul>
-<p>O desenvolvimento matemático e teórico da disciplina será apresentado em sala de aula, baseado em artigos e livros (referências complementares).</p>
-</section>
-<section id="referências-complementares" class="level3">
-<h3 class="anchored" data-anchor-id="referências-complementares">Referências complementares:</h3>
-<ul>
-<li><p>Montgomery, D. C. (2019). Design and analysis of experiments. 10th ed. Wiley.</p></li>
-<li><p>Dean, A. M., Voss, D. D., &amp; Draguljić, D. (2017). Design and analysis of experiments. 2nd ed. Springer.</p></li>
-<li><p>Quinn, G. P., &amp; Keough, M. J. (2024). Experimental design and data analysis for biologists. 2nd ed. Cambridge University Press.</p></li>
-<li><p>Mason, R. L., Gunst, R. F., &amp; Hess, J. L. (2003). Statistical design and analysis of experiments: with applications to engineering and science. 2nd ed. Wiley.</p></li>
-</ul>
+<section id="lista-de-exercícios-1" class="level3">
+<h3 class="anchored" data-anchor-id="lista-de-exercícios-1">Lista de exercícios 1</h3>
+<p>Para cada experimento, identifique: fatores, níveis dos fatores, tratamentos, tratamento controle/testemunha (quando houver), número de repetições, parcela ou tipo de parcela, número total de parcelas, bloco (quando houver), variável(is) resposta, presença de bordadura, delineamento experimental e faça um croqui do experimento.</p>
+<ol type="1">
+<li><p>Um pesquisador pretende avaliar o comportamento produtivo de diferentes cultivares de milho para produção de forragem, com vista a sua utilização na alimentação animal. Foi avaliado cinco cultivares (<span class="math inline">\(A\)</span>, <span class="math inline">\(B\)</span>, <span class="math inline">\(C\)</span>, <span class="math inline">\(D\)</span> e <span class="math inline">\(E\)</span>), sendo que cada cultivar foi repetido por seis vezes. A parcela experimental foi constituída por cinco linhas de seis (<span class="math inline">\(6\)</span>) metros de comprimento, espaçadas de um metro entre si; como área útil de avaliação foi considerada as três linhas centrais, eliminando-se <span class="math inline">\(50\)</span> centímetros em ambas as extremidades. Após a germinação e feito o desbaste foram deixadas cinco plantas por metro linear. Foram medidos a produção de grãos, produção de matéria verde e de matéria seca, e teores de macro e micro nutrientes.</p></li>
+<li><p>Um pesquisador tem interesse em avaliar se misturas de proteína e de carboidrato forem adicionadas em uma ração, se esta vai melhorar sua qualidade. A pesquisa foi realizada em uma granja de aves poedeiras, sendo que as aves escolhidas pertenciam a uma mesma faixa de idade e peso. Cada amostra da ração foi servida a grupos de cinco aves, e os avaliadores pesavam as aves antes de iniciar o fornecimento da ração e depois ao final do experimento. Os tipos de misturas elaboradas foram: <span class="math inline">\(i.\)</span> ração comum, <span class="math inline">\(ii.\)</span> ração comum <span class="math inline">\(+\)</span> carboidrato, <span class="math inline">\(iii.\)</span> ração comum <span class="math inline">\(+\)</span> proteína e <span class="math inline">\(iv.\)</span> ração comum <span class="math inline">\(+\)</span> carboidrato <span class="math inline">\(+\)</span> proteína.</p></li>
+<li><p>Um pesquisador pretende estudar o efeito que a aplicação de cloreto de cálcio pode provocar nas características físico-químicas durante o armazenamento de uvas para consumo {}. Foram preparadas soluções de <span class="math inline">\(CaCl_2\)</span> nas concentrações de <span class="math inline">\(0, 1, 2, 3\)</span> e <span class="math inline">\(4\%\)</span>. Foram escolhidos aleatoriamente <span class="math inline">\(120\)</span> cachos de uvas de um conjunto uniforme, previamente colhidos e limpos de qualquer injúria. Cada repetição foi constituída por quatro cachos e cada tratamento foi repetido por seis vezes. Algumas das características avaliadas foram: perda de peso, teores de sólidos solúveis, acidez titulável, açúcares e vitamina <span class="math inline">\(C\)</span>.</p></li>
+<li><p>Um pesquisador tem interesse avaliar se a utilização de determinados medicamentos podem afetar o nível de colesterol no sangue de ratos (cobaias experimentais). Cada animal foi tratado com três medicamentos (<span class="math inline">\(A\)</span>, <span class="math inline">\(B\)</span> e <span class="math inline">\(C\)</span>), com suficiente tempo entre as aplicações para que o efeito residual de cada medicamento desaparecesse. Os medicamentos foram aplicados em <span class="math inline">\(20\)</span> animais distintos.</p></li>
+<li><p>Um pesquisador deseja avaliar o desempenho de quatro cultivares de alface crespa (<span class="math inline">\(A\)</span>, <span class="math inline">\(B\)</span>, <span class="math inline">\(C\)</span>, <span class="math inline">\(D\)</span>) em casa de vegetação. O experimento foi conduzido em delineamento inteiramente casualizado, com 5 repetições. Cada parcela foi composta por 12 plantas, distribuídas em três linhas de quatro plantas, sendo consideradas úteis as 6 plantas centrais. Foram avaliadas massa fresca comercial, número de folhas e diâmetro da cabeça.</p></li>
+</ol>
+<p>Termos: área útil = parte da parcela usada na avaliação; casa de vegetação = ambiente protegido com maior controle das condições de cultivo.</p>
+<ol start="6" type="1">
+<li>Em uma área com gradiente de fertilidade no sentido leste-oeste, um pesquisador pretende comparar cinco doses de nitrogênio (<span class="math inline">\(0\)</span>, <span class="math inline">\(50\)</span>, <span class="math inline">\(100\)</span>, <span class="math inline">\(150\)</span>, <span class="math inline">\(200 kg/ha\)</span>) na cultura do milho. Foram utilizados 4 blocos, e em cada bloco todos os tratamentos apareceram uma única vez. Cada parcela foi formada por 4 linhas de <span class="math inline">\(5 m\)</span>, espaçadas de <span class="math inline">\(0,80m\)</span>, sendo úteis as 2 linhas centrais, com descarte de <span class="math inline">\(0,5m\)</span> em cada extremidade. Avaliaram-se altura de plantas, massa de espigas e produtividade de grãos.</li>
+</ol>
+<p>Termos: bloco = grupo de parcelas homogêneas usado para controlar variação local; gradiente de fertilidade = mudança gradual da fertilidade ao longo da área.</p>
+<ol start="7" type="1">
+<li>Um estudo foi conduzido para avaliar o efeito de três lâminas de irrigação (<span class="math inline">\(50\)</span>, <span class="math inline">\(75\)</span>, <span class="math inline">\(100\%\)</span> da ETc) e de dois tipos de cobertura do solo (<span class="math inline">\(com\ palha\)</span>, <span class="math inline">\(sem\ palha\)</span>) sobre a produtividade do tomateiro. O experimento foi realizado em blocos casualizados, com 4 blocos, e cada parcela continha 10 plantas, sendo úteis as 6 centrais. As variáveis avaliadas foram produtividade, número de frutos por planta e massa média de frutos.</li>
+</ol>
+<p>Termos: ETc = evapotranspiração da cultura; palha = cobertura morta usada para reduzir perda de água e crescimento de plantas daninhas.</p>
+<ol start="8" type="1">
+<li>Um pesquisador quer estudar o efeito de quatro herbicidas (<span class="math inline">\(H_1, H_2, H_3, H_4\)</span>) e de uma testemunha sem aplicação no controle de plantas daninhas em soja. O ensaio foi instalado em 5 blocos. Cada parcela continha <span class="math inline">\(6\)</span> linhas de <span class="math inline">\(4 m\)</span>, com uma linha de bordadura em cada lateral e descarte de <span class="math inline">\(0,5 m\)</span> nas extremidades. Foram avaliados o percentual de controle aos <span class="math inline">\(21\)</span> dias após a aplicação e a produtividade de grãos.</li>
+</ol>
+<p>Termos: testemunha = tratamento de referência; bordadura = parte da parcela não usada na avaliação para reduzir efeito de borda.</p>
+<ol start="9" type="1">
+<li>Em um experimento com morangueiro, deseja-se avaliar o efeito de duas cultivares (<span class="math inline">\(C_1, C_2\)</span>) e de três doses de potássio (<span class="math inline">\(0,\ 60,\ 120\ \text{kg/ha}\)</span>). O estudo foi conduzido em 4 blocos. Cada parcela continha 8 plantas, das quais 4 centrais foram avaliadas. As variáveis resposta foram número de frutos, massa fresca e teor de sólidos solúveis.</li>
+</ol>
+<p>Termos: sólidos solúveis = medida associada principalmente ao teor de açúcares do fruto.</p>
+<ol start="10" type="1">
+<li>Quatro dietas foram comparadas em vacas leiteiras: <span class="math inline">\(D_1, D_2, D_3, D_4\)</span>. O experimento utilizou 4 vacas e 4 períodos experimentais, de modo que cada dieta apareceu uma vez em cada vaca e uma vez em cada período. Cada período teve 14 dias de adaptação e 7 dias de coleta. Foram registradas produção diária de leite, teor de gordura e consumo de matéria seca. Admita que foi usado um quadrado latino <span class="math inline">\(4\times 4\)</span>.</li>
+</ol>
+<p>Termos: quadrado latino = delineamento que controla simultaneamente duas fontes de variação; período experimental = intervalo de tempo em que cada tratamento é aplicado.</p>
+<ol start="11" type="1">
+<li>Em laboratório, avaliou-se o efeito de três temperaturas de secagem (<span class="math inline">\(40,\ 50,\ 60^\circ C\)</span>) sobre o teor de umidade final de sementes. Para cada temperatura, foram utilizadas 6 bandejas independentes, cada uma contendo <span class="math inline">\(200 g\)</span> de sementes. De cada bandeja, o teor de umidade foi medido três vezes no mesmo material seco.</li>
+</ol>
+<p>Termos: bandeja independente = unidade experimental; replicata analítica = repetição da medição no mesmo material, não sendo nova repetição experimental.</p>
+<ol start="12" type="1">
+<li>Um experimento foi realizado para avaliar o efeito de cinco concentrações de <span class="math inline">\(CaCl_2\)</span> (<span class="math inline">\(0,\ 1,\ 2,\ 3,\ 4%\)</span>) na conservação pós-colheita de mangas. Foram usadas 5 repetições por tratamento, e cada parcela experimental foi constituída por 4 frutos. Os frutos foram distribuídos aleatoriamente em câmara fria. Avaliaram-se perda de massa, firmeza da polpa e teor de sólidos solúveis.</li>
+</ol>
+<p>Termos: pós-colheita = fase após a colheita do produto; firmeza da polpa = resistência do fruto à deformação.</p>
+<ol start="13" type="1">
+<li>Um pesquisador deseja estudar o efeito de três medicamentos (<span class="math inline">\(A, B, C\)</span>) sobre a glicemia de coelhos. Foram utilizados 12 animais, e cada animal recebeu os três medicamentos, um em cada semana, com 10 dias de intervalo entre aplicações para evitar efeito residual. A ordem de aplicação foi casualizada entre os animais. A variável resposta foi a concentração de glicose duas horas após cada aplicação.</li>
+</ol>
+<p>Termos: efeito residual = efeito do tratamento anterior que permanece no período seguinte; ordem casualizada = sequência dos tratamentos definida aleatoriamente.</p>
+<ol start="14" type="1">
+<li>Em um viveiro florestal, deseja-se comparar quatro substratos na produção de mudas de ipê. O experimento foi conduzido em delineamento inteiramente casualizado, com 6 repetições, sendo cada parcela composta por 10 tubetes. Ao final, foram avaliadas altura, diâmetro do colo e massa seca. Para massa seca, cada amostra moída foi analisada em duplicata laboratorial.</li>
+</ol>
+<p>Termos: tubete = recipiente individual usado para formação de mudas; diâmetro do colo = diâmetro do caule da muda na região do colo, isto é, na transição entre a raiz e a parte aérea, bem próximo à superfície do substrato ou do solo; duplicata laboratorial = duas análises no mesmo material preparado.</p>
+<ol start="15" type="1">
+<li>Em uma granja de poedeiras, deseja-se avaliar o efeito da adição de carboidrase e de protease em uma ração basal. Os tratamentos foram: (i.) ração basal; (ii.) ração basal + carboidrase; (iii.) ração basal + protease; (iv.) ração basal + carboidrase + protease. O experimento foi conduzido em delineamento inteiramente casualizado, com 6 repetições, sendo cada parcela uma gaiola com 8 aves. As variáveis avaliadas foram consumo de ração, produção de ovos e conversão alimentar.</li>
+</ol>
+<p>Termos: carboidrase e protease = enzimas adicionadas à ração; conversão alimentar = quantidade de ração necessária para produzir uma unidade de produto.</p>
+<!-- 16. Em cana-de-açúcar, pretende-se avaliar duas condições hídricas ($irrigado,\ sequeiro$) e três variedades ($V_1, V_2, V_3$). Devido à dificuldade operacional, a condição hídrica foi alocada em áreas maiores e, dentro delas, as variedades foram casualizadas. O experimento teve 4 blocos. Cada subparcela foi composta por 4 sulcos de 6 m, sendo úteis os 2 sulcos centrais. Avaliaram-se TCH e teor de sacarose. -->
+<!--     Termos: sequeiro = cultivo sem irrigação suplementar; sulco = linha de plantio; TCH = toneladas de colmos por hectare. -->
+<ol start="16" type="1">
+<li>Um pesquisador deseja comparar quatro níveis de sombreamento (<span class="math inline">\(0,\ 30,\ 50,\ 70\%\)</span>) no crescimento inicial de mudas de cafeeiro. O estudo foi conduzido em viveiro, em delineamento inteiramente casualizado, com 5 repetições, sendo cada parcela composta por 12 mudas em sacolas plásticas. Avaliaram-se altura, número de pares de folhas e massa seca da parte aérea.</li>
+</ol>
+<p>Termos: sombreamento = redução controlada da radiação solar; parte aérea = fração da planta acima do solo.</p>
+<ol start="17" type="1">
+<li>Em cebola, deseja-se estudar dois sistemas de irrigação (<span class="math inline">\(gotejamento,\ aspersão\)</span>), três doses de nitrogênio (<span class="math inline">\(50,\ 100,\ 150\ \text{kg/ha}\)</span>) e duas cultivares (<span class="math inline">\(C_1, C_2\)</span>). O experimento foi conduzido com 4 blocos. Avaliaram-se produtividade, massa média de bulbos e porcentagem de bulbos comerciais.</li>
+</ol>
+<p>Termos: gotejamento = irrigação localizada; aspersão = irrigação por aspersores.</p>
+<ol start="18" type="1">
+<li>Em um pomar experimental de laranjeira, deseja-se comparar cinco porta-enxertos. O experimento foi instalado em blocos casualizados, com 4 blocos, e cada parcela foi composta por 3 plantas, sendo útil apenas a planta central. Foram avaliadas produção por planta, massa média de frutos e teor de sólidos solúveis.</li>
+</ol>
+<p>Termos: porta-enxerto = parte radicular/planta-base sobre a qual a cultivar comercial é enxertada.</p>
+<ol start="19" type="1">
+<li>Um estudo foi conduzido para avaliar quatro doses de inoculante bacteriano na silagem de milho: <span class="math inline">\(0,\ 1,\ 2,\ 4\ \text{g/t}\)</span>. O experimento foi realizado em delineamento inteiramente casualizado, com 6 repetições, sendo cada parcela um mini-silo de PVC com 3 kg de material verde. As variáveis resposta foram pH, perdas por efluente e teor de matéria seca.</li>
+</ol>
+<p>Termos: silagem = forragem conservada por fermentação; mini-silo = recipiente experimental que simula o processo de ensilagem; efluente = líquido liberado durante a fermentação.</p>
+<ol start="20" type="1">
+<li>Em piscicultura, deseja-se comparar cinco níveis de proteína bruta (<span class="math inline">\(24,\ 28,\ 32,\ 36,\ 40\%\)</span>) em dietas para tilápia-do-nilo. O experimento foi conduzido em delineamento inteiramente casualizado, com 4 repetições, sendo cada parcela um tanque com 20 peixes. Avaliaram-se ganho de peso, sobrevivência e conversão alimentar.</li>
+</ol>
+<p>Termos: proteína bruta = estimativa do teor total de proteína da dieta; tanque = unidade experimental, não o peixe individual.</p>
+<ol start="21" type="1">
+<li>Em sistema hidropônico NFT, um pesquisador deseja avaliar quatro condutividades elétricas da solução nutritiva (<span class="math inline">\(1{,}2,\ 1{,}6,\ 2{,}0,\ 2{,}4\ \text{dS/m}\)</span>) na produção de alface. O experimento foi conduzido em blocos casualizados, com 4 blocos, sendo cada parcela um canal com 10 plantas, das quais 6 centrais foram avaliadas. As variáveis resposta foram massa fresca, massa seca e comprimento de raízes.</li>
+</ol>
+<p>Termos: NFT = técnica hidropônica de fluxo laminar de nutrientes; condutividade elétrica = indicador da concentração total de sais na solução.</p>
+<ol start="22" type="1">
+<li>Em uma área de solo ácido, deseja-se estudar o efeito de quatro doses de calcário (<span class="math inline">\(0,\ 1,\ 2,\ 4\ \text{t/ha}\)</span>) e de duas condições de gessagem (<span class="math inline">\(com,\ sem\)</span>) na cultura da soja. O experimento foi instalado em blocos casualizados, com 4 blocos, no esquema fatorial (4). Cada parcela foi formada por <span class="math inline">\(5\)</span> linhas de <span class="math inline">\(5 m\)</span>, sendo úteis as <span class="math inline">\(3\)</span> linhas centrais. Avaliaram-se pH do solo, saturação por bases e produtividade.</li>
+</ol>
+<p>Termos: calagem = aplicação de calcário para correção da acidez; gessagem = aplicação de gesso agrícola, geralmente para melhorar o ambiente radicular em profundidade; saturação por bases = proporção da CTC ocupada por cátions básicos.</p>
+<ol start="23" type="1">
+<li>Em pós-colheita de hortaliças, pretende-se comparar cinco soluções sanitizantes na conservação de alface minimamente processada: água, hipoclorito de sódio, ácido peracético, ozônio e uma formulação comercial. O estudo foi conduzido em delineamento inteiramente casualizado, com 5 repetições, sendo cada parcela uma bandeja com <span class="math inline">\(200 g\)</span> de folhas. Avaliaram-se contagem microbiana, perda de massa e aparência visual após 7 dias de armazenamento refrigerado.</li>
+</ol>
+<p>Termos: minimamente processada = hortaliça lavada, cortada e pronta para uso; solução sanitizante = solução usada para reduzir carga microbiana.</p>
+<ol start="24" type="1">
+<li>Em um experimento com frangos de corte, deseja-se avaliar o efeito de quatro níveis de lisina digestível (<span class="math inline">\(0{,}90,\ 1{,}00,\ 1{,}10,\ 1{,}20\%\)</span>) sobre o desempenho zootécnico na fase de crescimento. O estudo foi conduzido em delineamento inteiramente casualizado, com 6 repetições, sendo cada parcela composta por 12 aves alojadas em um boxe. As variáveis avaliadas foram ganho de peso, consumo de ração, conversão alimentar e rendimento de peito ao abate.</li>
+</ol>
+<p>Termos: lisina digestível = fração da lisina efetivamente aproveitada pelo animal; boxe = compartimento onde um grupo de aves é alojado, constituindo a unidade experimental.</p>
+<ol start="25" type="1">
+<li>Em suinocultura, um pesquisador deseja comparar cinco programas alimentares para leitões na fase de creche: <span class="math inline">\(P_1,\ P_2,\ P_3,\ P_4,\ P_5\)</span>. O experimento foi conduzido em delineamento em blocos casualizados, com 4 blocos, sendo o bloco formado pelo peso inicial dos animais. Cada parcela foi constituída por 4 leitões alojados em uma baia. Foram avaliados ganho de peso diário, consumo de ração, conversão alimentar e ocorrência de diarreia.</li>
+</ol>
+<p>Termos: fase de creche = período após o desmame em que os leitões permanecem em instalações específicas; baia = compartimento onde os animais são mantidos; bloco por peso inicial = agrupamento de parcelas com animais de pesos semelhantes no início do experimento.</p>
+<ol start="26" type="1">
+<li>Em bovinos de corte confinados, deseja-se estudar o efeito de duas fontes de volumoso (<span class="math inline">\(silagem\ de\ milho,\ silagem\ de\ sorgo\)</span>) e de três níveis de concentrado (<span class="math inline">\(30,\ 50,\ 70\%\)</span>) na dieta. O experimento foi conduzido com 5 repetições por tratamento, sendo cada parcela um curral com 3 animais. As variáveis resposta foram ganho médio diário, consumo de matéria seca e eficiência alimentar.</li>
+</ol>
+<p>Termos: volumoso = fração fibrosa da dieta, como silagens e fenos; concentrado = fração da dieta com maior densidade energética e menor teor de fibra; curral = unidade experimental contendo um pequeno grupo de animais.</p>
+<ol start="27" type="1">
+<li>Em ovinos, pretende-se avaliar o efeito de quatro doses de um anti-helmíntico (<span class="math inline">\(0,\ 1,\ 2,\ 3\ \text{mL/animal}\)</span>) no controle de parasitos gastrintestinais. Foram utilizados 32 cordeiros, distribuídos em delineamento inteiramente casualizado, com 8 repetições por tratamento, sendo cada animal considerado uma parcela experimental. Avaliaram-se contagem de ovos por grama de fezes, ganho de peso e escore de condição corporal.</li>
+</ol>
+<p>Termos: anti-helmíntico = medicamento utilizado para controle de vermes parasitos; ovos por grama de fezes = indicador laboratorial da carga parasitária; escore de condição corporal = avaliação visual e tátil das reservas corporais do animal.</p>
+<ol start="28" type="1">
+<li>Em um experimento com vacas leiteiras, deseja-se comparar três protocolos de sincronização do estro (<span class="math inline">\(A,\ B,\ C\)</span>) sobre a taxa de prenhez em inseminação artificial em tempo fixo. O estudo foi conduzido em delineamento em blocos casualizados, com 4 blocos, sendo os blocos formados pela ordem de lactação das vacas. Cada tratamento foi aplicado a 10 vacas por bloco. As variáveis avaliadas foram taxa de prenhez, intervalo até o cio e concentração sérica de progesterona.</li>
+</ol>
+<p>Termos: sincronização do estro = conjunto de manejos hormonais para induzir e sincronizar o cio; lactação = período em que a vaca produz leite; progesterona = hormônio relacionado ao ciclo reprodutivo.</p>
+<ol start="29" type="1">
+<li>Em um ensaio clínico, deseja-se comparar o efeito de quatro doses de um anti-hipertensivo (<span class="math inline">\(0,\ 5,\ 10,\ 20\ \text{mg}\)</span>) sobre a pressão arterial sistólica de adultos com hipertensão leve. O estudo foi conduzido em delineamento inteiramente casualizado, com 20 pacientes por tratamento, sendo cada paciente uma unidade experimental. As variáveis avaliadas foram pressão arterial sistólica, pressão arterial diastólica e frequência cardíaca após 8 semanas de acompanhamento.</li>
+</ol>
+<p>Termos: anti-hipertensivo = medicamento utilizado para reduzir a pressão arterial; unidade experimental = menor unidade que recebe o tratamento, neste caso o paciente.</p>
+<ol start="30" type="1">
+<li>Em enfermagem, um pesquisador pretende avaliar o efeito de três tipos de curativo (<span class="math inline">\(gaze\ estéril,\ espuma,\ hidrocoloide\)</span>) no tempo de cicatrização de úlceras por pressão. O estudo foi conduzido com 15 pacientes por tratamento, distribuídos aleatoriamente. Cada paciente recebeu apenas um tipo de curativo durante todo o acompanhamento. As variáveis resposta foram tempo de cicatrização, redução da área da lesão e intensidade de dor durante a troca.</li>
+</ol>
+<p>Termos: hidrocoloide = cobertura especial usada em curativos para manter ambiente úmido; úlcera por pressão = lesão decorrente de pressão prolongada sobre a pele.</p>
+<ol start="31" type="1">
+<li>Em farmácia, deseja-se estudar o efeito de cinco formulações de comprimidos sobre o tempo de desintegração. Cada formulação foi produzida em 6 lotes independentes, e de cada lote foram avaliadas 10 unidades. O experimento foi conduzido considerando cada lote como parcela experimental. As variáveis avaliadas foram tempo de desintegração, dureza e friabilidade.</li>
+</ol>
+<p>Termos: desintegração = tempo necessário para que o comprimido se desfaça em condições padronizadas; friabilidade = tendência do comprimido a se desgastar ou quebrar; lote = conjunto de unidades produzidas sob as mesmas condições.</p>
+<ol start="32" type="1">
+<li>Em medicina, pretende-se comparar três protocolos anestésicos (<span class="math inline">\(P_1,\ P_2,\ P_3\)</span>) quanto ao tempo de recuperação pós-procedimento em pacientes submetidos a endoscopia digestiva. Foram incluídos 18 pacientes por protocolo, distribuídos aleatoriamente. As variáveis resposta foram tempo até recuperação da consciência, saturação de oxigênio e ocorrência de náusea nas primeiras 2 horas.</li>
+</ol>
+<p>Termos: protocolo anestésico = combinação padronizada de fármacos e doses para anestesia; saturação de oxigênio = porcentagem de hemoglobina ligada ao oxigênio no sangue.</p>
+<ol start="33" type="1">
+<li>Em enfermagem hospitalar, deseja-se avaliar o efeito de quatro estratégias educativas (<span class="math inline">\(folheto,\ vídeo,\ orientação\ verbal,\ vídeo+orientação\)</span>) sobre a adesão à higiene das mãos entre acompanhantes de pacientes internados. O experimento foi conduzido com 5 repetições por tratamento, sendo cada parcela uma enfermaria com 8 acompanhantes. As variáveis avaliadas foram percentual de adesão observada, escore de conhecimento e consumo de preparação alcoólica.</li>
+</ol>
+<p>Termos: adesão = cumprimento da prática recomendada; preparação alcoólica = produto utilizado para higienização antisséptica das mãos.</p>
+<ol start="34" type="1">
+<li>Em engenharia civil, um pesquisador deseja avaliar o efeito de quatro traços de concreto <span class="math inline">\(T_1,\ T_2,\ T_3,\ T_4\)</span> sobre a resistência à compressão aos 28 dias. O experimento foi conduzido em delineamento inteiramente casualizado, com 6 repetições, sendo cada parcela composta por 3 corpos de prova cilíndricos moldados a partir do mesmo traço. As variáveis avaliadas foram resistência à compressão, abatimento do tronco de cone e massa específica do concreto fresco.</li>
+</ol>
+<p>Termos: traço = proporção entre os materiais constituintes do concreto; corpo de prova = amostra padronizada usada para ensaios laboratoriais; abatimento do tronco de cone = medida da consistência do concreto fresco.</p>
+<ol start="35" type="1">
+<li>Em engenharia civil, pretende-se estudar o efeito de três tipos de cimento <span class="math inline">\(CP\ I,\ CP\ II,\ CP\ III\)</span> e de duas relações água/cimento <span class="math inline">\(0{,}45,\ 0{,}60\)</span> sobre a resistência de argamassas. O experimento foi conduzido com 5 repetições por tratamento, em esquema fatorial, sendo cada parcela composta por 4 corpos de prova prismáticos. As variáveis resposta foram resistência à compressão, resistência à tração na flexão e absorção de água.</li>
+</ol>
+<p>Termos: relação água/cimento = razão entre a massa de água e a massa de cimento na mistura; argamassa = mistura de cimento, areia e água; absorção de água = capacidade do material de incorporar água por porosidade.</p>
+<ol start="36" type="1">
+<li>Em um laboratório de materiais de construção, deseja-se comparar cinco aditivos plastificantes no desempenho de um concreto estrutural. O estudo foi conduzido em delineamento inteiramente casualizado, com 4 repetições, sendo cada parcela um lote de concreto com 50 litros. Avaliaram-se abatimento, tempo de pega e resistência à compressão aos 7 e 28 dias.</li>
+</ol>
+<p>Termos: aditivo plastificante = produto adicionado ao concreto para melhorar trabalhabilidade; tempo de pega = tempo necessário para o início e o fim do endurecimento do cimento; lote = quantidade de material produzida sob as mesmas condições.</p>
+<ol start="37" type="1">
+<li>Em engenharia civil, um pesquisador deseja avaliar o efeito de quatro teores de resíduo cerâmico moído <span class="math inline">\(0,\ 5,\ 10,\ 15\%\)</span> em substituição parcial ao cimento na produção de blocos. O experimento foi conduzido com 6 repetições por tratamento, sendo cada parcela composta por 10 blocos moldados. As variáveis avaliadas foram resistência à compressão, absorção de água e massa dos blocos após cura.</li>
+</ol>
+<p>Termos: substituição parcial = troca de parte de um material por outro; cura = período em que o material permanece em condições adequadas para desenvolver resistência.</p>
+<ol start="38" type="1">
+<li>Em um estudo geotécnico, pretende-se comparar quatro energias de compactação sobre a densidade seca máxima de um solo utilizado em pavimentação. O experimento foi conduzido em delineamento inteiramente casualizado, com 5 repetições, sendo cada parcela uma amostra independente de solo submetida ao ensaio. As variáveis resposta foram densidade seca máxima, umidade ótima e índice de vazios.</li>
+</ol>
+<p>Termos: compactação = processo de adensamento mecânico do solo; densidade seca máxima = maior densidade obtida para o solo seco em determinado ensaio; umidade ótima = teor de água que maximiza a compactação.</p>
+<ol start="39" type="1">
+<li>Em engenharia florestal, um pesquisador deseja comparar cinco espaçamentos de plantio <span class="math inline">\(2\times2,\ 3\times2,\ 3\times3,\ 4\times2,\ 4\times3\ m\)</span> no crescimento inicial de eucalipto. O experimento foi instalado em blocos casualizados, com 4 blocos. Cada parcela foi composta por 25 plantas, sendo úteis as 9 plantas centrais. Avaliaram-se altura total, diâmetro à altura do peito e sobrevivência.</li>
+</ol>
+<p>Termos: espaçamento = distância entre plantas e entre linhas de plantio; diâmetro à altura do peito = diâmetro do tronco medido, em geral, a 1,30 m do solo.</p>
+<ol start="40" type="1">
+<li>Em um viveiro florestal, deseja-se avaliar o efeito de quatro doses de fósforo <span class="math inline">\(0,\ 50,\ 100,\ 150\ \text{mg/dm}^3\)</span> na produção de mudas de mogno africano. O experimento foi conduzido em delineamento inteiramente casualizado, com 6 repetições, sendo cada parcela composta por 8 mudas em tubetes. As variáveis avaliadas foram altura, diâmetro do colo e massa seca de raízes.</li>
+</ol>
+<p>Termos: fósforo = nutriente essencial ao desenvolvimento vegetal; massa seca de raízes = massa obtida após secagem completa do sistema radicular.</p>
+<ol start="41" type="1">
+<li>Em engenharia florestal, pretende-se estudar o efeito de três níveis de sombreamento <span class="math inline">\(30,\ 50,\ 70\%\)</span> e de dois tipos de substrato <span class="math inline">\(substrato\ comercial,\ mistura\ solo+areia+esterco\)</span> na produção de mudas de cedro. O experimento foi conduzido com 5 repetições por tratamento, em esquema fatorial, sendo cada parcela composta por 10 mudas. Avaliaram-se altura, número de folhas e índice de qualidade de Dickson.</li>
+</ol>
+<p>Termos: substrato = material usado para sustentar e nutrir a muda; índice de qualidade de Dickson = indicador morfológico usado para avaliar a qualidade de mudas florestais.</p>
+<ol start="42" type="1">
+<li>Em uma floresta plantada, um pesquisador deseja comparar quatro intensidades de desbaste <span class="math inline">\(0,\ 20,\ 35,\ 50\%\)</span> na produtividade de povoamentos de pinus. O experimento foi instalado em blocos casualizados, com 4 blocos, sendo cada parcela composta por uma área com 36 árvores, das quais as 16 centrais constituíram a área útil. As variáveis resposta foram incremento em diâmetro, volume por árvore e volume por hectare.</li>
+</ol>
+<p>Termos: desbaste = remoção planejada de parte das árvores do povoamento; povoamento = conjunto de árvores de uma mesma área; incremento = aumento de uma variável ao longo do tempo.</p>
+<ol start="43" type="1">
+<li>Em tecnologia da madeira, deseja-se avaliar o efeito de cinco temperaturas de secagem <span class="math inline">\(40,\ 50,\ 60,\ 70,\ 80^\circ C\)</span> sobre a qualidade de tábuas de eucalipto. O experimento foi conduzido em delineamento inteiramente casualizado, com 5 repetições, sendo cada parcela um conjunto de 4 tábuas submetidas ao mesmo programa de secagem. Avaliaram-se teor de umidade final, empenamento e ocorrência de rachaduras.</li>
+</ol>
+<p>Termos: programa de secagem = conjunto de condições de temperatura e tempo aplicadas à madeira; empenamento = deformação da peça de madeira durante a secagem.</p>
 <hr>
 <div style="text-align: center;">
 <p><a href="https://instagram.com/profjulianobortolini">@profjulianobortolini</a>      <a href="http://www.julianobortolini.com.br">www.julianobortolini.com.br</a>      <a href="https://linkedin.com/in/julianobortolini">linkedin</a>      <a href="https://github.com/julianobortolini">github</a>       <a href="http://lattes.cnpq.br/6210909768845403">lattes</a></p>
