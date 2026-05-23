@@ -3224,123 +3224,714 @@ window.Quarto = {
 
 
 <p><em>Bacharelado em Estatística - UFMT</em></p>
-<p><em>Período letivo: 2026/1</em></p>
-<section id="avisos" class="level3">
-<h3 class="anchored" data-anchor-id="avisos">Avisos:</h3>
-<ul>
-<li>Última atualização do site às <strong>09:12</strong> do dia <strong>23/05/2026</strong>.</li>
-<li>Monitores: André Riul e Elyonara.</li>
-<li>Avaliação 1: 25/5/2026. Será permitido a consulta a uma folha de papel com anotações manuscritas (tamanho A4, frente e verso) para as avaliações escrita e computacional. Não será permitido o uso de internet e de nenhum arquivo computacional (scripts de análise). Será permitido o uso de calculadora científica. Será permitido o uso do software R para cálculos computacionais exclusivamente na avaliação computacional. A avaliação será escrita, computacional e arguição oral.</li>
-<li>Tabelas: <a href="tab_F_5.pdf">Tabela F (5%)</a>, <a href="tab_F_1.pdf">F (1%)</a> e <a href="tab_q_tukey.pdf">Tabela q (Tukey)</a>.</li>
-</ul>
-</section>
-<section id="ementa" class="level3">
-<h3 class="anchored" data-anchor-id="ementa">Ementa:</h3>
-<p>Princípios gerais da experimentação. Análise de Variância e suas pressuposições. Comparações Múltiplas. Regressão na Análise de Variância. Delineamentos experimentais básicos: inteiramente casualizados, blocos casualizados e quadrados latinos. Transformação de Dados e Testes Não Paramétricos. Introdução aos experimentos em esquema fatorial.</p>
-</section>
-<section id="notas-de-aula" class="level3">
-<h3 class="anchored" data-anchor-id="notas-de-aula">Notas de aula:</h3>
-<ul>
-<li><p>Aula 1: apresentação da disciplina: ementa, livro texto, bibliografia e avaliações. O que é estatística experimental? Diferença entre estudo observacional e experimento. Relação entre vendas de sorvete e ataques de tubarão. Exemplos de estudos observacionais e experimentais. Breve história da estatística experimental (Montgomery, 2019). Pesquisar a história da “Senhora toma chá” (<a href="https://a.co/d/0bMr978q">Salsburg, 2009</a>).</p></li>
-<li><p>Aula 2: conceitos básicos e os princípios da experimentação. Delineamentos experimentais. Exercícios. Estudar os capítulos 1 e 2 do livro da Sônia Vieira e o capítulo 1 do livro do Banzatto e Kronka.</p></li>
-<li><p><a href="lista1_2026_1.html">Lista 1</a>: conceitos básicos em experimentação.</p></li>
-<li><p>Aula 3: delineamentos experimentais (dic, dbc e dql). Delineamento inteiramente casualizado: definição, características, vantagens e desvantagens, aleatorização, modelo matemático para efeitos de tratamentos, teste de hipóteses para efeitos de tratamentos (análise de variância), <a href="exemplo_dic.R">exemplo de ANOVA no R</a>. Estudar os capítulos 1, 2 e 3 do livro da Sônia Vieira e os capítulos 1 e 3 do livro do Banzatto e Kronka.</p></li>
-<li><p><a href="lista2_2026_1.html">Lista 2</a>: delineamento inteiramente casualizado e análise de variância.</p></li>
-<li><p>Aula 4: desenvolvimento teórico da análise de variância para o delineamento inteiramente casualizado. Decomposição da soma de quadrados total em entre tratamentos (ou simplesmente tratamentos) e dentro de tratamentos (também chamada de erro ou resíduo). Fórmulas para os cálculos dos graus de liberdade, somas de quadrados, quadrados médios e teste F. Tarefa: cálculo da análise de variância para o DIC. <a href="tab_F_5.pdf">Tabela F (5%)</a>. <a href="tab_F_1.pdf">F (1%)</a>. Exemplo do cálculo do quantil superior da distribuição F(3, 12) no R: <code>qf(p = 0.05, df1 = 3, df2 = 12, lower.tail = FALSE)</code>. Cálculo de somas de quadrados na calculadora <a href="casio_fx82ms.html">casio fx-82MS</a>. Estudar os capítulos 1, 2 e 3 do livro da Sônia Vieira e os capítulos 1 e 3 do livro do Banzatto e Kronka.</p></li>
-<li><p>Aula 5: exemplo de cálculo da análise de variância para o DIC com interpretação dos resultados. Exercício de análise de variância para o DIC (exercício 1 da <a href="lista2_2026_1.html">lista 2</a>, com apenas as repetições 1 e 2). Análise dos pressupostos de normalidade, independência (quando aplicável) e homocedasticidade dos erros por meio de análise gráfica e testes de hipóteses. Análise gráfica: histograma, gráfico de resíduos versus valores estimados, gráfico de probabilidade normal (QQ-plot) e gráfico de resíduos versus ordem de coleta. Testes para verificação dos pressupostos. Normalidade: Shapiro-Wilk e Kolmogorov-Smirnov. Homocedasticidade: Bartlett, Levene e Breusch-Pagan. Independência: Durbin-Watson e Ljung-Box. Tarefa: como realizar a análise de pressupostos (gráficos e testes de hipóteses) no R? Estudar os capítulos 1 a 4 do livro da Sônia Vieira e os capítulos 1 e 3 do livro do Banzatto e Kronka.</p></li>
-<li><p>Aula 6: monitoria com o Matheus. Resolição de exercícios da <a href="lista2_2026_1.html">lista 2</a>. Estudar os capítulos 1 a 4 do livro da Sônia Vieira e os capítulos 1 e 3 do livro do Banzatto e Kronka.</p></li>
-<li><p>Aula 7: exemplo de cálculo da análise de variância, passo a passo. Teste de Tukey para comparação dos efeitos de tratametos (apenas para experimentos balanceados, ou seja, mesma quantidade de repetições em todos os tratamentos). Exemplo de aplicação do teste de Tukey e interpretação dos resultados. <a href="tab_q_tukey.pdf">Tabela q (Tukey)</a>. Exemplo de cálculo do q (Tukey) no R, para um experimento com 3 tratamentos e grau de liberdade igual a 12 para o resíduo: <code>qtukey(p = 0.05, nmeans = 3, df = 12, lower.tail = FALSE)</code>. Tarefa: pesquisar o procedimento de teste Tukey (atribuição de letras de significância da diferença de médias). Estudar os capítulos 1 a 5 do livro da Sônia Vieira e os capítulos 1, 2 e 3 do livro do Banzatto e Kronka.</p></li>
-<li><p><a href="lista3_2026_1.html">Lista 3</a>: delineamento inteiramente casualizado, análise de variância, teste de Tukey e pressupostos da ANOVA.</p></li>
-<li><p>Aula 8: avaliação 1 (escrita, computacional e arguição oral).</p></li>
-</ul>
-<!-- -   Aula 1: apresentação geral da disciplina. O que é estatística experimental? Diferença entre estudo observacional e experimento. Identidade fundamental da Análise de Variância. Exercício: demonstrar a identidade fundamental da ANOVA. -->
-<!-- - Aula 2: entrega do exercício da aula anterior. -->
-<!-- - Aula 3: semana da estatística -->
-<!-- - Aula 4: diferenças entre estudo observacional e experimental. O que é um experimento. Objetivos da experimentação (D. Montgomery). Desenvolvimento histórico da experimentação (Eras) (D. Montgomery). Origem do teste t (cervejaria Guiness e William Sealy Gosset). Definição de planejar um experimento. Conceitos básicos: unidade experimental, unidade experimental básica, parcela e exemplos de parcelas (vaso de plantas, linhas de plantio, árvores, animais (pequeno, médio e grande porte). O que é variável e os tipos de variáveis na experimentação: variável independente (fator ou tratamentos) e variável dependente ou resposta. Mais sobre conceitos básicos: grupo controle ou tratamento controle/testemunha, variáveis de confusão, parcela, repetição, casualização, controle local, bloco e delineamento. Tipos de delineamentos: delineamento inteiramente casualizado, delineamento em blocos casualizados, delineamento em blocos incompletos, delineamento em quadrado latino, entre outros. Bordadura e área útil (exemplo com linhas de plantio). Exemplo de experimento sobre dieta de suínos, descrever: fatores, tratamentos, parcela, bloco, número de repetições, variável resposta e delineamento. **Tarefa:** ler o artigo [Guidelines for the Design and Statistical Analysis of Experiments Using Laboratory Animals](https://academic.oup.com/ilarjournal/article/43/4/244/981872) dos autores Festing, M. F. W. e  Altman, D. G. (ILAR Journal. Volume 43, Number 4, 2002) -->
-<!-- - Aula 5: revisão da aula anterior, conceitos básicos da experimentação, princípios básicos da experimentação: repetição, casualização e controle local. Definição e objetivos dos princípios básicos. Tipos de esquemas fatoriais, tipos de variáveis, cálculo de número de repetições (por grau de liberdade do resíduo ou quantidade de parcelas no experimento). Teste de hipótese na experimentação: comparação entre efeitos de tratamentos. Exemplo de análise de dados: dados de crescimento de cães submetidos a dois tratamentos de suplementação. -->
-<!-- -   Aula 6: delineamento inteiramente casualizado, exemplos, aleatorização, modelo estatístico, definição das componentes, estimação dos parâmetros (exercício: método dos mínimos quadrados com restrições nos parâmetros), análise de variância, decomposição da soma de quadrados total em entre tratamentos (ou simplesmente tratamentos) e dentro de tratamentos (também chamada de erro ou resíduo). Fórmulas para os cálculos dos graus de liberdade, somas de quadrados, quadrados médios e teste F. Exemplo de cálculo da análise de variância para o DIC com interpretação dos resultados. -->
-<!-- - [Lista 1](lista1_2025_2.html): conceitos básicos em experimentação, delineamento inteiramente casualizado e análise de variância (ANOVA) de um fator e teste Tukey. -->
-<!-- - Aula 7: exercício da aula anterior (supressão do crescimento de bactérias),  teste de Tukey para experimentos balanceados (mesma quantidade de repetições em todos os tratamentos). Exemplo de aplicação do teste de Tukey e interpretação dos resultados. [Tabela q (Tukey)](tab_q_tukey.pdf). [Tabela F (5%)](tab_F_5.pdf). [F (1%)](tab_F_1.pdf). Exemplo de cálculo do q (Tukey) no R, para um experimento com 3 tratamentos e grau de liberdade igual a 12 para o resíduo: `qtukey(p = 0.05, nmeans = 3, df = 12, lower.tail = FALSE)`. Exemplo do cálculo do quantil da distribuição F no R: `qf(p = 0.05, df1 = 2, df2 = 12, lower.tail = FALSE)`. Cálculo de somas de quadrados na [Casio fx-82MS](casio_fx82ms.html). Atividade em sala: resolver o exercício 3 da [lista 1](lista1_2025_2.html). -->
-<!-- - Aula 8: feriado, 8 de dezembro. Dia de Nossa Senhora da Conceição. -->
-<!-- - Aula 9: avaliação 1 (escrita e arguição oral). -->
-<!-- - Aula 10: revisão da disciplina e resolução da prova 1. Análise de experimentos em DIC no R, com comparações múltipla. Mais sobre testes de comparações múltipla: Tukey (HSD), Duncan, SNK (Student-Newman-Keuls), Dunnett, Scott-Knott e t (LSD). Tabela para o teste de [Duncan](tab_duncan.pdf) e tabela para o teste de [Dunnett](tab_dunnett.pdf). Resolver a [lista 2](lista2_2025_2.html). **Tarefa**: realizar os testes de comparações múltipla Tukey, SNK e Scott-Knott para os dados do exercício 3 da prova 1 e comentar os resultados. Dados do exercício 3 da [prova 1](prova1_20252.pdf): -->
-<!-- ```{r} -->
-<!-- #| eval: false -->
-<!-- substrato <- rep(c("CaC+EB", "CaC+EA", "HM",  -->
-<!--                    "Cap+EA", "Cap+EB", "Plantmax"), each = 5) -->
-<!-- repeticao <- rep(1:5, times = 6) -->
-<!-- altura <- c( -->
-<!--    18, 16, 20, 17, 18,    # CaC+EB -->
-<!--    12, 14, 10, 15, 12,    # CaC+EA -->
-<!--    21, 19, 24, 20, 21,    # HM -->
-<!--    14, 16, 12, 17, 14,    # Cap+EA -->
-<!--    13, 11, 15, 12, 13,    # Cap+EB -->
-<!--    16, 14, 18, 15, 16     # Plantmax -->
-<!-- ) -->
-<!-- # Data Frame -->
-<!-- dados <- data.frame( -->
-<!--    substrato, -->
-<!--    repeticao, -->
-<!--    altura -->
-<!-- ) -->
-<!-- ``` -->
-<!-- - [Lista 2](lista2_2025_2.html): testes de comparações múltiplas. -->
-<!-- - Aula 11: delineamentos em blocos casualizados e em quadrado latino: definição, modelo estatístico, exemplos ilustrando a aplicação de cada delineamento e método de aleatorização dos tratamentos às unidades experimentais. Análise de variância e teste F. Análises no software `R`. Tarefa: resolver a [lista 3](lista3_2025_2.html), até comparações múltiplas. -->
-<!-- - [Lista 3](lista3_2025_2.html): delineamentos inteiramente casualizados, em blocos casualizados e em quadrado latino, testes de comparações múltiplas, análise dos pressupostos da ANOVA, transformação de variáveis e testes não paramétricos. -->
-<!-- - Aula 12: análise dos pressupostos da ANOVA: normalidade, homocedasticidade e independência dos erros. Verificação dos pressupostos por análise gráfica e testes de hipóteses. Transformação de variáveis: motivos para transformar e tipos de transformação (logarítmica, raiz quadrada, raiz cúbica, inversa, Box-Cox). [Análise no `R`](pae1_comp.html). Exemplos no `R`. Tarefa: resolver a [lista 3](lista3_2025_2.html). -->
-<!-- -   [Lista 3](lista3_20251.html): conceitos básicos em experimentação, delineamento inteiramente casualizado e análise de variância (ANOVA) de um fator e teste de Tukey. -->
-<!-- - Aula 6: avaliação 1. -->
-<!-- Exemplo de experimento de análise sensorial de café: variáveis influentes e controláveis, variáveis influentes e não-controláveis e variáveis respostas. Exemplos de experimentos: área da saúde, educação, medicina veterinária e agricultura. Origem da experimentação com Ronald Fisher. Experimento das xícaras de chá (e leite). Desenvolvimento matemático das possibilidades de acerto (1 em 70 possibilidades = 1,43%). **Tarefa para casa:** ler o capítulo 2 do livro The design of experiments do R. Fisher (1935). Próxima aula será realizado experimento em sala de aula. -->
-<!-- -   Aula 2: revisão da aula anterior com comentários sobre o experimento das xícaras de chá (e leite). Realização do experimento de comparar dois tipos de água, simulando o experimento das xícaras de chá (e leite). Cálculo das probabilidades de acertar 1, 2, 3 e 4 xícaras. -->
-<!-- -   Aula 3: diferenças entre estudo observacional e experimental. O que é um experimento. Objetivos da experimentação (D. Montgomery). Desenvolvimento histórico da experimentação (Eras) (D. Montgomery). Origem do teste t (cervejaria Guiness e William Sealy Gosset). Definição de planejar um experimento. Conceitos básicos: unidade experimental, unidade experimental básica, parcela e exemplos de parcelas (vaso de plantas, linhas de plantio, árvores, animais (pequeno, médio e grande porte). O que é variável e os tipos de variáveis na experimentação: variável independente (fator ou tratamentos) e variável dependente ou resposta. Mais sobre conceitos básicos: grupo controle ou tratamento controle/testemunha, variáveis de confusão, parcela, repetição, casualização, controle local, bloco e delineamento. Tipos de delineamentos: delineamento inteiramente casualizado, delineamento em blocos casualizados, delineamento em blocos incompletos, delineamento em quadrado latino, entre outros. Bordadura e área útil (exemplo com linhas de plantio). Exemplo de experimento sobre dieta de suínos, descrever: fatores, tratamentos, parcela, bloco, número de repetições, variável resposta e delineamento. **Tarefa:** 1. pesquisar sobre o experimento com helicóptero de papel, 2. ler o artigo [Guidelines for the Design and Statistical Analysis of Experiments Using Laboratory Animals](https://academic.oup.com/ilarjournal/article/43/4/244/981872) dos autores Festing, M. F. W. e  Altman, D. G. (ILAR Journal. Volume 43, Number 4, 2002) e 3. Estudar os princípios básicos da experimentação e responder as seguintes perguntas: a. O que é? b. Para que serve? -->
-<!-- -   [Lista 1](lista1_20251.html): conceitos básicos em experimentação. -->
-<!-- - Sugestão de leitura: [Guidelines for the Design and Statistical Analysis of Experiments Using Laboratory Animals](https://academic.oup.com/ilarjournal/article/43/4/244/981872). Artigo com conceitos básicos de experimentação e questões éticas relacionadas à experimentação com animais. -->
-<!-- -  Sugestão de leitura: [Alternativas para a experimentação industrial em esquema fatorial: um estudo de caso para adesivo estrutural de base acrílica](https://revistas.utfpr.edu.br/revistagi/article/view/1472/1023). Artigo com conceitos básicos de experimentação na indústria e experimentos fatoriais $2^k$. -->
-<!-- -   Aula 4: revisão da aula anterior, conceitos básicos da experimentação, princípios básicos da experimentação: repetição, casualização e controle local. Definição e objetivos dos princípios básicos. Tipos de esquemas fatoriais, tipos de variáveis, cálculo de número de repetições (por grau de liberdade do resíduo ou quantidade de parcelas no experimento). Teste de hipótese na experimentação: comparação entre efeitos de tratamentos. Exemplo de análise de dados: dados de crescimento de cães submetidos a dois tratamentos de suplementação. -->
-<!-- -   [Lista 2](lista2_20251.html): conceitos básicos em experimentação, delineamento inteiramente casualizado e análise de variância (ANOVA) de um fator. -->
-<!-- -   Aula 5: delineamento inteiramente casualizado, exemplos, aleatorização, modelo estatístico, definição das componentes, estimação dos parâmetros (exercício: método dos mínimos quadrados com restrições nos parâmetros), análise de variância, decomposição da soma de quadrados total em entre tratamentos (ou simplesmente tratamentos) e dentro de tratamentos (também chamada de erro ou resíduo). Fórmulas para os cálculos dos graus de liberdade, somas de quadrados, quadrados médios e teste F. Exemplo de cálculo da análise de variância para o DIC com interpretação dos resultados. Teste de Tukey para experimentos balanceados (mesma quantidade de repetições em todos os tratamentos). Exemplo de aplicação do teste de Tukey e interpretação dos resultados. [Tabela q (Tukey)](tab_q_tukey.pdf). [Tabela F (5%)](tab_F_5.pdf). [F (1%)](tab_F_1.pdf). Exemplo de cálculo do q (Tukey) no R, para um experimento com 3 tratamentos e grau de liberdade igual a 12 para o resíduo: `qtukey(p = 0.05, nmeans = 3, df = 12, lower.tail = FALSE)`. Exemplo do cálculo do quantil da distribuição F no R: `qf(p = 0.05, df1 = 2, df2 = 12, lower.tail = FALSE)`. Cálculo de somas de quadrados na [Casio fx-82MS](casio_fx82ms.html). -->
-<!-- -   [Lista 3](lista3_20251.html): conceitos básicos em experimentação, delineamento inteiramente casualizado e análise de variância (ANOVA) de um fator e teste de Tukey. -->
-<!-- - Aula 6: avaliação 1. -->
-<!-- - Aula 7: revisão da avaliação 1. Delineamentos experimentais: revisão do DIC, delineamento em blocos casualizados e em quadrado latino. Modelo estatístico de cada delineamento, exemplos ilustrando a aplicação de cada delineamento e método de aleatorização dos tratamentos às unidades experimentais. Análise de variância e teste F. -->
-<!-- - Aula 8: testes de comparações múltiplas: revisão do teste de Tukey, teste de Duncan, teste de Dunnett, teste de Student-Newman-Keuls (SNK), teste t e teste de Scott-Knott. Exemplos ilustrando a aplicação dos testes e interpretação dos resultados. Pressupostos da ANOVA: normalidade, homocedasticidade e independência dos erros. Verificação dos pressupostos por análise gráfica: histograma, gráfico de resíduos versus valores estimados, gráfico de probabilidade normal (QQ-plot) e gráfico de resíduos versus ordem de coleta. Exemplos de aplicação dos gráficos e interpretação dos resultados. Testes para verificação dos pressupostos. Normalidade: Shapiro-Wilk e Kolmogorov-Smirnov. Homocedasticidade: Bartlett e Levene. Independência: Durbin-Watson e Ljung-Box. -->
-<!-- Exemplos de aplicação dos testes no R e interpretação dos resultados. Transformação de variáveis: motivos para transformar, tipos de transformação (logarítmica, raiz quadrada, raiz cúbica, inversa, Box-Cox) e exemplos. -->
-<!-- -   [Lista 4](lista4_20251.html): delineamento em blocos casualizados e em quadrado latino, testes de comparações múltiplas, análise dos pressupostos da ANOVA e transformação de variáveis. -->
-<!-- -   Aula 9: continuação da aula 8 sobre métodos de comparações múltiplas e pressupostos da análise de variância. -->
-<!-- -   Aula 10: experimentos fatoriais: exemplos motivacionais, definição, aleatorização, análise de variância, efeitos simples, principais e de interação, gráficos de efeitos principais e de interação. Exemplo prático no R. Tarefa: resolver o exemplo de experimento fatorial triplo do livro do Banzatto e Kronka. -->
-<!-- -   Aula 11: resolução de exercícios da lista 4. -->
-<!-- -  Aula 12: aula de reposição. -->
-<!-- -  Aula 13: avaliação 2. -->
-</section>
-<section id="avaliações" class="level3">
-<h3 class="anchored" data-anchor-id="avaliações">Avaliações:</h3>
-<ul>
-<li><span class="math inline">\(A_1\)</span>: escrita, computacional e arguição oral. Nota: 0 a 10.</li>
-</ul>
-<p><em>Conteúdo:</em> Planejamento de experimentos e princípios básicos, ideias gerais dos delineamentos experimentais e análise de variância para o delineamento inteiramente casualidade e comparação múltipla pelo teste de Tukey.</p>
-<ul>
-<li><span class="math inline">\(A_2\)</span>: escrita, computacional e arguição oral. Nota: 0 a 10.</li>
-</ul>
-<p><em>Conteúdo:</em> Planejamento de experimentos e princípios básicos, ideias gerais dos delineamentos experimentais, análise de variância para o delineamento inteiramente casualidade, em blocos casualidades e quadrado latino, testes de comparações múltiplas pelos testes de Tukey, Duncan, Dunnett, SNK, t e Scott-Knott, análise dos pressupostos da ANOVA, regressão na ANOVA, transformação de variáveis, testes não paramétricos e introdução aos experimentos fatoriais.</p>
-<p>A média final (<span class="math inline">\(MF\)</span>) será calculada por:</p>
-<p><span class="math display">\[MF = 0,5 A_1 + 0,5 A_2.\]</span></p>
-</section>
-<section id="livro-texto" class="level3">
-<h3 class="anchored" data-anchor-id="livro-texto">Livro texto:</h3>
-<p>Conceitos gerais, sem formalidade matemática:</p>
-<ul>
-<li><p>Sônia Vieira, Delineamento e análise de experimentos nas ciências agrárias. FEALQ, 2021.</p></li>
-<li><p>Banzatto D.A. e Kronka, S.N., Experimentação agrícola. 4ª ed. Jaboticabal: FUNEP, 2006.</p></li>
-</ul>
-<p>O desenvolvimento matemático e teórico da disciplina será apresentado em sala de aula, baseado em artigos e livros (referências complementares).</p>
-</section>
-<section id="referências-complementares" class="level3">
-<h3 class="anchored" data-anchor-id="referências-complementares">Referências complementares:</h3>
-<ul>
-<li><p>Montgomery, D. C. (2019). Design and analysis of experiments. 10th ed. Wiley.</p></li>
-<li><p>Dean, A. M., Voss, D. D., &amp; Draguljić, D. (2017). Design and analysis of experiments. 2nd ed. Springer.</p></li>
-<li><p>Quinn, G. P., &amp; Keough, M. J. (2024). Experimental design and data analysis for biologists. 2nd ed. Cambridge University Press.</p></li>
-<li><p>Mason, R. L., Gunst, R. F., &amp; Hess, J. L. (2003). Statistical design and analysis of experiments: with applications to engineering and science. 2nd ed. Wiley.</p></li>
-</ul>
+<section id="lista-de-exercícios-3" class="level3">
+<h3 class="anchored" data-anchor-id="lista-de-exercícios-3">Lista de exercícios 3</h3>
+<ol type="1">
+<li>Um experimento foi conduzido para verificar a viabilidade do plantio de palmito na região de Lavras, MG, sob quatro diferentes ambientes de plantio: sob eucalipto, sob mata, sob pinus e a pleno sol. Foram medidas as alturas das plantas palmeiras (em cm) em cinco repetições para cada tratamento. Os dados coletados são apresentados na tabela abaixo:</li>
+</ol>
+<table class="caption-top table">
+<colgroup>
+<col style="width: 16%">
+<col style="width: 16%">
+<col style="width: 16%">
+<col style="width: 16%">
+<col style="width: 16%">
+<col style="width: 16%">
+</colgroup>
+<thead>
+<tr class="header">
+<th>Tratamento</th>
+<th>Repetição 1</th>
+<th>Repetição 2</th>
+<th>Repetição 3</th>
+<th>Repetição 4</th>
+<th>Repetição 5</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>Eucalipto</td>
+<td>37</td>
+<td>51</td>
+<td>42</td>
+<td>57</td>
+<td>55</td>
+</tr>
+<tr class="even">
+<td>Mata</td>
+<td>44</td>
+<td>62</td>
+<td>40</td>
+<td>71</td>
+<td>55</td>
+</tr>
+<tr class="odd">
+<td>Pinus</td>
+<td>56</td>
+<td>58</td>
+<td>62</td>
+<td>70</td>
+<td>65</td>
+</tr>
+<tr class="even">
+<td>Pleno Sol</td>
+<td>53</td>
+<td>33</td>
+<td>42</td>
+<td>38</td>
+<td>35</td>
+</tr>
+</tbody>
+</table>
+<ol type="a">
+<li>Aplique o teste F (análise de variância) e interprete os resultados.</li>
+<li>Realize o teste de Tukey, ao nível de <span class="math inline">\(5\%\)</span> de significância, para verificar quais efeitos dos tratamentos diferem entre si.</li>
+<li>Usando o software R, refaça os itens ‘a)’ e ‘b)’ e realize a análise de resíduos para verificar se os pressupostos do teste F foram atendidos. Interprete os resultados.</li>
+</ol>
+<!-- c) Realize o teste de Duncan, ao nível de $5\%$ de significância, para verificar quais efeitos dos tratamentos diferem entre si. -->
+<!-- d) Realize o teste SNK, ao nível de $5\%$ de significância, para verificar quais efeitos dos tratamentos diferem entre si. -->
+<!-- e) Realize o teste Scott-Knott, ao nível de $5\%$ de significância, para verificar quais efeitos dos tratamentos diferem entre si. -->
+<!-- f) Realize o teste Dunnett, ao nível de $5\%$ de significância, para verificar quais efeitos dos tratamentos diferem com a testemunha (Pleno Sol). -->
+<ol start="2" type="1">
+<li>Um experimento foi conduzido no delineamento inteiramente casualizado (DIC), com quatro repetições, para avaliar a altura de plantas da espécie florestal acácia (<em>Acacia holocericea</em>) submetidas a diferentes substratos para formação de mudas. Os tratamentos e os valores de altura de planta (em cm) foram registrados na seguinte tabela:</li>
+</ol>
+<table class="caption-top table">
+<thead>
+<tr class="header">
+<th>Substratos</th>
+<th>Rep. 1</th>
+<th>Rep. 2</th>
+<th>Rep. 3</th>
+<th>Rep. 4</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>CaC+EB</td>
+<td>18,2</td>
+<td>16,4</td>
+<td>20,5</td>
+<td>19,4</td>
+</tr>
+<tr class="even">
+<td>CaC+EA</td>
+<td>12,8</td>
+<td>14,5</td>
+<td>10,3</td>
+<td>11,5</td>
+</tr>
+<tr class="odd">
+<td>HM</td>
+<td>21,8</td>
+<td>19,3</td>
+<td>24,5</td>
+<td>22,6</td>
+</tr>
+<tr class="even">
+<td>Cap+EA</td>
+<td>14,8</td>
+<td>16,4</td>
+<td>12,3</td>
+<td>13,7</td>
+</tr>
+<tr class="odd">
+<td>Cap+EB</td>
+<td>13,0</td>
+<td>11,2</td>
+<td>15,4</td>
+<td>12,6</td>
+</tr>
+<tr class="even">
+<td>Plantmax</td>
+<td>16,0</td>
+<td>14,2</td>
+<td>18,1</td>
+<td>16,4</td>
+</tr>
+</tbody>
+</table>
+<ol type="a">
+<li>Aplique o teste F (análise de variância) e interprete os resultados.</li>
+<li>Realize o teste de Tukey, ao nível de <span class="math inline">\(5\%\)</span> de significância, para verificar quais efeitos dos tratamentos diferem entre si.</li>
+<li>Usando o software R, refaça os itens ‘a)’ e ‘b)’ e realize a análise de resíduos para verificar se os pressupostos do teste F foram atendidos. Interprete os resultados.</li>
+</ol>
+<!-- c) Realize o teste de Duncan, ao nível de $5\%$ de significância, para verificar quais efeitos dos tratamentos diferem entre si. -->
+<!-- d) Realize o teste Scott-Knott, ao nível de $5\%$ de significância, para verificar quais efeitos dos tratamentos diferem entre si. -->
+<!-- e) Realize o teste Dunnett, ao nível de $5\%$ de significância, para verificar quais efeitos dos tratamentos diferem com o controle (Plantmax). -->
+<!-- f) Formule 5 contrastes ortogonais entre si e realize o teste t. -->
+<!-- g) Há diferença entre os efeitos do uso de CaC e CaP? Utilize contrastes. -->
+<!-- h) Há diferença entre os efeitos do uso de EB e EA? Utilize contrastes. -->
+<!-- i) Há diferença entre os efeitos do uso de EB e EA com HM? Utilize contrastes. -->
+<ol start="3" type="1">
+<li>Um experimento foi realizado para verificar se três suplementos alimentares resultam em diferentes produções médias de leite. Foram selecionadas 15 vacas de mesma idade, e a cada 5 foi atribuído um tipo de suplemento alimentar.</li>
+</ol>
+<p>Tabela. Produção de Leite (litros) por Suplemento.</p>
+<table class="caption-top table">
+<thead>
+<tr class="header">
+<th>Repetição</th>
+<th>Suplemento 1</th>
+<th>Suplemento 2</th>
+<th>Suplemento 3</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>1</td>
+<td>25,40</td>
+<td>23,40</td>
+<td>20,00</td>
+</tr>
+<tr class="even">
+<td>2</td>
+<td>26,31</td>
+<td>21,80</td>
+<td>22,20</td>
+</tr>
+<tr class="odd">
+<td>3</td>
+<td>24,10</td>
+<td>23,50</td>
+<td>19,75</td>
+</tr>
+<tr class="even">
+<td>4</td>
+<td>23,74</td>
+<td>22,75</td>
+<td>20,60</td>
+</tr>
+<tr class="odd">
+<td>5</td>
+<td>25,10</td>
+<td>21,60</td>
+<td>20,40</td>
+</tr>
+</tbody>
+</table>
+<ol type="a">
+<li>Aplique o teste F (análise de variância) e interprete os resultados.</li>
+<li>Realize o teste de Tukey, ao nível de <span class="math inline">\(5\%\)</span> de significância, para verificar quais efeitos dos tratamentos diferem entre si.</li>
+<li>Usando o software R, refaça os itens ‘a)’ e ‘b)’ e realize a análise de resíduos para verificar se os pressupostos do teste F foram atendidos. Interprete os resultados.</li>
+</ol>
+<!-- c) Realize o teste de Duncan, ao nível de $5\%$ de significância, para verificar quais efeitos dos tratamentos diferem entre si. -->
+<ol start="4" type="1">
+<li>Um experimento foi realizado para verificar o efeito de antiparasitários no peso dos animais. Foram selecionadas 5 amostras de tamanho 5. Para cada amostra foi aplicado um antiparasitário diferente (tratamentos).</li>
+</ol>
+<p>Tabela. Peso dos Animais por Tratamento e Repetição.</p>
+<table class="caption-top table">
+<thead>
+<tr class="header">
+<th>Tratamento</th>
+<th>1</th>
+<th>2</th>
+<th>3</th>
+<th>4</th>
+<th>5</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>Controle</td>
+<td>279</td>
+<td>240</td>
+<td>266</td>
+<td>269</td>
+<td>250</td>
+</tr>
+<tr class="even">
+<td>Neguvon</td>
+<td>330</td>
+<td>314</td>
+<td>331</td>
+<td>311</td>
+<td>320</td>
+</tr>
+<tr class="odd">
+<td>Methiridim</td>
+<td>315</td>
+<td>304</td>
+<td>307</td>
+<td>320</td>
+<td>305</td>
+</tr>
+<tr class="even">
+<td>TH</td>
+<td>298</td>
+<td>289</td>
+<td>273</td>
+<td>240</td>
+<td>121</td>
+</tr>
+<tr class="odd">
+<td>Haloxon</td>
+<td>286</td>
+<td>273</td>
+<td>269</td>
+<td>278</td>
+<td>274</td>
+</tr>
+</tbody>
+</table>
+<ol type="a">
+<li>Aplique o teste F (análise de variância) e interprete os resultados.</li>
+<li>Realize o teste de Tukey, ao nível de <span class="math inline">\(5\%\)</span> de significância, para verificar quais efeitos dos tratamentos diferem entre si.</li>
+<li>Usando o software R, refaça os itens ‘a)’ e ‘b)’ e realize a análise de resíduos para verificar se os pressupostos do teste F foram atendidos. Interprete os resultados.</li>
+</ol>
+<!-- c) Realize o teste de t (LSD), ao nível de $5\%$ de significância, para verificar quais efeitos dos tratamentos diferem entre si. -->
+<!-- d) Realize o teste Dunnett, ao nível de $5\%$ de significância, para verificar quais efeitos dos tratamentos diferem com o controle. -->
+<ol start="5" type="1">
+<li>Um experimento foi realizado para verificar a força de tensão do cimento portland. Quatro diferentes técnicas de mistura podem ser utilizadas economicamente. Os seguintes dados foram coletados:</li>
+</ol>
+<p>Tabela. Força de Tensão (lb/in²) por Técnica de Mistura.</p>
+<table class="caption-top table">
+<thead>
+<tr class="header">
+<th>Técnica de Mistura</th>
+<th>1</th>
+<th>2</th>
+<th>3</th>
+<th>4</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>A</td>
+<td>3129</td>
+<td>3000</td>
+<td>2865</td>
+<td>2890</td>
+</tr>
+<tr class="even">
+<td>B</td>
+<td>3200</td>
+<td>3300</td>
+<td>2975</td>
+<td>3150</td>
+</tr>
+<tr class="odd">
+<td>C</td>
+<td>2800</td>
+<td>2900</td>
+<td>2985</td>
+<td>3050</td>
+</tr>
+<tr class="even">
+<td>D</td>
+<td>2600</td>
+<td>2700</td>
+<td>2600</td>
+<td>2765</td>
+</tr>
+</tbody>
+</table>
+<ol type="a">
+<li>Aplique o teste F (análise de variância) e interprete os resultados.</li>
+<li>Realize o teste de Tukey, ao nível de <span class="math inline">\(5\%\)</span> de significância, para verificar quais efeitos dos tratamentos diferem entre si.</li>
+<li>Usando o software R, refaça os itens ‘a)’ e ‘b)’ e realize a análise de resíduos para verificar se os pressupostos do teste F foram atendidos. Interprete os resultados. <!-- c) Realize o teste SNK, ao nível de $5\%$ de significância, para verificar quais efeitos dos tratamentos diferem entre si. --> <!-- d) Realize o teste Scott-Knott, ao nível de $5\%$ de significância, para verificar quais efeitos dos tratamentos diferem entre si. --></li>
+</ol>
+<ol start="6" type="1">
+<li>Um estudo foi realizado para verificar o teor de flúor em água mineral. Foram escolhidas 3 localidades produtoras de água mineral, e obtidas 5 repetições para cada localidade:</li>
+</ol>
+<p>Tabela. Teor de Flúor (mg/L) por Localidade e Repetição.</p>
+<table class="caption-top table">
+<thead>
+<tr class="header">
+<th>Localidade</th>
+<th>1</th>
+<th>2</th>
+<th>3</th>
+<th>4</th>
+<th>5</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>A</td>
+<td>1,1</td>
+<td>2,0</td>
+<td>0,5</td>
+<td>1,6</td>
+<td>1,4</td>
+</tr>
+<tr class="even">
+<td>B</td>
+<td>0,7</td>
+<td>2,0</td>
+<td>0,7</td>
+<td>2,1</td>
+<td>0,8</td>
+</tr>
+<tr class="odd">
+<td>C</td>
+<td>0,8</td>
+<td>2,5</td>
+<td>1,0</td>
+<td>2,4</td>
+<td>0,8</td>
+</tr>
+</tbody>
+</table>
+<ol type="a">
+<li>Aplique o teste F (análise de variância) e interprete os resultados.</li>
+<li>Realize o teste de Tukey, ao nível de <span class="math inline">\(5\%\)</span> de significância, para verificar quais efeitos dos tratamentos diferem entre si.</li>
+<li>Usando o software R, refaça os itens ‘a)’ e ‘b)’ e realize a análise de resíduos para verificar se os pressupostos do teste F foram atendidos. Interprete os resultados. <!-- c) Realize o teste t (LSD), ao nível de $5\%$ de significância, para verificar quais efeitos dos tratamentos diferem entre si. --></li>
+</ol>
+<ol start="7" type="1">
+<li>Uma locadora de veículos deseja investigar se o tipo de carro alugado influencia a duração do contrato de aluguel. Para isso, foi conduzido um experimento durante uma semana em uma unidade específica da empresa.</li>
+</ol>
+<p>Foram selecionados, aleatoriamente, 10 contratos de aluguel para cada tipo de carro, e os dados coletados são apresentados na tabela a seguir:</p>
+<table class="caption-top table">
+<thead>
+<tr class="header">
+<th>Tipo de Carro</th>
+<th>Observações</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>Subcompacto</td>
+<td>3, 5, 3, 7, 6, 5, 3, 2, 1, 6</td>
+</tr>
+<tr class="even">
+<td>Compacto</td>
+<td>1, 3, 4, 7, 5, 6, 3, 2, 1, 7</td>
+</tr>
+<tr class="odd">
+<td>Médio</td>
+<td>4, 1, 3, 5, 7, 1, 2, 4, 2, 7</td>
+</tr>
+<tr class="even">
+<td>Grande</td>
+<td>3, 5, 7, 5, 10, 3, 4, 7, 2, 7</td>
+</tr>
+</tbody>
+</table>
+<ol type="a">
+<li>Aplique o teste F (análise de variância) e interprete os resultados.</li>
+<li>Realize o teste de Tukey, ao nível de <span class="math inline">\(5\%\)</span> de significância, para verificar quais efeitos dos tratamentos diferem entre si.</li>
+<li>Usando o software R, refaça os itens ‘a)’ e ‘b)’ e realize a análise de resíduos para verificar se os pressupostos do teste F foram atendidos. Interprete os resultados. <!-- c) Realize o teste de t (LSD), ao nível de $5\%$ de significância, para verificar quais efeitos dos tratamentos diferem entre si. --> <!-- d) Realize o teste de t (LSD) com correção de Bonferroni, ao nível de $5\%$ de significância, para verificar quais efeitos dos tratamentos diferem entre si. --></li>
+</ol>
+<ol start="8" type="1">
+<li>Um fabricante da indústria farmacêutica deseja investigar a bioatividade de um novo medicamento. Para isso, foi conduzido um experimento com delineamento inteiramente casualizado e um único fator, representado pelo nível de dosagem.</li>
+</ol>
+<p>Três níveis de dosagem foram testados (20 g, 30 g e 40 g), e os resultados obtidos estão apresentados na tabela abaixo:</p>
+<table class="caption-top table">
+<thead>
+<tr class="header">
+<th>Dosagem</th>
+<th>Observações</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>20 g</td>
+<td>24, 28, 37, 30</td>
+</tr>
+<tr class="even">
+<td>30 g</td>
+<td>37, 44, 31, 35</td>
+</tr>
+<tr class="odd">
+<td>40 g</td>
+<td>42, 47, 52, 38</td>
+</tr>
+</tbody>
+</table>
+<p>Há evidência de que a dosagem do medicamento influencia sua bioatividade? Realize todas as análises necessárias e interprete os resultados.</p>
+<ol start="9" type="1">
+<li>Um artigo publicado no <em>ACI Materials Journal</em> (Vol. 84, 1987, pp. 213–216) descreve diversos experimentos que investigam o uso da técnica de <strong>rodding</strong> (compactação por hasteamento) do concreto com o objetivo de remover o ar aprisionado durante o preparo.</li>
+</ol>
+<p>Foi utilizado um cilindro de 3 × 6 polegadas, e a variável experimental foi o número de vezes que a haste foi inserida no concreto — denominada nível de rodding. A variável resposta foi a resistência à compressão das amostras de concreto.</p>
+<p>Os dados obtidos estão apresentados na tabela a seguir:</p>
+<table class="caption-top table">
+<thead>
+<tr class="header">
+<th>Nível de Rodding</th>
+<th>Resistência à Compressão (psi)</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>10</td>
+<td>1530, 1530, 1440</td>
+</tr>
+<tr class="even">
+<td>15</td>
+<td>1610, 1650, 1500</td>
+</tr>
+<tr class="odd">
+<td>20</td>
+<td>1560, 1730, 1530</td>
+</tr>
+<tr class="even">
+<td>25</td>
+<td>1500, 1490, 1510</td>
+</tr>
+</tbody>
+</table>
+<p>Há evidência de que o nível de rodding influencia a resistência à compressão do concreto? Realize todas as análises necessárias e interprete os resultados.</p>
+<ol start="10" type="1">
+<li>Um artigo publicado na revista <em>Environment International</em> (Vol. 18, Nº 4, 1992) descreve um experimento cujo objetivo foi investigar a quantidade de radônio liberado em chuveiros. Para isso, utilizou-se água enriquecida com radônio, e foram testados seis diferentes diâmetros de orifício em cabeças de chuveiro.</li>
+</ol>
+<p>Os dados obtidos no experimento são apresentados na tabela a seguir:</p>
+<table class="caption-top table">
+<thead>
+<tr class="header">
+<th>Diâmetro do Orifício (cm)</th>
+<th>Radônio Liberado (%)</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>0.37</td>
+<td>80, 83, 83, 85</td>
+</tr>
+<tr class="even">
+<td>0.51</td>
+<td>75, 75, 79, 79</td>
+</tr>
+<tr class="odd">
+<td>0.71</td>
+<td>74, 73, 76, 77</td>
+</tr>
+<tr class="even">
+<td>1.02</td>
+<td>67, 72, 74, 74</td>
+</tr>
+<tr class="odd">
+<td>1.40</td>
+<td>62, 62, 67, 69</td>
+</tr>
+<tr class="even">
+<td>1.99</td>
+<td>60, 61, 64, 66</td>
+</tr>
+</tbody>
+</table>
+<p>A análise dos dados indica que o diâmetro do orifício influencia a quantidade de radônio liberado? Realize todas as análises necessárias e interprete os resultados.</p>
+<ol start="11" type="1">
+<li>Considere os dados a seguir sobre o crescimento de plantas após a aplicação de diferentes tipos de hormônio de crescimento.</li>
+</ol>
+<table class="caption-top table">
+<colgroup>
+<col style="width: 14%">
+<col style="width: 21%">
+<col style="width: 21%">
+<col style="width: 21%">
+<col style="width: 21%">
+</colgroup>
+<thead>
+<tr class="header">
+<th>Hormônio</th>
+<th>Crescimento 1</th>
+<th>Crescimento 2</th>
+<th>Crescimento 3</th>
+<th>Crescimento 4</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>1</td>
+<td>13</td>
+<td>17</td>
+<td>7</td>
+<td>14</td>
+</tr>
+<tr class="even">
+<td>2</td>
+<td>21</td>
+<td>13</td>
+<td>20</td>
+<td>17</td>
+</tr>
+<tr class="odd">
+<td>3</td>
+<td>18</td>
+<td>15</td>
+<td>20</td>
+<td>17</td>
+</tr>
+<tr class="even">
+<td>4</td>
+<td>7</td>
+<td>11</td>
+<td>18</td>
+<td>10</td>
+</tr>
+<tr class="odd">
+<td>5</td>
+<td>6</td>
+<td>11</td>
+<td>15</td>
+<td>8</td>
+</tr>
+</tbody>
+</table>
+<ol type="a">
+<li><p>Realize um teste <span class="math inline">\(F\)</span> ao nível <span class="math inline">\(\alpha = 0.05\)</span>.</p></li>
+<li><p>O que acontece quando o procedimento de Tukey é aplicado?</p></li>
+</ol>
+<ol start="3" type="a">
+<li>Usando o software R, refaça os itens ‘a)’ e ‘b)’ e realize a análise de resíduos para verificar se os pressupostos do teste F foram atendidos. Interprete os resultados.</li>
+</ol>
+<ol start="12" type="1">
+<li>Amostras de seis diferentes marcas de margarina diet/imitada foram analisadas para determinar o nível de ácidos graxos poli-insaturados fisiologicamente ativos (PAPFUA, em porcentagem). Os dados abaixo são consistentes com um estudo realizado pela <em>Consumer Reports</em>:</li>
+</ol>
+<table class="caption-top table">
+<thead>
+<tr class="header">
+<th>Marca</th>
+<th>PAPFUA 1</th>
+<th>PAPFUA 2</th>
+<th>PAPFUA 3</th>
+<th>PAPFUA 4</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>Imperial</td>
+<td>14.1</td>
+<td>13.6</td>
+<td>14.4</td>
+<td>14.3</td>
+</tr>
+<tr class="even">
+<td>Parkay</td>
+<td>12.8</td>
+<td>12.5</td>
+<td>13.4</td>
+<td>13.0</td>
+</tr>
+<tr class="odd">
+<td>Blue Bonnet</td>
+<td>13.5</td>
+<td>13.4</td>
+<td>14.1</td>
+<td>14.3</td>
+</tr>
+<tr class="even">
+<td>Chiffon</td>
+<td>13.2</td>
+<td>12.7</td>
+<td>12.6</td>
+<td>13.9</td>
+</tr>
+<tr class="odd">
+<td>Mazola</td>
+<td>16.8</td>
+<td>17.2</td>
+<td>16.4</td>
+<td>17.3</td>
+</tr>
+<tr class="even">
+<td>Fleischmann’s</td>
+<td>18.1</td>
+<td>17.2</td>
+<td>18.7</td>
+<td>18.4</td>
+</tr>
+</tbody>
+</table>
+<p>Os dados indicam que há diferença significativa entre as marcas de margarina em relação ao nível de PAPFUA? Realize todas as análises necessárias e interprete os resultados.</p>
+<ol start="13" type="1">
+<li>Um estudo foi conduzido para comparar a vida útil de escrita de quatro marcas premium de canetas. Uma máquina de escrita foi utilizada para garantir que as demais condições fossem homogêneas (por exemplo, pressão constante e um ângulo fixo). A mesma superfície de escrita (tipo de papel) foi usada em todas as repetições. A tabela apresenta dois tempos de vida útil (min) obtidos para cada marca de caneta.</li>
+</ol>
+<table class="caption-top table">
+<thead>
+<tr class="header">
+<th>Marca da caneta</th>
+<th>Rep 1</th>
+<th>Rep 2</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>1</td>
+<td>709</td>
+<td>659</td>
+</tr>
+<tr class="even">
+<td>2</td>
+<td>668</td>
+<td>685</td>
+</tr>
+<tr class="odd">
+<td>3</td>
+<td>659</td>
+<td>685</td>
+</tr>
+<tr class="even">
+<td>4</td>
+<td>698</td>
+<td>650</td>
+</tr>
+</tbody>
+</table>
+<p>Há evidência de que a vida útil de escrita difere entre as marcas de caneta? Realize todas as análises necessárias e interprete os resultados.</p>
+<ol start="14" type="1">
+<li>O artigo <em>“Atividades Antimicrobianas do Óleo Essencial de Oito Espécies de Plantas de Diferentes Famílias Contra Alguns Microrganismos Patogênicos”</em> (<em>Res. J. Microbiol.</em> 2016: 28–34) relatou um experimento no qual oito óleos essenciais foram aplicadas a culturas bacterianas ativas. A tabela a seguir apresenta a porcentagem de inibição de <em>E. coli</em> para cada óleo. A concentração dos óleos essenciais foi de 4 μL/mL.</li>
+</ol>
+<table class="caption-top table">
+<thead>
+<tr class="header">
+<th>Tipo de óleo</th>
+<th>Rep 1</th>
+<th>Rep 2</th>
+<th>Rep 3</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>Ginger</td>
+<td>60</td>
+<td>72</td>
+<td>80</td>
+</tr>
+<tr class="even">
+<td>Thyme</td>
+<td>58</td>
+<td>64</td>
+<td>78</td>
+</tr>
+<tr class="odd">
+<td>Coriander</td>
+<td>57</td>
+<td>63</td>
+<td>81</td>
+</tr>
+<tr class="even">
+<td>Marjoram</td>
+<td>17</td>
+<td>34</td>
+<td>49</td>
+</tr>
+<tr class="odd">
+<td>Mustard</td>
+<td>14</td>
+<td>31</td>
+<td>45</td>
+</tr>
+<tr class="even">
+<td>Chamomile</td>
+<td>22</td>
+<td>36</td>
+<td>54</td>
+</tr>
+<tr class="odd">
+<td>Licorice</td>
+<td>10</td>
+<td>14</td>
+<td>23</td>
+</tr>
+<tr class="even">
+<td>Nigella</td>
+<td>15</td>
+<td>29</td>
+<td>42</td>
+</tr>
+</tbody>
+</table>
+<p>Há evidência de que a porcentagem de inibição de <em>E. coli</em> difere entre os óleos essenciais? Realize todas as análises necessárias e interprete os resultados.</p>
 <hr>
 <div style="text-align: center;">
 <p><a href="https://instagram.com/profjulianobortolini">@profjulianobortolini</a>      <a href="http://www.julianobortolini.com.br">www.julianobortolini.com.br</a>      <a href="https://linkedin.com/in/julianobortolini">linkedin</a>      <a href="https://github.com/julianobortolini">github</a>       <a href="http://lattes.cnpq.br/6210909768845403">lattes</a></p>
